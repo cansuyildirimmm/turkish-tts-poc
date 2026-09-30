@@ -1,0 +1,426 @@
+# Pilot recording script, source sentences (original text written for this project).
+# Format: id|category|text   (lines starting with # are ignored)
+# The talent reads the NORMALIZED form generated into recording/pilot_script.tsv,
+# not this file. Must never overlap with evaluation/sentences.txt (checked by
+# src/recording_script.py).
+# Categories: general, question, erp, number, abbreviation, short
+g001|general|Sabah erkenden kalkıp işe gitmek için hazırlandım.
+g002|general|Toplantı odasındaki projeksiyon cihazı yine çalışmıyor.
+g003|general|Yeni ofisimiz şehir merkezine oldukça yakın bir yerde.
+g004|general|Kahvemi içtikten sonra e-postalarımı kontrol edeceğim.
+g005|general|Bu hafta sonu ailemle birlikte sahil kasabasına gidiyoruz.
+g006|general|Çocuklar bahçede top oynarken anneleri onları pencereden izliyordu.
+g007|general|Kitaplığın en üst rafındaki ansiklopediler toz içinde kalmış.
+g008|general|Güneş batarken gökyüzü turuncu ve mor renklere büründü.
+g009|general|Otobüs durağında beklerken yağmur aniden bastırdı.
+g010|general|Eski fotoğraflara bakınca çocukluğumu hatırladım.
+g011|general|Ağaçların yaprakları sonbaharda sararıp dökülmeye başlar.
+g012|general|Kütüphanede sessizce çalışan öğrenciler sınavlara hazırlanıyordu.
+g013|general|Pazardan taze domates, biber ve salatalık aldık.
+g014|general|Uçağımız rötar yaptığı için havalimanında iki saat bekledik.
+g015|general|Komşumuz yeni doğan kedi yavrularına yuva arıyor.
+g016|general|Şehrin tarihi sokaklarında yürümek insana huzur veriyor.
+g017|general|Akşam yemeğinden sonra hep birlikte çay içtik.
+g018|general|Dağın zirvesine ulaştığımızda manzara nefes kesiciydi.
+g019|general|Öğretmenimiz bize kitap okumanın önemini anlattı.
+g020|general|Bisikletimin lastiği patladığı için eve yürüyerek döndüm.
+g021|general|Yazın en sıcak günlerinde gölgede oturmayı tercih ediyorum.
+g022|general|Müzede sergilenen antik heykeller ziyaretçilerin ilgisini çekti.
+g023|general|Kışın kar yağınca yollar kapanabiliyor, dikkatli olmak gerekiyor.
+g024|general|Arkadaşımın doğum günü için küçük bir sürpriz hazırladık.
+g025|general|Balıkçılar sabahın erken saatlerinde denize açıldı.
+g026|general|Bu tarifte un, şeker, yumurta ve tereyağı kullanılıyor.
+g027|general|Konserin biletleri birkaç saat içinde tükendi.
+g028|general|Doktor, düzenli uyku ve dengeli beslenmenin önemli olduğunu söyledi.
+g029|general|Tren istasyonu kalabalıktı, herkes bir yerlere yetişmeye çalışıyordu.
+g030|general|Yeni bir dil öğrenmek sabır ve düzenli çalışma gerektirir.
+g031|general|Rüzgârın uğultusu bütün gece kulaklarımızda çınladı.
+g032|general|Mahalledeki fırından gelen taze ekmek kokusu sokağı sarmıştı.
+g033|general|Kardeşim üniversiteyi kazandığında hepimiz çok sevindik.
+g034|general|Gölün kenarındaki ördekler ekmek kırıntılarını paylaşamadı.
+g035|general|Saat kulesinin çanları öğle vaktini haber veriyordu.
+g036|general|Bahçıvan gülleri budadıktan sonra toprağı suladı.
+g037|general|Yağmurdan sonra gökyüzünde kocaman bir gökkuşağı belirdi.
+g038|general|Hafta içi yoğun çalıştığım için hafta sonları dinlenmeye özen gösteriyorum.
+g039|general|Köprünün altından geçen nehir ilkbaharda taşma noktasına geldi.
+g040|general|Çarşıdaki kuyumcu dükkânı yüz yıldır aynı ailenin elinde.
+g041|general|Gazeteyi okurken ilginç bir haber gözüme çarptı.
+g042|general|Sınıfın penceresinden okulun bahçesi görünüyordu.
+g043|general|Dedem bana gençliğinde yaşadığı ilginç anıları anlattı.
+g044|general|Otoparkta boş yer bulmak her geçen gün zorlaşıyor.
+g045|general|Kış tatilinde kayak yapmak için dağ evine gittik.
+g046|general|Şoförümüz dikkatli ve sakin bir şekilde araç kullanıyordu.
+g047|general|Ormanda kamp yaparken ateşin başında şarkılar söyledik.
+g048|general|Eczaneden ilaçlarımı aldıktan sonra doğruca eve geçtim.
+g049|general|Deniz kenarındaki lokantada ızgara balık yedik.
+g050|general|Bu sabah trafikte her zamankinden daha uzun süre bekledim.
+g051|general|Çiçekçi, sevgililer günü için yüzlerce kırmızı gül hazırlamıştı.
+g052|general|Hırsız, gece yarısı alarm çalınca kaçmak zorunda kaldı.
+g053|general|Çamaşır makinesi arızalandığı için tamirci çağırdık.
+g054|general|Yaşlı adam parkta güvercinleri besliyordu.
+g055|general|Üniversite kampüsünde yeni bir spor salonu açıldı.
+g056|general|Şarkıcı sahneye çıktığında seyirciler alkışlamaya başladı.
+g057|general|Babaannem her bayram bize el yapımı tatlılar hazırlar.
+g058|general|Bilgisayarım çok yavaşladığı için bir uzmana götürdüm.
+g059|general|Dolmuşa binmeden önce bozuk para hazırlamayı unutma.
+g060|general|Gemi limana yanaşırken yolcular güverteye çıktı.
+g061|general|Kırsal bölgelerde internet erişimi hâlâ sınırlı olabiliyor.
+g062|general|Yeğenim resim yapmayı çok seviyor, her gün yeni bir tablo çiziyor.
+g063|general|Fırtına yüzünden bazı uçak seferleri iptal edildi.
+g064|general|Kış aylarında sıcak çorba içmek insanı ısıtır.
+g065|general|Şirketimizin kuruluş yıldönümü için küçük bir tören düzenlendi.
+g066|general|Otelin resepsiyon görevlisi bize çok yardımcı oldu.
+g067|general|Bu yol, yapım çalışmaları nedeniyle bir süre kapalı kalacak.
+g068|general|Köpeğimiz her sabah kapının önünde beni bekliyor.
+g069|general|Ülkemizin farklı bölgelerinde birbirinden güzel yemekler yapılır.
+g070|general|Pencereyi açınca içeriye serin bir hava doldu.
+g071|general|Kırtasiyeden defter, kalem ve silgi aldım.
+g072|general|Kuşlar göç mevsiminde binlerce kilometre yol kat eder.
+g073|general|Düğün salonu davetlilerle dolup taşmıştı.
+g074|general|Işıklar söndüğünde herkes bir anda sessizleşti.
+g075|general|Ağabeyim yıllardır yurt dışında yaşıyor ama her yaz bize geliyor.
+g076|general|Günümüzde birçok iş uzaktan çalışma modeliyle yürütülüyor.
+g077|general|Kütüphaneden ödünç aldığım kitabı iade etmeyi unuttum.
+g078|general|Çay bahçesinde oturup gelen geçeni izledik.
+g079|general|Zeytin ağaçları yüzlerce yıl yaşayabilir.
+g080|general|Yoğurt, pek çok Türk yemeğinin vazgeçilmez bir parçasıdır.
+g081|general|Uzun bir aradan sonra eski okul arkadaşlarımla buluştum.
+g082|general|Soğuk havalarda ısınma masraflarını azaltmak için yalıtım önemlidir.
+g083|general|Kaptan, rüzgârın yön değiştirdiğini fark edince yelkenleri indirdi.
+g084|general|Eski radyodan hafif bir müzik yükseliyordu.
+g085|general|Çocuklara trafik kurallarını küçük yaşta öğretmek gerekir.
+g086|general|Bu mahallede herkes birbirini tanır ve yardımlaşır.
+g087|general|Göl kenarındaki kulübede sessiz bir hafta geçirdik.
+g088|general|Ödevini bitirmeden televizyon izlemeyeceğine söz verdi.
+g089|general|Şehir meydanındaki çeşmenin suyu buz gibiydi.
+g090|general|Aşçı, yemeğe son olarak biraz nane ve pul biber ekledi.
+g091|general|Hastanenin acil servisi gece boyunca yoğun çalıştı.
+g092|general|Ürünlerimizi daha çevreci ambalajlarla göndermeye başladık.
+g093|general|Yeni açılan pastanenin önünde uzun bir kuyruk vardı.
+g094|general|Kırk yıllık dostluğumuz hiç bitmesin istiyorum.
+g095|general|Tatil dönüşü valizleri boşaltmak bir türlü bitmek bilmedi.
+g096|general|Öğle arasında iş yerinin yakınındaki parkta kısa bir yürüyüş yapıyorum.
+g097|general|Fabrikanın bacasından yükselen duman uzaktan görülüyordu.
+g098|general|Müzik öğretmenimiz hepimize flüt çalmayı öğretti.
+g099|general|Deprem tatbikatında herkes toplanma alanına geçti.
+g100|general|Anneannemin bahçesindeki incir ağacı meyveyle dolmuştu.
+g101|general|Yolculuk boyunca pencereden dışarıyı seyrettim.
+g102|general|Gençler hafta sonu için bir doğa yürüyüşü planlıyor.
+g103|general|Kış bahçesindeki bitkiler özenle bakıldığı için çok canlı görünüyor.
+g104|general|Sokak lambaları akşam olunca otomatik olarak yanıyor.
+g105|general|Duvardaki saat durmuş, pili bitmiş olmalı.
+g106|general|Bu ilçede her salı günü büyük bir pazar kuruluyor.
+g107|general|Film o kadar etkileyiciydi ki salondan kimse ayrılmak istemedi.
+g108|general|Yerel yönetim, parkların yenilenmesi için çalışma başlattı.
+g109|general|İstasyondaki anons, trenin biraz gecikeceğini bildirdi.
+g110|general|Buzdolabında yalnızca biraz peynir ve zeytin kalmıştı.
+g111|general|Evin çatısındaki kiremitler fırtınada yerinden oynamış.
+g112|general|Arı kovanlarının bulunduğu yamaç çiçeklerle kaplıydı.
+g113|general|Hepimiz ortak bir amaç için elimizden geleni yaptık.
+g114|general|Yağmur çiseledi ama kimse şemsiyesini açmadı.
+g115|general|Tiyatro oyununun ikinci perdesi çok daha heyecanlıydı.
+g116|general|Oğuz, Ülkü ve Çağla aynı projede birlikte çalışıyor.
+g117|general|Işıl ışıl parlayan yıldızları seyrederken zamanın nasıl geçtiğini anlamadık.
+g118|general|Öğüt vermek kolaydır, önemli olan örnek olmaktır.
+g119|general|Üşüdüğü için ceketini sıkıca ilikledi.
+g120|general|Ağır yükleri taşırken belinizi korumaya dikkat edin.
+q001|question|Toplantı saat kaçta başlayacak?
+q002|question|Bu raporu yarına kadar tamamlayabilir misiniz?
+q003|question|Yeni sisteme geçiş ne zaman yapılacak?
+q004|question|Şifremi unuttum, nasıl sıfırlayabilirim?
+q005|question|Hangi departmanda çalışıyorsunuz?
+q006|question|Faturanın bir kopyasını bana gönderebilir misiniz?
+q007|question|Bu hafta sonu ne yapmayı planlıyorsunuz?
+q008|question|Öğrenci kayıtları hangi tarihte başlıyor?
+q009|question|Ödeme yöntemini değiştirmek mümkün mü?
+q010|question|Kullanıcı yetkilerini kim tanımlayacak?
+q011|question|Neden bu işlem bu kadar uzun sürüyor?
+q012|question|Size nasıl yardımcı olabilirim?
+q013|question|Stokta kaç adet ürün kaldığını kontrol ettiniz mi?
+q014|question|Yarın ofiste olacak mısınız?
+q015|question|Bu belgeyi kimin onaylaması gerekiyor?
+q016|question|Hesap ekstresini nereden indirebilirim?
+q017|question|Veliler bilgilendirme mesajını aldı mı?
+q018|question|Taksitlerin vadesi ne zaman doluyor?
+q019|question|Raporda bir hata olduğunu düşünüyor musunuz?
+q020|question|Yeni dönemde kaç öğrenci kayıt yaptırdı?
+q021|question|Bu ekranı ilk defa mı kullanıyorsunuz?
+q022|question|Hangi şubeden işlem yapmak istiyorsunuz?
+q023|question|Değişiklikleri kaydettiniz mi?
+q024|question|Bu ürünün tedarikçisi kim?
+q025|question|Maaş bordroları ne zaman hazır olur?
+q026|question|İzin talebim onaylandı mı?
+q027|question|Sipariş kargoya verildi mi, yoksa hâlâ depoda mı?
+q028|question|Öğretmenlerin ders programı güncellendi mi?
+q029|question|Bu tutar neden eksik görünüyor?
+q030|question|Sisteme hangi tarayıcıyla giriş yapmalıyım?
+q031|question|Yedekleme işlemi başarıyla tamamlandı mı?
+q032|question|Müşteri bu teklifi kabul etti mi?
+q033|question|Kaç gün yıllık izin hakkım kaldı?
+q034|question|Bu alanı boş bırakırsam ne olur?
+q035|question|Sınav sonuçları ne zaman açıklanacak?
+q036|question|Toplantıya kimler katılacak?
+q037|question|Bu raporu hangi formatta almak istersiniz?
+q038|question|Ödeme onaylandıktan sonra makbuz gönderiliyor mu?
+q039|question|Neden oturumum kapandı?
+q040|question|Dokümanın son sürümü hangisi?
+e001|erp|Öğrenci listesini sınıf ve şube bazında filtreleyebilirsiniz.
+e002|erp|Veli bilgileri kaydedilmeden öğrenci kaydı tamamlanamaz.
+e003|erp|Ders programı oluşturulurken öğretmenlerin uygunluk durumu dikkate alınır.
+e004|erp|Personel izin talepleri insan kaynakları modülünden takip edilir.
+e005|erp|Bordro hesaplaması ay sonunda otomatik olarak başlatılır.
+e006|erp|Satın alma talebi, bütçe onayından sonra siparişe dönüştürülür.
+e007|erp|Tedarikçi kartında vergi numarası ve adres bilgileri yer alır.
+e008|erp|Depolar arası transfer işlemi başarıyla kaydedildi.
+e009|erp|Mizan raporu seçilen dönem için yeniden hesaplandı.
+e010|erp|Banka hesap hareketleri her gün otomatik olarak içeri aktarılır.
+e011|erp|Kasa hesabında gün sonu kapanışı yapılmadı.
+e012|erp|Gider fişine ait belgeleri sisteme yükleyiniz.
+e013|erp|Çek ve senet takibini portföy ekranından yapabilirsiniz.
+e014|erp|Müşteri siparişi sevkiyata hazır olarak işaretlendi.
+e015|erp|İrsaliye bilgileri faturaya otomatik olarak aktarılır.
+e016|erp|Dönem kapanışından sonra geçmiş kayıtlar değiştirilemez.
+e017|erp|Kullanıcı rolleri ve yetkileri sistem yöneticisi tarafından tanımlanır.
+e018|erp|Onay akışında bekleyen üç belge bulunmaktadır.
+e019|erp|Öğrencinin devamsızlık bilgisi velisine bildirildi.
+e020|erp|Sınav notları öğretmen tarafından sisteme girildi.
+e021|erp|Karne ve transkript belgeleri yazdırılmaya hazır.
+e022|erp|Burs başvuruları değerlendirme aşamasındadır.
+e023|erp|Yemekhane ücretleri aylık olarak tahakkuk ettirilir.
+e024|erp|Servis güzergâhları yeni döneme göre güncellendi.
+e025|erp|Kayıt yenileme işlemleri için veli onayı gereklidir.
+e026|erp|Öğretmenlerin ek ders ücretleri puantaj cetveline göre hesaplanır.
+e027|erp|Hak ediş raporu onaylanmadan ödeme talimatı verilemez.
+e028|erp|Cari kart bakiyesi borç durumunu göstermektedir.
+e029|erp|Alacak dekontu oluşturulduktan sonra müşteriye gönderildi.
+e030|erp|Vadesi geçmiş alacaklar raporu hazırlandı.
+e031|erp|Tahsilat makbuzu velinin e-posta adresine iletildi.
+e032|erp|Kısmi ödeme kabul edildi, kalan tutar bir sonraki taksite eklendi.
+e033|erp|Muhasebe entegrasyonu sırasında bir hata oluştu.
+e034|erp|Hesap planında yeni bir alt hesap açıldı.
+e035|erp|Yevmiye defteri kayıtları kontrol edilmelidir.
+e036|erp|Amortisman hesaplaması demirbaş kartlarına göre yapılır.
+e037|erp|Demirbaş zimmet formu personel tarafından imzalandı.
+e038|erp|Stok sayım farkları raporlanarak onaya sunuldu.
+e039|erp|Minimum stok seviyesinin altına düşen ürünler için uyarı oluşturuldu.
+e040|erp|Ürün reçetesi üretim planlamasında kullanılır.
+e041|erp|İş emri üretim hattına gönderildi.
+e042|erp|Satış teklifi müşteri tarafından onaylandı.
+e043|erp|Fiyat listesi yeni kur değerlerine göre güncellendi.
+e044|erp|İndirim kampanyası yalnızca seçili ürünlerde geçerlidir.
+e045|erp|İade talebi depo sorumlusunun onayını bekliyor.
+e046|erp|Kargo takip numarası siparişe eklendi.
+e047|erp|Personel sicil kartında eksik bilgiler bulunmaktadır.
+e048|erp|İşe giriş bildirgesi zamanında gönderilmelidir.
+e049|erp|Fazla mesai saatleri puantaj ekranından girilir.
+e050|erp|Yıllık izin bakiyesi otomatik olarak hesaplanır.
+e051|erp|Masraf merkezi seçmeden kayıt yapamazsınız.
+e052|erp|Bütçe gerçekleşme raporu yöneticilere gönderildi.
+e053|erp|Nakit akış tablosu önümüzdeki üç ay için hazırlandı.
+e054|erp|Kur farkı faturası düzenlenmesi gerekiyor.
+e055|erp|Döviz cinsinden yapılan ödemeler günlük kur ile değerlendirilir.
+e056|erp|Banka mutabakatı başarıyla tamamlandı.
+e057|erp|Mutabakat mektubu tüm tedarikçilere gönderildi.
+e058|erp|Şube bazında gelir ve gider karşılaştırması yapılabilir.
+e059|erp|Dashboard ekranındaki grafikler anlık olarak yenilenir.
+e060|erp|Kullanıcı oturumu uzun süre işlem yapılmadığı için sonlandırıldı.
+e061|erp|Yetkiniz olmayan bir ekrana erişmeye çalıştınız.
+e062|erp|Zorunlu alanlar kırmızı renkle işaretlenmiştir.
+e063|erp|Kaydetme işlemi sırasında beklenmeyen bir hata oluştu.
+e064|erp|Lütfen arama kriterlerini daraltarak tekrar deneyiniz.
+e065|erp|Seçilen kayıt başka bir kullanıcı tarafından düzenleniyor.
+e066|erp|Excel dosyasından toplu veri aktarımı tamamlandı.
+e067|erp|Aktarım sırasında hatalı satırlar atlandı.
+e068|erp|Rapor şablonu şirket logosuyla birlikte kaydedildi.
+e069|erp|Bildirim tercihlerinizi profil ayarlarından değiştirebilirsiniz.
+e070|erp|İki aşamalı doğrulama hesabınız için etkinleştirildi.
+e071|erp|Şifreniz en az sekiz karakter uzunluğunda olmalıdır.
+e072|erp|Sistem, bakım çalışması nedeniyle kısa süreliğine erişime kapatılacaktır.
+e073|erp|Yeni sürümle birlikte raporlama ekranı yenilendi.
+e074|erp|Öğrenci velisine ait iletişim bilgileri güncellendi.
+e075|erp|Kardeş indirimi ikinci öğrenciden itibaren uygulanır.
+e076|erp|Erken kayıt indirimi dönem başına kadar geçerlidir.
+e077|erp|Ödeme planı veli ile yapılan sözleşmeye göre oluşturuldu.
+e078|erp|Sözleşme belgesi dijital olarak imzalandı.
+e079|erp|Eğitim öğretim yılı takvimi sisteme tanımlandı.
+e080|erp|Sınıf kapasitesi dolduğu için yeni kayıt alınamıyor.
+e081|erp|Öğrencinin nakil işlemi diğer şubeye aktarıldı.
+e082|erp|Etüt programına katılım listesi hazırlandı.
+e083|erp|Rehberlik servisi görüşme notlarını kaydetti.
+e084|erp|Kütüphane modülünden ödünç verilen kitaplar takip edilebilir.
+e085|erp|Öğretmen performans değerlendirme formu dolduruldu.
+e086|erp|Ders yükü dağılımı branşlara göre raporlandı.
+e087|erp|Nöbet çizelgesi haftalık olarak yayınlandı.
+e088|erp|Veli toplantısı davetiyeleri kısa mesajla gönderildi.
+e089|erp|Ödev teslim tarihleri öğrenci portalında görüntülenebilir.
+e090|erp|Online ödeme sayfası üzerinden kredi kartıyla ödeme yapılabilir.
+e091|erp|Sanal pos entegrasyonu test ortamında doğrulandı.
+e092|erp|Başarısız ödeme işlemleri ayrı bir listede gösterilir.
+e093|erp|Geri ödeme talebi muhasebe birimine iletildi.
+e094|erp|Fatura adresi ile teslimat adresi farklı olabilir.
+e095|erp|Proforma fatura müşteriye onay için gönderildi.
+e096|erp|Satış siparişinden otomatik fatura oluşturuldu.
+e097|erp|Tevkifatlı fatura düzenlerken oranı doğru seçiniz.
+e098|erp|Gelir tablosu ve bilanço raporları dönem sonunda hazırlanır.
+e099|erp|Bağımsız denetim için gerekli belgeler arşivden çıkarıldı.
+e100|erp|Arşivlenen dokümanlara yalnızca yetkili kullanıcılar erişebilir.
+e101|erp|Doküman yönetim sisteminde yeni bir klasör oluşturuldu.
+e102|erp|Belgenin önceki sürümleri geçmiş sekmesinde listelenir.
+e103|erp|Görev atanan kullanıcıya bildirim gönderildi.
+e104|erp|Proje maliyetleri aşama bazında takip edilmektedir.
+e105|erp|Toplantı tutanağı ilgili birimlerle paylaşıldı.
+e106|erp|Müşteri şikâyeti destek ekibine yönlendirildi.
+e107|erp|Destek talebi çözüldü olarak kapatıldı.
+e108|erp|Randevu takvimi öğretmenlerin müsaitliğine göre düzenlendi.
+e109|erp|Personel eğitim kayıtları yıllık olarak raporlanır.
+e110|erp|Veri yedekleri her gece şifreli olarak saklanır.
+n001|number|Bu ayki tahsilat toplamı 48.750 TL oldu.
+n002|number|Kalan borç ₺3.420,50'dir.
+n003|number|Faturanın vade tarihi 12.11.2026'dır.
+n004|number|Kayıt ücreti %15 indirimle 25.500 TL'ye düştü.
+n005|number|Toplantı saat 09:30'da başlayacak.
+n006|number|Öğrenci sayısı geçen yıla göre %8 arttı.
+n007|number|Ödemenin 3 taksitte yapılması kararlaştırıldı.
+n008|number|Son ödeme günü 28 Şubat 2027'dir.
+n009|number|Aylık kira bedeli 18.000 TL olarak belirlendi.
+n010|number|Sipariş toplamı 1.245,90 TL'dir.
+n011|number|Stok miktarı 350 adede düştü.
+n012|number|Ders saat 13:15'te sona eriyor.
+n013|number|Personel sayımız 124 kişiye ulaştı.
+n014|number|Yıllık bütçenin %62,5'i harcandı.
+n015|number|Taksit tutarı ₺2.750'dir.
+n016|number|Sınav 05.01.2027 tarihinde yapılacak.
+n017|number|Depoda 1.200 koli ürün bulunuyor.
+n018|number|İndirim oranı %10 ile %25 arasında değişiyor.
+n019|number|Servis ücreti aylık 1.850 TL'dir.
+n020|number|Sistem saat 23:00'te bakıma alınacak.
+n021|number|Toplam 7 şubemizde eğitim veriliyor.
+n022|number|Müşteri 2019'dan beri bizimle çalışıyor.
+n023|number|Birim fiyat 12,75 TL olarak güncellendi.
+n024|number|Yemek ücreti günlük 185 TL'dir.
+n025|number|Yeni kur 1 Ocak 2027 tarihinden itibaren geçerli olacak.
+n026|number|Veli toplantısı 17:45'te yapılacak.
+n027|number|Bu dönem 36 yeni öğretmen işe başladı.
+n028|number|Gecikme faizi aylık %4,25 olarak uygulanır.
+n029|number|Kasada 6.430 TL nakit bulunuyor.
+n030|number|Teslimat 14 iş günü içinde yapılacaktır.
+n031|number|Sipariş numarası 450981 olan kayıt bulunamadı.
+n032|number|Yeni dönem 08.09.2026 tarihinde başladı.
+n033|number|Karne ortalaması 87,4 olarak hesaplandı.
+n034|number|Maaş artışı %30 olarak belirlendi.
+n035|number|Toplam alacak 2.345.600 TL'ye ulaştı.
+n036|number|Okulun kuruluşu 1998 yılına dayanıyor.
+n037|number|Ders süresi 40 dakikadır.
+n038|number|Öğle arası 12:00 ile 13:00 arasındadır.
+n039|number|Borcun 5.000 TL tutarındaki kısmı ödendi.
+n040|number|KDV dahil toplam tutar 11.800 TL'dir.
+n041|number|Öğrencinin devamsızlığı 6 gün oldu.
+n042|number|Kampanya 31.12.2026 tarihinde sona eriyor.
+n043|number|Çalışanların %75'i eğitime katıldı.
+n044|number|Ürün ₺89,99'a satışa sunuldu.
+n045|number|Randevunuz 10:20'de onaylandı.
+n046|number|Toplam 2.500 kilogram malzeme teslim alındı.
+n047|number|Bu ay 19 fatura düzenlendi.
+n048|number|Teklifin geçerlilik süresi 30 gündür.
+n049|number|Sınıf mevcudu 28 öğrencidir.
+n050|number|Endeks 0,85 puan geriledi.
+n051|number|Hedefin %112'si gerçekleştirildi.
+n052|number|Ödeme 15.03.2027'de yapılacak.
+n053|number|Yıllık ücret 96.000 TL'dir.
+n054|number|Kütüphanede 4.380 kitap bulunuyor.
+n055|number|Sistem 3 saniye içinde yanıt verdi.
+n056|number|Kapanış saati 18:30'dur.
+n057|number|Personel servisi 07:50'de hareket eder.
+n058|number|Toplam 215 veli ankete katıldı.
+n059|number|Stok değeri 750.000 TL'nin üzerinde.
+n060|number|2026 yılı bütçesi revize edildi.
+n061|number|Fiyatlara %20 KDV dahildir.
+n062|number|İade tutarı 450 TL'dir.
+n063|number|Kredi kartıyla 6 taksit seçeneği sunuluyor.
+n064|number|Rapor 21.10.2026 tarihine kadar teslim edilmeli.
+n065|number|Doluluk oranı %93'e ulaştı.
+n066|number|Sınav süresi 90 dakikadır.
+n067|number|Bakım ücreti 3.600,00 TL'dir.
+n068|number|Ortalama bekleme süresi 4,5 dakikaya düştü.
+n069|number|Alış fiyatı 1.020 TL, satış fiyatı 1.350 TL'dir.
+n070|number|Son güncelleme 16:05'te yapıldı.
+a001|abbreviation|KDV beyannamesi ayın yirmi sekizine kadar verilmelidir.
+a002|abbreviation|SGK prim bildirgesi zamanında gönderildi.
+a003|abbreviation|e-Fatura mükellefi olan müşteriler için ayrı bir seri kullanılır.
+a004|abbreviation|e-Arşiv belgeleri e-posta ile iletilir.
+a005|abbreviation|IBAN numarasını girerken boşluk bırakmayınız.
+a006|abbreviation|CRM üzerinden müşteri görüşmeleri kaydedilebilir.
+a007|abbreviation|ERP projesinin ikinci aşaması başladı.
+a008|abbreviation|KPI hedefleri her çeyrek dönemde gözden geçirilir.
+a009|abbreviation|Raporu PDF olarak indirebilirsiniz.
+a010|abbreviation|Doğrulama kodu SMS ile gönderildi.
+a011|abbreviation|ÖTV oranları yeni düzenlemeyle değişti.
+a012|abbreviation|e-İrsaliye düzenlenmeden sevkiyat yapılmamalıdır.
+a013|abbreviation|e-Defter beratları süresi içinde yüklendi.
+a014|abbreviation|TC kimlik numarası on bir haneden oluşur.
+a015|abbreviation|Müşteri adayı CRM ekranında lead olarak işaretlendi.
+a016|abbreviation|Verileri Excel formatında export ederek paylaşabilirsiniz.
+a017|abbreviation|Login ekranında kullanıcı adınızı ve şifrenizi giriniz.
+a018|abbreviation|Dashboard üzerinden günlük satışları takip edebilirsiniz.
+a019|abbreviation|Online kayıt formu veliler tarafından doldurulabilir.
+a020|abbreviation|KDV'si ödenmemiş faturalar ayrıca listelenir.
+a021|abbreviation|SGK'ya bildirilen gün sayısı kontrol edilmelidir.
+a022|abbreviation|ERP'deki stok bilgileri anlık olarak güncellenir.
+a023|abbreviation|CRM'e eklenen notlar satış ekibiyle paylaşılır.
+a024|abbreviation|PDF'e dönüştürülen rapor e-posta ile gönderildi.
+a025|abbreviation|IBAN'ın ilk iki harfi ülke kodunu gösterir.
+a026|abbreviation|Raporlar, grafikler vb. içerikler panelde yer alır.
+a027|abbreviation|Faturalar, irsaliyeler vs. arşivde saklanır.
+a028|abbreviation|KPI değerlerinde belirgin bir düşüş görüldü.
+a029|abbreviation|SMS bildirimleri veli tercihine göre gönderilir.
+a030|abbreviation|e-Fatura ve e-Arşiv entegrasyonu test edildi.
+a031|abbreviation|ERP ve CRM sistemleri arasında veri aktarımı sağlandı.
+a032|abbreviation|KDV ve ÖTV tutarları faturada ayrı ayrı gösterilir.
+a033|abbreviation|TL cinsinden tutarlar iki ondalık basamakla gösterilir.
+a034|abbreviation|Hesap TR56 0001 0012 3456 7890 1234 56 numaralı IBAN ile eşleştirildi.
+a035|abbreviation|Tedarikçinin IBAN bilgisi güncellendi.
+a036|abbreviation|Lead kaydı fırsata dönüştürüldü.
+a037|abbreviation|Export işlemi tamamlandığında bildirim alacaksınız.
+a038|abbreviation|Excel şablonunu indirip doldurduktan sonra tekrar yükleyiniz.
+a039|abbreviation|Login işlemi başarısız oldu, lütfen tekrar deneyiniz.
+a040|abbreviation|Online ödeme sistemi yirmi dört saat hizmet vermektedir.
+s001|short|Tamam.
+s002|short|Kaydedildi.
+s003|short|İşlem başarılı.
+s004|short|Lütfen bekleyiniz.
+s005|short|Hata oluştu.
+s006|short|Onaylandı.
+s007|short|Reddedildi.
+s008|short|Teşekkür ederim.
+s009|short|Hoş geldiniz.
+s010|short|Güle güle.
+s011|short|İyi günler.
+s012|short|Evet, doğru.
+s013|short|Hayır, yanlış.
+s014|short|Devam ediyoruz.
+s015|short|Kayıt bulunamadı.
+s016|short|Oturum kapatıldı.
+s017|short|Ödeme alındı.
+s018|short|Belge yüklendi.
+s019|short|Dikkat!
+s020|short|Harika!
+s021|short|Maalesef olmadı.
+s022|short|Bir dakika lütfen.
+s023|short|Sonraki adım.
+s024|short|Önceki sayfa.
+s025|short|Ana menü.
+s026|short|Filtreyi temizle.
+s027|short|Değişiklikler geri alındı.
+s028|short|Yetkiniz yok.
+s029|short|Bağlantı kesildi.
+s030|short|Yeniden deneyin.
+s031|short|Ne güzel!
+s032|short|Çok teşekkürler.
+s033|short|Görüşmek üzere.
+s034|short|Kolay gelsin.
+s035|short|Afiyet olsun.
+s036|short|Geçmiş olsun.
+s037|short|Tebrikler!
+s038|short|Rapor hazır.
+s039|short|Sipariş iptal edildi.
+s040|short|Güncelleme tamamlandı.

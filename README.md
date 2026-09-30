@@ -4,7 +4,8 @@ Self-hosted Turkish text-to-speech proof of concept. Standalone: no ERP
 integration, no external TTS APIs. Inference runs fully offline; input text
 never leaves the machine.
 
-**Current phase:** FAZ 4 — Turkish text normalization (no training, no API, no Docker).
+**Current phase:** FAZ 5 — dataset research done; pilot recording in preparation
+(no training, no API, no Docker).
 
 ## Model
 
@@ -116,6 +117,23 @@ Tracks pitch per second and flags files whose pitch drops >= 5 semitones from
 the opening (the female voice drifting toward a male-sounding voice). See
 *Known limitations*.
 
+### Pilot recording script
+
+No public Turkish dataset is both single-speaker and cleared for commercial
+use (see [docs/dataset_report.md](docs/dataset_report.md)), so a company-owned
+pilot recording is used. Recording instructions, legal checklist and file
+layout: [docs/recording_guide.md](docs/recording_guide.md).
+
+```powershell
+python src/recording_script.py
+```
+
+Builds `recording/pilot_script.tsv` from `recording/pilot_sentences.txt`:
+`read_text` is the normalized text the talent reads, `train_text` the same
+text mapped to the model vocabulary (the training transcript). Fails if any
+sentence overlaps the evaluation set, is duplicated, or contains characters
+the model cannot represent.
+
 ## Offline guarantee
 
 - `src/download_models.py` is the only code that contacts Hugging Face.
@@ -133,6 +151,9 @@ src/evaluation_set.py   reader for evaluation/sentences.txt
 src/generate_eval.py    batch synthesis of the evaluation set
 src/text_normalizer.py  Turkish text normalization (numbers, money, dates, abbreviations)
 src/voice_check.py      pitch-based voice drift detector
+src/recording_script.py pilot recording script builder + checks
+recording/              pilot script sources and generated TSV
+docs/                   dataset report, recording guide
 tests/                  unit tests
 evaluation/sentences.txt  unseen ERP evaluation sentences
 outputs/base/           generated audio (git-ignored)

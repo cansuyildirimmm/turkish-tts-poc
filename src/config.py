@@ -18,9 +18,16 @@ THIRD_PARTY_DIR = PROJECT_ROOT / "third_party"
 # Unseen ERP evaluation set. Must never be used as training data.
 EVAL_SENTENCES_PATH = EVALUATION_DIR / "sentences.txt"
 
+# Pilot recording (FAZ 5/6): source sentences -> script the talent reads.
+RECORDING_DIR = PROJECT_ROOT / "recording"
+PILOT_SENTENCES_PATH = RECORDING_DIR / "pilot_sentences.txt"
+PILOT_SCRIPT_PATH = RECORDING_DIR / "pilot_script.tsv"
+PILOT_DATASET_DIR = PROJECT_ROOT / "datasets" / "pilot"
+
 # FreyaTTS inference code (not on PyPI) is cloned here at a pinned commit.
 FREYATTS_SRC_DIR = THIRD_PARTY_DIR / "FreyaTTS"
 FREYATTS_SRC_COMMIT = "146d36c1cb6660646be57d31339db4eed9315de3"
+FREYATTS_VOCAB_PATH = FREYATTS_SRC_DIR / "freyatts" / "char_vocab.json"
 
 SEED = 42
 

@@ -103,7 +103,14 @@ def upstream_normalize(text: str) -> str:
 # Characters missing from the model's 92-symbol vocabulary, mapped to the
 # closest symbol it knows. Anything else unknown is decomposed or replaced.
 _VOCAB_FALLBACK = {"Ğ": "ğ", "q": "k", "Â": "A", "î": "i", "Î": "İ", "û": "u", "Û": "U",
-                   "“": "", "”": "", '"': "", "«": "", "»": "", "–": ",", "—": ","}
+                   "!": ".", "“": "", "”": "", '"': "", "«": "", "»": "", "–": ",", "—": ","}
+
+
+def unmappable_chars(text: str, vocab: dict) -> set[str]:
+    """Characters fit_to_vocab would have to drop (replace with a space)."""
+    return {ch for ch in text
+            if ch not in vocab and ch not in _VOCAB_FALLBACK and ch.lower() not in vocab
+            and unicodedata.normalize("NFD", ch)[0] not in vocab}
 
 
 def fit_to_vocab(text: str, vocab: dict) -> str:

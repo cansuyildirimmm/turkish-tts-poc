@@ -1,0 +1,421 @@
+﻿id	category	source_text	read_text	train_text	est_seconds
+g001	general	Sabah erkenden kalkıp işe gitmek için hazırlandım.	Sabah erkenden kalkıp işe gitmek için hazırlandım.	Sabah erkenden kalkıp işe gitmek için hazırlandım.	3.6
+g002	general	Toplantı odasındaki projeksiyon cihazı yine çalışmıyor.	Toplantı odasındaki projeksiyon cihazı yine çalışmıyor.	Toplantı odasındaki projeksiyon cihazı yine çalışmıyor.	3.9
+g003	general	Yeni ofisimiz şehir merkezine oldukça yakın bir yerde.	Yeni ofisimiz şehir merkezine oldukça yakın bir yerde.	Yeni ofisimiz şehir merkezine oldukça yakın bir yerde.	3.9
+g004	general	Kahvemi içtikten sonra e-postalarımı kontrol edeceğim.	Kahvemi içtikten sonra e-postalarımı kontrol edeceğim.	Kahvemi içtikten sonra e-postalarımı kontrol edeceğim.	3.9
+g005	general	Bu hafta sonu ailemle birlikte sahil kasabasına gidiyoruz.	Bu hafta sonu ailemle birlikte sahil kasabasına gidiyoruz.	Bu hafta sonu ailemle birlikte sahil kasabasına gidiyoruz.	4.1
+g006	general	Çocuklar bahçede top oynarken anneleri onları pencereden izliyordu.	Çocuklar bahçede top oynarken anneleri onları pencereden izliyordu.	Çocuklar bahçede top oynarken anneleri onları pencereden izliyordu.	4.8
+g007	general	Kitaplığın en üst rafındaki ansiklopediler toz içinde kalmış.	Kitaplığın en üst rafındaki ansiklopediler toz içinde kalmış.	Kitaplığın en üst rafındaki ansiklopediler toz içinde kalmış.	4.4
+g008	general	Güneş batarken gökyüzü turuncu ve mor renklere büründü.	Güneş batarken gökyüzü turuncu ve mor renklere büründü.	Güneş batarken gökyüzü turuncu ve mor renklere büründü.	3.9
+g009	general	Otobüs durağında beklerken yağmur aniden bastırdı.	Otobüs durağında beklerken yağmur aniden bastırdı.	Otobüs durağında beklerken yağmur aniden bastırdı.	3.6
+g010	general	Eski fotoğraflara bakınca çocukluğumu hatırladım.	Eski fotoğraflara bakınca çocukluğumu hatırladım.	Eski fotoğraflara bakınca çocukluğumu hatırladım.	3.5
+g011	general	Ağaçların yaprakları sonbaharda sararıp dökülmeye başlar.	Ağaçların yaprakları sonbaharda sararıp dökülmeye başlar.	Ağaçların yaprakları sonbaharda sararıp dökülmeye başlar.	4.1
+g012	general	Kütüphanede sessizce çalışan öğrenciler sınavlara hazırlanıyordu.	Kütüphanede sessizce çalışan öğrenciler sınavlara hazırlanıyordu.	Kütüphanede sessizce çalışan öğrenciler sınavlara hazırlanıyordu.	4.6
+g013	general	Pazardan taze domates, biber ve salatalık aldık.	Pazardan taze domates, biber ve salatalık aldık.	Pazardan taze domates, biber ve salatalık aldık.	3.4
+g014	general	Uçağımız rötar yaptığı için havalimanında iki saat bekledik.	Uçağımız rötar yaptığı için havalimanında iki saat bekledik.	Uçağımız rötar yaptığı için havalimanında iki saat bekledik.	4.3
+g015	general	Komşumuz yeni doğan kedi yavrularına yuva arıyor.	Komşumuz yeni doğan kedi yavrularına yuva arıyor.	Komşumuz yeni doğan kedi yavrularına yuva arıyor.	3.5
+g016	general	Şehrin tarihi sokaklarında yürümek insana huzur veriyor.	Şehrin tarihi sokaklarında yürümek insana huzur veriyor.	Şehrin tarihi sokaklarında yürümek insana huzur veriyor.	4.0
+g017	general	Akşam yemeğinden sonra hep birlikte çay içtik.	Akşam yemeğinden sonra hep birlikte çay içtik.	Akşam yemeğinden sonra hep birlikte çay içtik.	3.3
+g018	general	Dağın zirvesine ulaştığımızda manzara nefes kesiciydi.	Dağın zirvesine ulaştığımızda manzara nefes kesiciydi.	Dağın zirvesine ulaştığımızda manzara nefes kesiciydi.	3.9
+g019	general	Öğretmenimiz bize kitap okumanın önemini anlattı.	Öğretmenimiz bize kitap okumanın önemini anlattı.	Öğretmenimiz bize kitap okumanın önemini anlattı.	3.5
+g020	general	Bisikletimin lastiği patladığı için eve yürüyerek döndüm.	Bisikletimin lastiği patladığı için eve yürüyerek döndüm.	Bisikletimin lastiği patladığı için eve yürüyerek döndüm.	4.1
+g021	general	Yazın en sıcak günlerinde gölgede oturmayı tercih ediyorum.	Yazın en sıcak günlerinde gölgede oturmayı tercih ediyorum.	Yazın en sıcak günlerinde gölgede oturmayı tercih ediyorum.	4.2
+g022	general	Müzede sergilenen antik heykeller ziyaretçilerin ilgisini çekti.	Müzede sergilenen antik heykeller ziyaretçilerin ilgisini çekti.	Müzede sergilenen antik heykeller ziyaretçilerin ilgisini çekti.	4.6
+g023	general	Kışın kar yağınca yollar kapanabiliyor, dikkatli olmak gerekiyor.	Kışın kar yağınca yollar kapanabiliyor, dikkatli olmak gerekiyor.	Kışın kar yağınca yollar kapanabiliyor, dikkatli olmak gerekiyor.	4.6
+g024	general	Arkadaşımın doğum günü için küçük bir sürpriz hazırladık.	Arkadaşımın doğum günü için küçük bir sürpriz hazırladık.	Arkadaşımın doğum günü için küçük bir sürpriz hazırladık.	4.1
+g025	general	Balıkçılar sabahın erken saatlerinde denize açıldı.	Balıkçılar sabahın erken saatlerinde denize açıldı.	Balıkçılar sabahın erken saatlerinde denize açıldı.	3.6
+g026	general	Bu tarifte un, şeker, yumurta ve tereyağı kullanılıyor.	Bu tarifte un, şeker, yumurta ve tereyağı kullanılıyor.	Bu tarifte un, şeker, yumurta ve tereyağı kullanılıyor.	3.9
+g027	general	Konserin biletleri birkaç saat içinde tükendi.	Konserin biletleri birkaç saat içinde tükendi.	Konserin biletleri birkaç saat içinde tükendi.	3.3
+g028	general	Doktor, düzenli uyku ve dengeli beslenmenin önemli olduğunu söyledi.	Doktor, düzenli uyku ve dengeli beslenmenin önemli olduğunu söyledi.	Doktor, düzenli uyku ve dengeli beslenmenin önemli olduğunu söyledi.	4.9
+g029	general	Tren istasyonu kalabalıktı, herkes bir yerlere yetişmeye çalışıyordu.	Tren istasyonu kalabalıktı, herkes bir yerlere yetişmeye çalışıyordu.	Tren istasyonu kalabalıktı, herkes bir yerlere yetişmeye çalışıyordu.	4.9
+g030	general	Yeni bir dil öğrenmek sabır ve düzenli çalışma gerektirir.	Yeni bir dil öğrenmek sabır ve düzenli çalışma gerektirir.	Yeni bir dil öğrenmek sabır ve düzenli çalışma gerektirir.	4.1
+g031	general	Rüzgârın uğultusu bütün gece kulaklarımızda çınladı.	Rüzgârın uğultusu bütün gece kulaklarımızda çınladı.	Rüzgârın uğultusu bütün gece kulaklarımızda çınladı.	3.7
+g032	general	Mahalledeki fırından gelen taze ekmek kokusu sokağı sarmıştı.	Mahalledeki fırından gelen taze ekmek kokusu sokağı sarmıştı.	Mahalledeki fırından gelen taze ekmek kokusu sokağı sarmıştı.	4.4
+g033	general	Kardeşim üniversiteyi kazandığında hepimiz çok sevindik.	Kardeşim üniversiteyi kazandığında hepimiz çok sevindik.	Kardeşim üniversiteyi kazandığında hepimiz çok sevindik.	4.0
+g034	general	Gölün kenarındaki ördekler ekmek kırıntılarını paylaşamadı.	Gölün kenarındaki ördekler ekmek kırıntılarını paylaşamadı.	Gölün kenarındaki ördekler ekmek kırıntılarını paylaşamadı.	4.2
+g035	general	Saat kulesinin çanları öğle vaktini haber veriyordu.	Saat kulesinin çanları öğle vaktini haber veriyordu.	Saat kulesinin çanları öğle vaktini haber veriyordu.	3.7
+g036	general	Bahçıvan gülleri budadıktan sonra toprağı suladı.	Bahçıvan gülleri budadıktan sonra toprağı suladı.	Bahçıvan gülleri budadıktan sonra toprağı suladı.	3.5
+g037	general	Yağmurdan sonra gökyüzünde kocaman bir gökkuşağı belirdi.	Yağmurdan sonra gökyüzünde kocaman bir gökkuşağı belirdi.	Yağmurdan sonra gökyüzünde kocaman bir gökkuşağı belirdi.	4.1
+g038	general	Hafta içi yoğun çalıştığım için hafta sonları dinlenmeye özen gösteriyorum.	Hafta içi yoğun çalıştığım için hafta sonları dinlenmeye özen gösteriyorum.	Hafta içi yoğun çalıştığım için hafta sonları dinlenmeye özen gösteriyorum.	5.4
+g039	general	Köprünün altından geçen nehir ilkbaharda taşma noktasına geldi.	Köprünün altından geçen nehir ilkbaharda taşma noktasına geldi.	Köprünün altından geçen nehir ilkbaharda taşma noktasına geldi.	4.5
+g040	general	Çarşıdaki kuyumcu dükkânı yüz yıldır aynı ailenin elinde.	Çarşıdaki kuyumcu dükkânı yüz yıldır aynı ailenin elinde.	Çarşıdaki kuyumcu dükkânı yüz yıldır aynı ailenin elinde.	4.1
+g041	general	Gazeteyi okurken ilginç bir haber gözüme çarptı.	Gazeteyi okurken ilginç bir haber gözüme çarptı.	Gazeteyi okurken ilginç bir haber gözüme çarptı.	3.4
+g042	general	Sınıfın penceresinden okulun bahçesi görünüyordu.	Sınıfın penceresinden okulun bahçesi görünüyordu.	Sınıfın penceresinden okulun bahçesi görünüyordu.	3.5
+g043	general	Dedem bana gençliğinde yaşadığı ilginç anıları anlattı.	Dedem bana gençliğinde yaşadığı ilginç anıları anlattı.	Dedem bana gençliğinde yaşadığı ilginç anıları anlattı.	3.9
+g044	general	Otoparkta boş yer bulmak her geçen gün zorlaşıyor.	Otoparkta boş yer bulmak her geçen gün zorlaşıyor.	Otoparkta boş yer bulmak her geçen gün zorlaşıyor.	3.6
+g045	general	Kış tatilinde kayak yapmak için dağ evine gittik.	Kış tatilinde kayak yapmak için dağ evine gittik.	Kış tatilinde kayak yapmak için dağ evine gittik.	3.5
+g046	general	Şoförümüz dikkatli ve sakin bir şekilde araç kullanıyordu.	Şoförümüz dikkatli ve sakin bir şekilde araç kullanıyordu.	Şoförümüz dikkatli ve sakin bir şekilde araç kullanıyordu.	4.1
+g047	general	Ormanda kamp yaparken ateşin başında şarkılar söyledik.	Ormanda kamp yaparken ateşin başında şarkılar söyledik.	Ormanda kamp yaparken ateşin başında şarkılar söyledik.	3.9
+g048	general	Eczaneden ilaçlarımı aldıktan sonra doğruca eve geçtim.	Eczaneden ilaçlarımı aldıktan sonra doğruca eve geçtim.	Eczaneden ilaçlarımı aldıktan sonra doğruca eve geçtim.	3.9
+g049	general	Deniz kenarındaki lokantada ızgara balık yedik.	Deniz kenarındaki lokantada ızgara balık yedik.	Deniz kenarındaki lokantada ızgara balık yedik.	3.4
+g050	general	Bu sabah trafikte her zamankinden daha uzun süre bekledim.	Bu sabah trafikte her zamankinden daha uzun süre bekledim.	Bu sabah trafikte her zamankinden daha uzun süre bekledim.	4.1
+g051	general	Çiçekçi, sevgililer günü için yüzlerce kırmızı gül hazırlamıştı.	Çiçekçi, sevgililer günü için yüzlerce kırmızı gül hazırlamıştı.	Çiçekçi, sevgililer günü için yüzlerce kırmızı gül hazırlamıştı.	4.6
+g052	general	Hırsız, gece yarısı alarm çalınca kaçmak zorunda kaldı.	Hırsız, gece yarısı alarm çalınca kaçmak zorunda kaldı.	Hırsız, gece yarısı alarm çalınca kaçmak zorunda kaldı.	3.9
+g053	general	Çamaşır makinesi arızalandığı için tamirci çağırdık.	Çamaşır makinesi arızalandığı için tamirci çağırdık.	Çamaşır makinesi arızalandığı için tamirci çağırdık.	3.7
+g054	general	Yaşlı adam parkta güvercinleri besliyordu.	Yaşlı adam parkta güvercinleri besliyordu.	Yaşlı adam parkta güvercinleri besliyordu.	3.0
+g055	general	Üniversite kampüsünde yeni bir spor salonu açıldı.	Üniversite kampüsünde yeni bir spor salonu açıldı.	Üniversite kampüsünde yeni bir spor salonu açıldı.	3.6
+g056	general	Şarkıcı sahneye çıktığında seyirciler alkışlamaya başladı.	Şarkıcı sahneye çıktığında seyirciler alkışlamaya başladı.	Şarkıcı sahneye çıktığında seyirciler alkışlamaya başladı.	4.1
+g057	general	Babaannem her bayram bize el yapımı tatlılar hazırlar.	Babaannem her bayram bize el yapımı tatlılar hazırlar.	Babaannem her bayram bize el yapımı tatlılar hazırlar.	3.9
+g058	general	Bilgisayarım çok yavaşladığı için bir uzmana götürdüm.	Bilgisayarım çok yavaşladığı için bir uzmana götürdüm.	Bilgisayarım çok yavaşladığı için bir uzmana götürdüm.	3.9
+g059	general	Dolmuşa binmeden önce bozuk para hazırlamayı unutma.	Dolmuşa binmeden önce bozuk para hazırlamayı unutma.	Dolmuşa binmeden önce bozuk para hazırlamayı unutma.	3.7
+g060	general	Gemi limana yanaşırken yolcular güverteye çıktı.	Gemi limana yanaşırken yolcular güverteye çıktı.	Gemi limana yanaşırken yolcular güverteye çıktı.	3.4
+g061	general	Kırsal bölgelerde internet erişimi hâlâ sınırlı olabiliyor.	Kırsal bölgelerde internet erişimi hâlâ sınırlı olabiliyor.	Kırsal bölgelerde internet erişimi hâlâ sınırlı olabiliyor.	4.2
+g062	general	Yeğenim resim yapmayı çok seviyor, her gün yeni bir tablo çiziyor.	Yeğenim resim yapmayı çok seviyor, her gün yeni bir tablo çiziyor.	Yeğenim resim yapmayı çok seviyor, her gün yeni bir tablo çiziyor.	4.7
+g063	general	Fırtına yüzünden bazı uçak seferleri iptal edildi.	Fırtına yüzünden bazı uçak seferleri iptal edildi.	Fırtına yüzünden bazı uçak seferleri iptal edildi.	3.6
+g064	general	Kış aylarında sıcak çorba içmek insanı ısıtır.	Kış aylarında sıcak çorba içmek insanı ısıtır.	Kış aylarında sıcak çorba içmek insanı ısıtır.	3.3
+g065	general	Şirketimizin kuruluş yıldönümü için küçük bir tören düzenlendi.	Şirketimizin kuruluş yıldönümü için küçük bir tören düzenlendi.	Şirketimizin kuruluş yıldönümü için küçük bir tören düzenlendi.	4.5
+g066	general	Otelin resepsiyon görevlisi bize çok yardımcı oldu.	Otelin resepsiyon görevlisi bize çok yardımcı oldu.	Otelin resepsiyon görevlisi bize çok yardımcı oldu.	3.6
+g067	general	Bu yol, yapım çalışmaları nedeniyle bir süre kapalı kalacak.	Bu yol, yapım çalışmaları nedeniyle bir süre kapalı kalacak.	Bu yol, yapım çalışmaları nedeniyle bir süre kapalı kalacak.	4.3
+g068	general	Köpeğimiz her sabah kapının önünde beni bekliyor.	Köpeğimiz her sabah kapının önünde beni bekliyor.	Köpeğimiz her sabah kapının önünde beni bekliyor.	3.5
+g069	general	Ülkemizin farklı bölgelerinde birbirinden güzel yemekler yapılır.	Ülkemizin farklı bölgelerinde birbirinden güzel yemekler yapılır.	Ülkemizin farklı bölgelerinde birbirinden güzel yemekler yapılır.	4.6
+g070	general	Pencereyi açınca içeriye serin bir hava doldu.	Pencereyi açınca içeriye serin bir hava doldu.	Pencereyi açınca içeriye serin bir hava doldu.	3.3
+g071	general	Kırtasiyeden defter, kalem ve silgi aldım.	Kırtasiyeden defter, kalem ve silgi aldım.	Kırtasiyeden defter, kalem ve silgi aldım.	3.0
+g072	general	Kuşlar göç mevsiminde binlerce kilometre yol kat eder.	Kuşlar göç mevsiminde binlerce kilometre yol kat eder.	Kuşlar göç mevsiminde binlerce kilometre yol kat eder.	3.9
+g073	general	Düğün salonu davetlilerle dolup taşmıştı.	Düğün salonu davetlilerle dolup taşmıştı.	Düğün salonu davetlilerle dolup taşmıştı.	2.9
+g074	general	Işıklar söndüğünde herkes bir anda sessizleşti.	Işıklar söndüğünde herkes bir anda sessizleşti.	Işıklar söndüğünde herkes bir anda sessizleşti.	3.4
+g075	general	Ağabeyim yıllardır yurt dışında yaşıyor ama her yaz bize geliyor.	Ağabeyim yıllardır yurt dışında yaşıyor ama her yaz bize geliyor.	Ağabeyim yıllardır yurt dışında yaşıyor ama her yaz bize geliyor.	4.6
+g076	general	Günümüzde birçok iş uzaktan çalışma modeliyle yürütülüyor.	Günümüzde birçok iş uzaktan çalışma modeliyle yürütülüyor.	Günümüzde birçok iş uzaktan çalışma modeliyle yürütülüyor.	4.1
+g077	general	Kütüphaneden ödünç aldığım kitabı iade etmeyi unuttum.	Kütüphaneden ödünç aldığım kitabı iade etmeyi unuttum.	Kütüphaneden ödünç aldığım kitabı iade etmeyi unuttum.	3.9
+g078	general	Çay bahçesinde oturup gelen geçeni izledik.	Çay bahçesinde oturup gelen geçeni izledik.	Çay bahçesinde oturup gelen geçeni izledik.	3.1
+g079	general	Zeytin ağaçları yüzlerce yıl yaşayabilir.	Zeytin ağaçları yüzlerce yıl yaşayabilir.	Zeytin ağaçları yüzlerce yıl yaşayabilir.	2.9
+g080	general	Yoğurt, pek çok Türk yemeğinin vazgeçilmez bir parçasıdır.	Yoğurt, pek çok Türk yemeğinin vazgeçilmez bir parçasıdır.	Yoğurt, pek çok Türk yemeğinin vazgeçilmez bir parçasıdır.	4.1
+g081	general	Uzun bir aradan sonra eski okul arkadaşlarımla buluştum.	Uzun bir aradan sonra eski okul arkadaşlarımla buluştum.	Uzun bir aradan sonra eski okul arkadaşlarımla buluştum.	4.0
+g082	general	Soğuk havalarda ısınma masraflarını azaltmak için yalıtım önemlidir.	Soğuk havalarda ısınma masraflarını azaltmak için yalıtım önemlidir.	Soğuk havalarda ısınma masraflarını azaltmak için yalıtım önemlidir.	4.9
+g083	general	Kaptan, rüzgârın yön değiştirdiğini fark edince yelkenleri indirdi.	Kaptan, rüzgârın yön değiştirdiğini fark edince yelkenleri indirdi.	Kaptan, rüzgârın yön değiştirdiğini fark edince yelkenleri indirdi.	4.8
+g084	general	Eski radyodan hafif bir müzik yükseliyordu.	Eski radyodan hafif bir müzik yükseliyordu.	Eski radyodan hafif bir müzik yükseliyordu.	3.1
+g085	general	Çocuklara trafik kurallarını küçük yaşta öğretmek gerekir.	Çocuklara trafik kurallarını küçük yaşta öğretmek gerekir.	Çocuklara trafik kurallarını küçük yaşta öğretmek gerekir.	4.1
+g086	general	Bu mahallede herkes birbirini tanır ve yardımlaşır.	Bu mahallede herkes birbirini tanır ve yardımlaşır.	Bu mahallede herkes birbirini tanır ve yardımlaşır.	3.6
+g087	general	Göl kenarındaki kulübede sessiz bir hafta geçirdik.	Göl kenarındaki kulübede sessiz bir hafta geçirdik.	Göl kenarındaki kulübede sessiz bir hafta geçirdik.	3.6
+g088	general	Ödevini bitirmeden televizyon izlemeyeceğine söz verdi.	Ödevini bitirmeden televizyon izlemeyeceğine söz verdi.	Ödevini bitirmeden televizyon izlemeyeceğine söz verdi.	3.9
+g089	general	Şehir meydanındaki çeşmenin suyu buz gibiydi.	Şehir meydanındaki çeşmenin suyu buz gibiydi.	Şehir meydanındaki çeşmenin suyu buz gibiydi.	3.2
+g090	general	Aşçı, yemeğe son olarak biraz nane ve pul biber ekledi.	Aşçı, yemeğe son olarak biraz nane ve pul biber ekledi.	Aşçı, yemeğe son olarak biraz nane ve pul biber ekledi.	3.9
+g091	general	Hastanenin acil servisi gece boyunca yoğun çalıştı.	Hastanenin acil servisi gece boyunca yoğun çalıştı.	Hastanenin acil servisi gece boyunca yoğun çalıştı.	3.6
+g092	general	Ürünlerimizi daha çevreci ambalajlarla göndermeye başladık.	Ürünlerimizi daha çevreci ambalajlarla göndermeye başladık.	Ürünlerimizi daha çevreci ambalajlarla göndermeye başladık.	4.2
+g093	general	Yeni açılan pastanenin önünde uzun bir kuyruk vardı.	Yeni açılan pastanenin önünde uzun bir kuyruk vardı.	Yeni açılan pastanenin önünde uzun bir kuyruk vardı.	3.7
+g094	general	Kırk yıllık dostluğumuz hiç bitmesin istiyorum.	Kırk yıllık dostluğumuz hiç bitmesin istiyorum.	Kırk yıllık dostluğumuz hiç bitmesin istiyorum.	3.4
+g095	general	Tatil dönüşü valizleri boşaltmak bir türlü bitmek bilmedi.	Tatil dönüşü valizleri boşaltmak bir türlü bitmek bilmedi.	Tatil dönüşü valizleri boşaltmak bir türlü bitmek bilmedi.	4.1
+g096	general	Öğle arasında iş yerinin yakınındaki parkta kısa bir yürüyüş yapıyorum.	Öğle arasında iş yerinin yakınındaki parkta kısa bir yürüyüş yapıyorum.	Öğle arasında iş yerinin yakınındaki parkta kısa bir yürüyüş yapıyorum.	5.1
+g097	general	Fabrikanın bacasından yükselen duman uzaktan görülüyordu.	Fabrikanın bacasından yükselen duman uzaktan görülüyordu.	Fabrikanın bacasından yükselen duman uzaktan görülüyordu.	4.1
+g098	general	Müzik öğretmenimiz hepimize flüt çalmayı öğretti.	Müzik öğretmenimiz hepimize flüt çalmayı öğretti.	Müzik öğretmenimiz hepimize flüt çalmayı öğretti.	3.5
+g099	general	Deprem tatbikatında herkes toplanma alanına geçti.	Deprem tatbikatında herkes toplanma alanına geçti.	Deprem tatbikatında herkes toplanma alanına geçti.	3.6
+g100	general	Anneannemin bahçesindeki incir ağacı meyveyle dolmuştu.	Anneannemin bahçesindeki incir ağacı meyveyle dolmuştu.	Anneannemin bahçesindeki incir ağacı meyveyle dolmuştu.	3.9
+g101	general	Yolculuk boyunca pencereden dışarıyı seyrettim.	Yolculuk boyunca pencereden dışarıyı seyrettim.	Yolculuk boyunca pencereden dışarıyı seyrettim.	3.4
+g102	general	Gençler hafta sonu için bir doğa yürüyüşü planlıyor.	Gençler hafta sonu için bir doğa yürüyüşü planlıyor.	Gençler hafta sonu için bir doğa yürüyüşü planlıyor.	3.7
+g103	general	Kış bahçesindeki bitkiler özenle bakıldığı için çok canlı görünüyor.	Kış bahçesindeki bitkiler özenle bakıldığı için çok canlı görünüyor.	Kış bahçesindeki bitkiler özenle bakıldığı için çok canlı görünüyor.	4.9
+g104	general	Sokak lambaları akşam olunca otomatik olarak yanıyor.	Sokak lambaları akşam olunca otomatik olarak yanıyor.	Sokak lambaları akşam olunca otomatik olarak yanıyor.	3.8
+g105	general	Duvardaki saat durmuş, pili bitmiş olmalı.	Duvardaki saat durmuş, pili bitmiş olmalı.	Duvardaki saat durmuş, pili bitmiş olmalı.	3.0
+g106	general	Bu ilçede her salı günü büyük bir pazar kuruluyor.	Bu ilçede her salı günü büyük bir pazar kuruluyor.	Bu ilçede her salı günü büyük bir pazar kuruluyor.	3.6
+g107	general	Film o kadar etkileyiciydi ki salondan kimse ayrılmak istemedi.	Film o kadar etkileyiciydi ki salondan kimse ayrılmak istemedi.	Film o kadar etkileyiciydi ki salondan kimse ayrılmak istemedi.	4.5
+g108	general	Yerel yönetim, parkların yenilenmesi için çalışma başlattı.	Yerel yönetim, parkların yenilenmesi için çalışma başlattı.	Yerel yönetim, parkların yenilenmesi için çalışma başlattı.	4.2
+g109	general	İstasyondaki anons, trenin biraz gecikeceğini bildirdi.	İstasyondaki anons, trenin biraz gecikeceğini bildirdi.	İstasyondaki anons, trenin biraz gecikeceğini bildirdi.	3.9
+g110	general	Buzdolabında yalnızca biraz peynir ve zeytin kalmıştı.	Buzdolabında yalnızca biraz peynir ve zeytin kalmıştı.	Buzdolabında yalnızca biraz peynir ve zeytin kalmıştı.	3.9
+g111	general	Evin çatısındaki kiremitler fırtınada yerinden oynamış.	Evin çatısındaki kiremitler fırtınada yerinden oynamış.	Evin çatısındaki kiremitler fırtınada yerinden oynamış.	3.9
+g112	general	Arı kovanlarının bulunduğu yamaç çiçeklerle kaplıydı.	Arı kovanlarının bulunduğu yamaç çiçeklerle kaplıydı.	Arı kovanlarının bulunduğu yamaç çiçeklerle kaplıydı.	3.8
+g113	general	Hepimiz ortak bir amaç için elimizden geleni yaptık.	Hepimiz ortak bir amaç için elimizden geleni yaptık.	Hepimiz ortak bir amaç için elimizden geleni yaptık.	3.7
+g114	general	Yağmur çiseledi ama kimse şemsiyesini açmadı.	Yağmur çiseledi ama kimse şemsiyesini açmadı.	Yağmur çiseledi ama kimse şemsiyesini açmadı.	3.2
+g115	general	Tiyatro oyununun ikinci perdesi çok daha heyecanlıydı.	Tiyatro oyununun ikinci perdesi çok daha heyecanlıydı.	Tiyatro oyununun ikinci perdesi çok daha heyecanlıydı.	3.9
+g116	general	Oğuz, Ülkü ve Çağla aynı projede birlikte çalışıyor.	Oğuz, Ülkü ve Çağla aynı projede birlikte çalışıyor.	Oğuz, Ülkü ve Çağla aynı projede birlikte çalışıyor.	3.7
+g117	general	Işıl ışıl parlayan yıldızları seyrederken zamanın nasıl geçtiğini anlamadık.	Işıl ışıl parlayan yıldızları seyrederken zamanın nasıl geçtiğini anlamadık.	Işıl ışıl parlayan yıldızları seyrederken zamanın nasıl geçtiğini anlamadık.	5.4
+g118	general	Öğüt vermek kolaydır, önemli olan örnek olmaktır.	Öğüt vermek kolaydır, önemli olan örnek olmaktır.	Öğüt vermek kolaydır, önemli olan örnek olmaktır.	3.5
+g119	general	Üşüdüğü için ceketini sıkıca ilikledi.	Üşüdüğü için ceketini sıkıca ilikledi.	Üşüdüğü için ceketini sıkıca ilikledi.	2.7
+g120	general	Ağır yükleri taşırken belinizi korumaya dikkat edin.	Ağır yükleri taşırken belinizi korumaya dikkat edin.	Ağır yükleri taşırken belinizi korumaya dikkat edin.	3.7
+q001	question	Toplantı saat kaçta başlayacak?	Toplantı saat kaçta başlayacak?	Toplantı saat kaçta başlayacak?	2.2
+q002	question	Bu raporu yarına kadar tamamlayabilir misiniz?	Bu raporu yarına kadar tamamlayabilir misiniz?	Bu raporu yarına kadar tamamlayabilir misiniz?	3.3
+q003	question	Yeni sisteme geçiş ne zaman yapılacak?	Yeni sisteme geçiş ne zaman yapılacak?	Yeni sisteme geçiş ne zaman yapılacak?	2.7
+q004	question	Şifremi unuttum, nasıl sıfırlayabilirim?	Şifremi unuttum, nasıl sıfırlayabilirim?	Şifremi unuttum, nasıl sıfırlayabilirim?	2.9
+q005	question	Hangi departmanda çalışıyorsunuz?	Hangi departmanda çalışıyorsunuz?	Hangi departmanda çalışıyorsunuz?	2.4
+q006	question	Faturanın bir kopyasını bana gönderebilir misiniz?	Faturanın bir kopyasını bana gönderebilir misiniz?	Faturanın bir kopyasını bana gönderebilir misiniz?	3.6
+q007	question	Bu hafta sonu ne yapmayı planlıyorsunuz?	Bu hafta sonu ne yapmayı planlıyorsunuz?	Bu hafta sonu ne yapmayı planlıyorsunuz?	2.9
+q008	question	Öğrenci kayıtları hangi tarihte başlıyor?	Öğrenci kayıtları hangi tarihte başlıyor?	Öğrenci kayıtları hangi tarihte başlıyor?	2.9
+q009	question	Ödeme yöntemini değiştirmek mümkün mü?	Ödeme yöntemini değiştirmek mümkün mü?	Ödeme yöntemini değiştirmek mümkün mü?	2.7
+q010	question	Kullanıcı yetkilerini kim tanımlayacak?	Kullanıcı yetkilerini kim tanımlayacak?	Kullanıcı yetkilerini kim tanımlayacak?	2.8
+q011	question	Neden bu işlem bu kadar uzun sürüyor?	Neden bu işlem bu kadar uzun sürüyor?	Neden bu işlem bu kadar uzun sürüyor?	2.6
+q012	question	Size nasıl yardımcı olabilirim?	Size nasıl yardımcı olabilirim?	Size nasıl yardımcı olabilirim?	2.2
+q013	question	Stokta kaç adet ürün kaldığını kontrol ettiniz mi?	Stokta kaç adet ürün kaldığını kontrol ettiniz mi?	Stokta kaç adet ürün kaldığını kontrol ettiniz mi?	3.6
+q014	question	Yarın ofiste olacak mısınız?	Yarın ofiste olacak mısınız?	Yarın ofiste olacak mısınız?	2.0
+q015	question	Bu belgeyi kimin onaylaması gerekiyor?	Bu belgeyi kimin onaylaması gerekiyor?	Bu belgeyi kimin onaylaması gerekiyor?	2.7
+q016	question	Hesap ekstresini nereden indirebilirim?	Hesap ekstresini nereden indirebilirim?	Hesap ekstresini nereden indirebilirim?	2.8
+q017	question	Veliler bilgilendirme mesajını aldı mı?	Veliler bilgilendirme mesajını aldı mı?	Veliler bilgilendirme mesajını aldı mı?	2.8
+q018	question	Taksitlerin vadesi ne zaman doluyor?	Taksitlerin vadesi ne zaman doluyor?	Taksitlerin vadesi ne zaman doluyor?	2.6
+q019	question	Raporda bir hata olduğunu düşünüyor musunuz?	Raporda bir hata olduğunu düşünüyor musunuz?	Raporda bir hata olduğunu düşünüyor musunuz?	3.1
+q020	question	Yeni dönemde kaç öğrenci kayıt yaptırdı?	Yeni dönemde kaç öğrenci kayıt yaptırdı?	Yeni dönemde kaç öğrenci kayıt yaptırdı?	2.9
+q021	question	Bu ekranı ilk defa mı kullanıyorsunuz?	Bu ekranı ilk defa mı kullanıyorsunuz?	Bu ekranı ilk defa mı kullanıyorsunuz?	2.7
+q022	question	Hangi şubeden işlem yapmak istiyorsunuz?	Hangi şubeden işlem yapmak istiyorsunuz?	Hangi şubeden işlem yapmak istiyorsunuz?	2.9
+q023	question	Değişiklikleri kaydettiniz mi?	Değişiklikleri kaydettiniz mi?	Değişiklikleri kaydettiniz mi?	2.1
+q024	question	Bu ürünün tedarikçisi kim?	Bu ürünün tedarikçisi kim?	Bu ürünün tedarikçisi kim?	1.9
+q025	question	Maaş bordroları ne zaman hazır olur?	Maaş bordroları ne zaman hazır olur?	Maaş bordroları ne zaman hazır olur?	2.6
+q026	question	İzin talebim onaylandı mı?	İzin talebim onaylandı mı?	İzin talebim onaylandı mı?	1.9
+q027	question	Sipariş kargoya verildi mi, yoksa hâlâ depoda mı?	Sipariş kargoya verildi mi, yoksa hâlâ depoda mı?	Sipariş kargoya verildi mi, yoksa hâlâ depoda mı?	3.5
+q028	question	Öğretmenlerin ders programı güncellendi mi?	Öğretmenlerin ders programı güncellendi mi?	Öğretmenlerin ders programı güncellendi mi?	3.1
+q029	question	Bu tutar neden eksik görünüyor?	Bu tutar neden eksik görünüyor?	Bu tutar neden eksik görünüyor?	2.2
+q030	question	Sisteme hangi tarayıcıyla giriş yapmalıyım?	Sisteme hangi tarayıcıyla giriş yapmalıyım?	Sisteme hangi tarayıcıyla giriş yapmalıyım?	3.1
+q031	question	Yedekleme işlemi başarıyla tamamlandı mı?	Yedekleme işlemi başarıyla tamamlandı mı?	Yedekleme işlemi başarıyla tamamlandı mı?	2.9
+q032	question	Müşteri bu teklifi kabul etti mi?	Müşteri bu teklifi kabul etti mi?	Müşteri bu teklifi kabul etti mi?	2.4
+q033	question	Kaç gün yıllık izin hakkım kaldı?	Kaç gün yıllık izin hakkım kaldı?	Kaç gün yıllık izin hakkım kaldı?	2.4
+q034	question	Bu alanı boş bırakırsam ne olur?	Bu alanı boş bırakırsam ne olur?	Bu alanı boş bırakırsam ne olur?	2.3
+q035	question	Sınav sonuçları ne zaman açıklanacak?	Sınav sonuçları ne zaman açıklanacak?	Sınav sonuçları ne zaman açıklanacak?	2.6
+q036	question	Toplantıya kimler katılacak?	Toplantıya kimler katılacak?	Toplantıya kimler katılacak?	2.0
+q037	question	Bu raporu hangi formatta almak istersiniz?	Bu raporu hangi formatta almak istersiniz?	Bu raporu hangi formatta almak istersiniz?	3.0
+q038	question	Ödeme onaylandıktan sonra makbuz gönderiliyor mu?	Ödeme onaylandıktan sonra makbuz gönderiliyor mu?	Ödeme onaylandıktan sonra makbuz gönderiliyor mu?	3.5
+q039	question	Neden oturumum kapandı?	Neden oturumum kapandı?	Neden oturumum kapandı?	1.6
+q040	question	Dokümanın son sürümü hangisi?	Dokümanın son sürümü hangisi?	Dokümanın son sürümü hangisi?	2.1
+e001	erp	Öğrenci listesini sınıf ve şube bazında filtreleyebilirsiniz.	Öğrenci listesini sınıf ve şube bazında filtreleyebilirsiniz.	Öğrenci listesini sınıf ve şube bazında filtreleyebilirsiniz.	4.4
+e002	erp	Veli bilgileri kaydedilmeden öğrenci kaydı tamamlanamaz.	Veli bilgileri kaydedilmeden öğrenci kaydı tamamlanamaz.	Veli bilgileri kaydedilmeden öğrenci kaydı tamamlanamaz.	4.0
+e003	erp	Ders programı oluşturulurken öğretmenlerin uygunluk durumu dikkate alınır.	Ders programı oluşturulurken öğretmenlerin uygunluk durumu dikkate alınır.	Ders programı oluşturulurken öğretmenlerin uygunluk durumu dikkate alınır.	5.3
+e004	erp	Personel izin talepleri insan kaynakları modülünden takip edilir.	Personel izin talepleri insan kaynakları modülünden takip edilir.	Personel izin talepleri insan kaynakları modülünden takip edilir.	4.6
+e005	erp	Bordro hesaplaması ay sonunda otomatik olarak başlatılır.	Bordro hesaplaması ay sonunda otomatik olarak başlatılır.	Bordro hesaplaması ay sonunda otomatik olarak başlatılır.	4.1
+e006	erp	Satın alma talebi, bütçe onayından sonra siparişe dönüştürülür.	Satın alma talebi, bütçe onayından sonra siparişe dönüştürülür.	Satın alma talebi, bütçe onayından sonra siparişe dönüştürülür.	4.5
+e007	erp	Tedarikçi kartında vergi numarası ve adres bilgileri yer alır.	Tedarikçi kartında vergi numarası ve adres bilgileri yer alır.	Tedarikçi kartında vergi numarası ve adres bilgileri yer alır.	4.4
+e008	erp	Depolar arası transfer işlemi başarıyla kaydedildi.	Depolar arası transfer işlemi başarıyla kaydedildi.	Depolar arası transfer işlemi başarıyla kaydedildi.	3.6
+e009	erp	Mizan raporu seçilen dönem için yeniden hesaplandı.	Mizan raporu seçilen dönem için yeniden hesaplandı.	Mizan raporu seçilen dönem için yeniden hesaplandı.	3.6
+e010	erp	Banka hesap hareketleri her gün otomatik olarak içeri aktarılır.	Banka hesap hareketleri her gün otomatik olarak içeri aktarılır.	Banka hesap hareketleri her gün otomatik olarak içeri aktarılır.	4.6
+e011	erp	Kasa hesabında gün sonu kapanışı yapılmadı.	Kasa hesabında gün sonu kapanışı yapılmadı.	Kasa hesabında gün sonu kapanışı yapılmadı.	3.1
+e012	erp	Gider fişine ait belgeleri sisteme yükleyiniz.	Gider fişine ait belgeleri sisteme yükleyiniz.	Gider fişine ait belgeleri sisteme yükleyiniz.	3.3
+e013	erp	Çek ve senet takibini portföy ekranından yapabilirsiniz.	Çek ve senet takibini portföy ekranından yapabilirsiniz.	Çek ve senet takibini portföy ekranından yapabilirsiniz.	4.0
+e014	erp	Müşteri siparişi sevkiyata hazır olarak işaretlendi.	Müşteri siparişi sevkiyata hazır olarak işaretlendi.	Müşteri siparişi sevkiyata hazır olarak işaretlendi.	3.7
+e015	erp	İrsaliye bilgileri faturaya otomatik olarak aktarılır.	İrsaliye bilgileri faturaya otomatik olarak aktarılır.	İrsaliye bilgileri faturaya otomatik olarak aktarılır.	3.9
+e016	erp	Dönem kapanışından sonra geçmiş kayıtlar değiştirilemez.	Dönem kapanışından sonra geçmiş kayıtlar değiştirilemez.	Dönem kapanışından sonra geçmiş kayıtlar değiştirilemez.	4.0
+e017	erp	Kullanıcı rolleri ve yetkileri sistem yöneticisi tarafından tanımlanır.	Kullanıcı rolleri ve yetkileri sistem yöneticisi tarafından tanımlanır.	Kullanıcı rolleri ve yetkileri sistem yöneticisi tarafından tanımlanır.	5.1
+e018	erp	Onay akışında bekleyen üç belge bulunmaktadır.	Onay akışında bekleyen üç belge bulunmaktadır.	Onay akışında bekleyen üç belge bulunmaktadır.	3.3
+e019	erp	Öğrencinin devamsızlık bilgisi velisine bildirildi.	Öğrencinin devamsızlık bilgisi velisine bildirildi.	Öğrencinin devamsızlık bilgisi velisine bildirildi.	3.6
+e020	erp	Sınav notları öğretmen tarafından sisteme girildi.	Sınav notları öğretmen tarafından sisteme girildi.	Sınav notları öğretmen tarafından sisteme girildi.	3.6
+e021	erp	Karne ve transkript belgeleri yazdırılmaya hazır.	Karne ve transkript belgeleri yazdırılmaya hazır.	Karne ve transkript belgeleri yazdırılmaya hazır.	3.5
+e022	erp	Burs başvuruları değerlendirme aşamasındadır.	Burs başvuruları değerlendirme aşamasındadır.	Burs başvuruları değerlendirme aşamasındadır.	3.2
+e023	erp	Yemekhane ücretleri aylık olarak tahakkuk ettirilir.	Yemekhane ücretleri aylık olarak tahakkuk ettirilir.	Yemekhane ücretleri aylık olarak tahakkuk ettirilir.	3.7
+e024	erp	Servis güzergâhları yeni döneme göre güncellendi.	Servis güzergâhları yeni döneme göre güncellendi.	Servis güzergâhları yeni döneme göre güncellendi.	3.5
+e025	erp	Kayıt yenileme işlemleri için veli onayı gereklidir.	Kayıt yenileme işlemleri için veli onayı gereklidir.	Kayıt yenileme işlemleri için veli onayı gereklidir.	3.7
+e026	erp	Öğretmenlerin ek ders ücretleri puantaj cetveline göre hesaplanır.	Öğretmenlerin ek ders ücretleri puantaj cetveline göre hesaplanır.	Öğretmenlerin ek ders ücretleri puantaj cetveline göre hesaplanır.	4.7
+e027	erp	Hak ediş raporu onaylanmadan ödeme talimatı verilemez.	Hak ediş raporu onaylanmadan ödeme talimatı verilemez.	Hak ediş raporu onaylanmadan ödeme talimatı verilemez.	3.9
+e028	erp	Cari kart bakiyesi borç durumunu göstermektedir.	Cari kart bakiyesi borç durumunu göstermektedir.	Cari kart bakiyesi borç durumunu göstermektedir.	3.4
+e029	erp	Alacak dekontu oluşturulduktan sonra müşteriye gönderildi.	Alacak dekontu oluşturulduktan sonra müşteriye gönderildi.	Alacak dekontu oluşturulduktan sonra müşteriye gönderildi.	4.1
+e030	erp	Vadesi geçmiş alacaklar raporu hazırlandı.	Vadesi geçmiş alacaklar raporu hazırlandı.	Vadesi geçmiş alacaklar raporu hazırlandı.	3.0
+e031	erp	Tahsilat makbuzu velinin e-posta adresine iletildi.	Tahsilat makbuzu velinin e posta adresine iletildi.	Tahsilat makbuzu velinin e posta adresine iletildi.	3.6
+e032	erp	Kısmi ödeme kabul edildi, kalan tutar bir sonraki taksite eklendi.	Kısmi ödeme kabul edildi, kalan tutar bir sonraki taksite eklendi.	Kısmi ödeme kabul edildi, kalan tutar bir sonraki taksite eklendi.	4.7
+e033	erp	Muhasebe entegrasyonu sırasında bir hata oluştu.	Muhasebe entegrasyonu sırasında bir hata oluştu.	Muhasebe entegrasyonu sırasında bir hata oluştu.	3.4
+e034	erp	Hesap planında yeni bir alt hesap açıldı.	Hesap planında yeni bir alt hesap açıldı.	Hesap planında yeni bir alt hesap açıldı.	2.9
+e035	erp	Yevmiye defteri kayıtları kontrol edilmelidir.	Yevmiye defteri kayıtları kontrol edilmelidir.	Yevmiye defteri kayıtları kontrol edilmelidir.	3.3
+e036	erp	Amortisman hesaplaması demirbaş kartlarına göre yapılır.	Amortisman hesaplaması demirbaş kartlarına göre yapılır.	Amortisman hesaplaması demirbaş kartlarına göre yapılır.	4.0
+e037	erp	Demirbaş zimmet formu personel tarafından imzalandı.	Demirbaş zimmet formu personel tarafından imzalandı.	Demirbaş zimmet formu personel tarafından imzalandı.	3.7
+e038	erp	Stok sayım farkları raporlanarak onaya sunuldu.	Stok sayım farkları raporlanarak onaya sunuldu.	Stok sayım farkları raporlanarak onaya sunuldu.	3.4
+e039	erp	Minimum stok seviyesinin altına düşen ürünler için uyarı oluşturuldu.	Minimum stok seviyesinin altına düşen ürünler için uyarı oluşturuldu.	Minimum stok seviyesinin altına düşen ürünler için uyarı oluşturuldu.	4.9
+e040	erp	Ürün reçetesi üretim planlamasında kullanılır.	Ürün reçetesi üretim planlamasında kullanılır.	Ürün reçetesi üretim planlamasında kullanılır.	3.3
+e041	erp	İş emri üretim hattına gönderildi.	İş emri üretim hattına gönderildi.	İş emri üretim hattına gönderildi.	2.4
+e042	erp	Satış teklifi müşteri tarafından onaylandı.	Satış teklifi müşteri tarafından onaylandı.	Satış teklifi müşteri tarafından onaylandı.	3.1
+e043	erp	Fiyat listesi yeni kur değerlerine göre güncellendi.	Fiyat listesi yeni kur değerlerine göre güncellendi.	Fiyat listesi yeni kur değerlerine göre güncellendi.	3.7
+e044	erp	İndirim kampanyası yalnızca seçili ürünlerde geçerlidir.	İndirim kampanyası yalnızca seçili ürünlerde geçerlidir.	İndirim kampanyası yalnızca seçili ürünlerde geçerlidir.	4.0
+e045	erp	İade talebi depo sorumlusunun onayını bekliyor.	İade talebi depo sorumlusunun onayını bekliyor.	İade talebi depo sorumlusunun onayını bekliyor.	3.4
+e046	erp	Kargo takip numarası siparişe eklendi.	Kargo takip numarası siparişe eklendi.	Kargo takip numarası siparişe eklendi.	2.7
+e047	erp	Personel sicil kartında eksik bilgiler bulunmaktadır.	Personel sicil kartında eksik bilgiler bulunmaktadır.	Personel sicil kartında eksik bilgiler bulunmaktadır.	3.8
+e048	erp	İşe giriş bildirgesi zamanında gönderilmelidir.	İşe giriş bildirgesi zamanında gönderilmelidir.	İşe giriş bildirgesi zamanında gönderilmelidir.	3.4
+e049	erp	Fazla mesai saatleri puantaj ekranından girilir.	Fazla mesai saatleri puantaj ekranından girilir.	Fazla mesai saatleri puantaj ekranından girilir.	3.4
+e050	erp	Yıllık izin bakiyesi otomatik olarak hesaplanır.	Yıllık izin bakiyesi otomatik olarak hesaplanır.	Yıllık izin bakiyesi otomatik olarak hesaplanır.	3.4
+e051	erp	Masraf merkezi seçmeden kayıt yapamazsınız.	Masraf merkezi seçmeden kayıt yapamazsınız.	Masraf merkezi seçmeden kayıt yapamazsınız.	3.1
+e052	erp	Bütçe gerçekleşme raporu yöneticilere gönderildi.	Bütçe gerçekleşme raporu yöneticilere gönderildi.	Bütçe gerçekleşme raporu yöneticilere gönderildi.	3.5
+e053	erp	Nakit akış tablosu önümüzdeki üç ay için hazırlandı.	Nakit akış tablosu önümüzdeki üç ay için hazırlandı.	Nakit akış tablosu önümüzdeki üç ay için hazırlandı.	3.7
+e054	erp	Kur farkı faturası düzenlenmesi gerekiyor.	Kur farkı faturası düzenlenmesi gerekiyor.	Kur farkı faturası düzenlenmesi gerekiyor.	3.0
+e055	erp	Döviz cinsinden yapılan ödemeler günlük kur ile değerlendirilir.	Döviz cinsinden yapılan ödemeler günlük kur ile değerlendirilir.	Döviz cinsinden yapılan ödemeler günlük kur ile değerlendirilir.	4.6
+e056	erp	Banka mutabakatı başarıyla tamamlandı.	Banka mutabakatı başarıyla tamamlandı.	Banka mutabakatı başarıyla tamamlandı.	2.7
+e057	erp	Mutabakat mektubu tüm tedarikçilere gönderildi.	Mutabakat mektubu tüm tedarikçilere gönderildi.	Mutabakat mektubu tüm tedarikçilere gönderildi.	3.4
+e058	erp	Şube bazında gelir ve gider karşılaştırması yapılabilir.	Şube bazında gelir ve gider karşılaştırması yapılabilir.	Şube bazında gelir ve gider karşılaştırması yapılabilir.	4.0
+e059	erp	Dashboard ekranındaki grafikler anlık olarak yenilenir.	Deşbord ekranındaki grafikler anlık olarak yenilenir.	Deşbord ekranındaki grafikler anlık olarak yenilenir.	3.8
+e060	erp	Kullanıcı oturumu uzun süre işlem yapılmadığı için sonlandırıldı.	Kullanıcı oturumu uzun süre işlem yapılmadığı için sonlandırıldı.	Kullanıcı oturumu uzun süre işlem yapılmadığı için sonlandırıldı.	4.6
+e061	erp	Yetkiniz olmayan bir ekrana erişmeye çalıştınız.	Yetkiniz olmayan bir ekrana erişmeye çalıştınız.	Yetkiniz olmayan bir ekrana erişmeye çalıştınız.	3.4
+e062	erp	Zorunlu alanlar kırmızı renkle işaretlenmiştir.	Zorunlu alanlar kırmızı renkle işaretlenmiştir.	Zorunlu alanlar kırmızı renkle işaretlenmiştir.	3.4
+e063	erp	Kaydetme işlemi sırasında beklenmeyen bir hata oluştu.	Kaydetme işlemi sırasında beklenmeyen bir hata oluştu.	Kaydetme işlemi sırasında beklenmeyen bir hata oluştu.	3.9
+e064	erp	Lütfen arama kriterlerini daraltarak tekrar deneyiniz.	Lütfen arama kriterlerini daraltarak tekrar deneyiniz.	Lütfen arama kriterlerini daraltarak tekrar deneyiniz.	3.9
+e065	erp	Seçilen kayıt başka bir kullanıcı tarafından düzenleniyor.	Seçilen kayıt başka bir kullanıcı tarafından düzenleniyor.	Seçilen kayıt başka bir kullanıcı tarafından düzenleniyor.	4.1
+e066	erp	Excel dosyasından toplu veri aktarımı tamamlandı.	Eksel dosyasından toplu veri aktarımı tamamlandı.	Eksel dosyasından toplu veri aktarımı tamamlandı.	3.5
+e067	erp	Aktarım sırasında hatalı satırlar atlandı.	Aktarım sırasında hatalı satırlar atlandı.	Aktarım sırasında hatalı satırlar atlandı.	3.0
+e068	erp	Rapor şablonu şirket logosuyla birlikte kaydedildi.	Rapor şablonu şirket logosuyla birlikte kaydedildi.	Rapor şablonu şirket logosuyla birlikte kaydedildi.	3.6
+e069	erp	Bildirim tercihlerinizi profil ayarlarından değiştirebilirsiniz.	Bildirim tercihlerinizi profil ayarlarından değiştirebilirsiniz.	Bildirim tercihlerinizi profil ayarlarından değiştirebilirsiniz.	4.6
+e070	erp	İki aşamalı doğrulama hesabınız için etkinleştirildi.	İki aşamalı doğrulama hesabınız için etkinleştirildi.	İki aşamalı doğrulama hesabınız için etkinleştirildi.	3.8
+e071	erp	Şifreniz en az sekiz karakter uzunluğunda olmalıdır.	Şifreniz en az sekiz karakter uzunluğunda olmalıdır.	Şifreniz en az sekiz karakter uzunluğunda olmalıdır.	3.7
+e072	erp	Sistem, bakım çalışması nedeniyle kısa süreliğine erişime kapatılacaktır.	Sistem, bakım çalışması nedeniyle kısa süreliğine erişime kapatılacaktır.	Sistem, bakım çalışması nedeniyle kısa süreliğine erişime kapatılacaktır.	5.2
+e073	erp	Yeni sürümle birlikte raporlama ekranı yenilendi.	Yeni sürümle birlikte raporlama ekranı yenilendi.	Yeni sürümle birlikte raporlama ekranı yenilendi.	3.5
+e074	erp	Öğrenci velisine ait iletişim bilgileri güncellendi.	Öğrenci velisine ait iletişim bilgileri güncellendi.	Öğrenci velisine ait iletişim bilgileri güncellendi.	3.7
+e075	erp	Kardeş indirimi ikinci öğrenciden itibaren uygulanır.	Kardeş indirimi ikinci öğrenciden itibaren uygulanır.	Kardeş indirimi ikinci öğrenciden itibaren uygulanır.	3.8
+e076	erp	Erken kayıt indirimi dönem başına kadar geçerlidir.	Erken kayıt indirimi dönem başına kadar geçerlidir.	Erken kayıt indirimi dönem başına kadar geçerlidir.	3.6
+e077	erp	Ödeme planı veli ile yapılan sözleşmeye göre oluşturuldu.	Ödeme planı veli ile yapılan sözleşmeye göre oluşturuldu.	Ödeme planı veli ile yapılan sözleşmeye göre oluşturuldu.	4.1
+e078	erp	Sözleşme belgesi dijital olarak imzalandı.	Sözleşme belgesi dijital olarak imzalandı.	Sözleşme belgesi dijital olarak imzalandı.	3.0
+e079	erp	Eğitim öğretim yılı takvimi sisteme tanımlandı.	Eğitim öğretim yılı takvimi sisteme tanımlandı.	Eğitim öğretim yılı takvimi sisteme tanımlandı.	3.4
+e080	erp	Sınıf kapasitesi dolduğu için yeni kayıt alınamıyor.	Sınıf kapasitesi dolduğu için yeni kayıt alınamıyor.	Sınıf kapasitesi dolduğu için yeni kayıt alınamıyor.	3.7
+e081	erp	Öğrencinin nakil işlemi diğer şubeye aktarıldı.	Öğrencinin nakil işlemi diğer şubeye aktarıldı.	Öğrencinin nakil işlemi diğer şubeye aktarıldı.	3.4
+e082	erp	Etüt programına katılım listesi hazırlandı.	Etüt programına katılım listesi hazırlandı.	Etüt programına katılım listesi hazırlandı.	3.1
+e083	erp	Rehberlik servisi görüşme notlarını kaydetti.	Rehberlik servisi görüşme notlarını kaydetti.	Rehberlik servisi görüşme notlarını kaydetti.	3.2
+e084	erp	Kütüphane modülünden ödünç verilen kitaplar takip edilebilir.	Kütüphane modülünden ödünç verilen kitaplar takip edilebilir.	Kütüphane modülünden ödünç verilen kitaplar takip edilebilir.	4.4
+e085	erp	Öğretmen performans değerlendirme formu dolduruldu.	Öğretmen performans değerlendirme formu dolduruldu.	Öğretmen performans değerlendirme formu dolduruldu.	3.6
+e086	erp	Ders yükü dağılımı branşlara göre raporlandı.	Ders yükü dağılımı branşlara göre raporlandı.	Ders yükü dağılımı branşlara göre raporlandı.	3.2
+e087	erp	Nöbet çizelgesi haftalık olarak yayınlandı.	Nöbet çizelgesi haftalık olarak yayınlandı.	Nöbet çizelgesi haftalık olarak yayınlandı.	3.1
+e088	erp	Veli toplantısı davetiyeleri kısa mesajla gönderildi.	Veli toplantısı davetiyeleri kısa mesajla gönderildi.	Veli toplantısı davetiyeleri kısa mesajla gönderildi.	3.8
+e089	erp	Ödev teslim tarihleri öğrenci portalında görüntülenebilir.	Ödev teslim tarihleri öğrenci portalında görüntülenebilir.	Ödev teslim tarihleri öğrenci portalında görüntülenebilir.	4.1
+e090	erp	Online ödeme sayfası üzerinden kredi kartıyla ödeme yapılabilir.	Onlayn ödeme sayfası üzerinden kredi kartıyla ödeme yapılabilir.	Onlayn ödeme sayfası üzerinden kredi kartıyla ödeme yapılabilir.	4.6
+e091	erp	Sanal pos entegrasyonu test ortamında doğrulandı.	Sanal pos entegrasyonu test ortamında doğrulandı.	Sanal pos entegrasyonu test ortamında doğrulandı.	3.5
+e092	erp	Başarısız ödeme işlemleri ayrı bir listede gösterilir.	Başarısız ödeme işlemleri ayrı bir listede gösterilir.	Başarısız ödeme işlemleri ayrı bir listede gösterilir.	3.9
+e093	erp	Geri ödeme talebi muhasebe birimine iletildi.	Geri ödeme talebi muhasebe birimine iletildi.	Geri ödeme talebi muhasebe birimine iletildi.	3.2
+e094	erp	Fatura adresi ile teslimat adresi farklı olabilir.	Fatura adresi ile teslimat adresi farklı olabilir.	Fatura adresi ile teslimat adresi farklı olabilir.	3.6
+e095	erp	Proforma fatura müşteriye onay için gönderildi.	Proforma fatura müşteriye onay için gönderildi.	Proforma fatura müşteriye onay için gönderildi.	3.4
+e096	erp	Satış siparişinden otomatik fatura oluşturuldu.	Satış siparişinden otomatik fatura oluşturuldu.	Satış siparişinden otomatik fatura oluşturuldu.	3.4
+e097	erp	Tevkifatlı fatura düzenlerken oranı doğru seçiniz.	Tevkifatlı fatura düzenlerken oranı doğru seçiniz.	Tevkifatlı fatura düzenlerken oranı doğru seçiniz.	3.6
+e098	erp	Gelir tablosu ve bilanço raporları dönem sonunda hazırlanır.	Gelir tablosu ve bilanço raporları dönem sonunda hazırlanır.	Gelir tablosu ve bilanço raporları dönem sonunda hazırlanır.	4.3
+e099	erp	Bağımsız denetim için gerekli belgeler arşivden çıkarıldı.	Bağımsız denetim için gerekli belgeler arşivden çıkarıldı.	Bağımsız denetim için gerekli belgeler arşivden çıkarıldı.	4.1
+e100	erp	Arşivlenen dokümanlara yalnızca yetkili kullanıcılar erişebilir.	Arşivlenen dokümanlara yalnızca yetkili kullanıcılar erişebilir.	Arşivlenen dokümanlara yalnızca yetkili kullanıcılar erişebilir.	4.6
+e101	erp	Doküman yönetim sisteminde yeni bir klasör oluşturuldu.	Doküman yönetim sisteminde yeni bir klasör oluşturuldu.	Doküman yönetim sisteminde yeni bir klasör oluşturuldu.	3.9
+e102	erp	Belgenin önceki sürümleri geçmiş sekmesinde listelenir.	Belgenin önceki sürümleri geçmiş sekmesinde listelenir.	Belgenin önceki sürümleri geçmiş sekmesinde listelenir.	3.9
+e103	erp	Görev atanan kullanıcıya bildirim gönderildi.	Görev atanan kullanıcıya bildirim gönderildi.	Görev atanan kullanıcıya bildirim gönderildi.	3.2
+e104	erp	Proje maliyetleri aşama bazında takip edilmektedir.	Proje maliyetleri aşama bazında takip edilmektedir.	Proje maliyetleri aşama bazında takip edilmektedir.	3.6
+e105	erp	Toplantı tutanağı ilgili birimlerle paylaşıldı.	Toplantı tutanağı ilgili birimlerle paylaşıldı.	Toplantı tutanağı ilgili birimlerle paylaşıldı.	3.4
+e106	erp	Müşteri şikâyeti destek ekibine yönlendirildi.	Müşteri şikâyeti destek ekibine yönlendirildi.	Müşteri şikâyeti destek ekibine yönlendirildi.	3.3
+e107	erp	Destek talebi çözüldü olarak kapatıldı.	Destek talebi çözüldü olarak kapatıldı.	Destek talebi çözüldü olarak kapatıldı.	2.8
+e108	erp	Randevu takvimi öğretmenlerin müsaitliğine göre düzenlendi.	Randevu takvimi öğretmenlerin müsaitliğine göre düzenlendi.	Randevu takvimi öğretmenlerin müsaitliğine göre düzenlendi.	4.2
+e109	erp	Personel eğitim kayıtları yıllık olarak raporlanır.	Personel eğitim kayıtları yıllık olarak raporlanır.	Personel eğitim kayıtları yıllık olarak raporlanır.	3.6
+e110	erp	Veri yedekleri her gece şifreli olarak saklanır.	Veri yedekleri her gece şifreli olarak saklanır.	Veri yedekleri her gece şifreli olarak saklanır.	3.4
+n001	number	Bu ayki tahsilat toplamı 48.750 TL oldu.	Bu ayki tahsilat toplamı kırk sekiz bin yedi yüz elli Türk lirası oldu.	Bu ayki tahsilat toplamı kırk sekiz bin yedi yüz elli Türk lirası oldu.	5.1
+n002	number	Kalan borç ₺3.420,50'dir.	Kalan borç üç bin dört yüz yirmi Türk lirası elli kuruştur.	Kalan borç üç bin dört yüz yirmi Türk lirası elli kuruştur.	4.2
+n003	number	Faturanın vade tarihi 12.11.2026'dır.	Faturanın vade tarihi on iki Kasım iki bin yirmi altıdır.	Faturanın vade tarihi on iki Kasım iki bin yirmi altıdır.	4.1
+n004	number	Kayıt ücreti %15 indirimle 25.500 TL'ye düştü.	Kayıt ücreti yüzde on beş indirimle yirmi beş bin beş yüz Türk lirasına düştü.	Kayıt ücreti yüzde on beş indirimle yirmi beş bin beş yüz Türk lirasına düştü.	5.6
+n005	number	Toplantı saat 09:30'da başlayacak.	Toplantı saat dokuz otuzda başlayacak.	Toplantı saat dokuz otuzda başlayacak.	2.7
+n006	number	Öğrenci sayısı geçen yıla göre %8 arttı.	Öğrenci sayısı geçen yıla göre yüzde sekiz arttı.	Öğrenci sayısı geçen yıla göre yüzde sekiz arttı.	3.5
+n007	number	Ödemenin 3 taksitte yapılması kararlaştırıldı.	Ödemenin üç taksitte yapılması kararlaştırıldı.	Ödemenin üç taksitte yapılması kararlaştırıldı.	3.4
+n008	number	Son ödeme günü 28 Şubat 2027'dir.	Son ödeme günü yirmi sekiz Şubat iki bin yirmi yedidir.	Son ödeme günü yirmi sekiz Şubat iki bin yirmi yedidir.	3.9
+n009	number	Aylık kira bedeli 18.000 TL olarak belirlendi.	Aylık kira bedeli on sekiz bin Türk lirası olarak belirlendi.	Aylık kira bedeli on sekiz bin Türk lirası olarak belirlendi.	4.4
+n010	number	Sipariş toplamı 1.245,90 TL'dir.	Sipariş toplamı bin iki yüz kırk beş Türk lirası doksan kuruştur.	Sipariş toplamı bin iki yüz kırk beş Türk lirası doksan kuruştur.	4.6
+n011	number	Stok miktarı 350 adede düştü.	Stok miktarı üç yüz elli adede düştü.	Stok miktarı üç yüz elli adede düştü.	2.6
+n012	number	Ders saat 13:15'te sona eriyor.	Ders saat on üç on beşte sona eriyor.	Ders saat on üç on beşte sona eriyor.	2.6
+n013	number	Personel sayımız 124 kişiye ulaştı.	Personel sayımız yüz yirmi dört kişiye ulaştı.	Personel sayımız yüz yirmi dört kişiye ulaştı.	3.3
+n014	number	Yıllık bütçenin %62,5'i harcandı.	Yıllık bütçenin yüzde altmış iki virgül beşi harcandı.	Yıllık bütçenin yüzde altmış iki virgül beşi harcandı.	3.9
+n015	number	Taksit tutarı ₺2.750'dir.	Taksit tutarı iki bin yedi yüz elli Türk lirasıdır.	Taksit tutarı iki bin yedi yüz elli Türk lirasıdır.	3.6
+n016	number	Sınav 05.01.2027 tarihinde yapılacak.	Sınav beş Ocak iki bin yirmi yedi tarihinde yapılacak.	Sınav beş Ocak iki bin yirmi yedi tarihinde yapılacak.	3.9
+n017	number	Depoda 1.200 koli ürün bulunuyor.	Depoda bin iki yüz koli ürün bulunuyor.	Depoda bin iki yüz koli ürün bulunuyor.	2.8
+n018	number	İndirim oranı %10 ile %25 arasında değişiyor.	İndirim oranı yüzde on ile yüzde yirmi beş arasında değişiyor.	İndirim oranı yüzde on ile yüzde yirmi beş arasında değişiyor.	4.4
+n019	number	Servis ücreti aylık 1.850 TL'dir.	Servis ücreti aylık bin sekiz yüz elli Türk lirasıdır.	Servis ücreti aylık bin sekiz yüz elli Türk lirasıdır.	3.9
+n020	number	Sistem saat 23:00'te bakıma alınacak.	Sistem saat yirmi üçte bakıma alınacak.	Sistem saat yirmi üçte bakıma alınacak.	2.8
+n021	number	Toplam 7 şubemizde eğitim veriliyor.	Toplam yedi şubemizde eğitim veriliyor.	Toplam yedi şubemizde eğitim veriliyor.	2.8
+n022	number	Müşteri 2019'dan beri bizimle çalışıyor.	Müşteri iki bin on dokuzdan beri bizimle çalışıyor.	Müşteri iki bin on dokuzdan beri bizimle çalışıyor.	3.6
+n023	number	Birim fiyat 12,75 TL olarak güncellendi.	Birim fiyat on iki Türk lirası yetmiş beş kuruş olarak güncellendi.	Birim fiyat on iki Türk lirası yetmiş beş kuruş olarak güncellendi.	4.8
+n024	number	Yemek ücreti günlük 185 TL'dir.	Yemek ücreti günlük yüz seksen beş Türk lirasıdır.	Yemek ücreti günlük yüz seksen beş Türk lirasıdır.	3.6
+n025	number	Yeni kur 1 Ocak 2027 tarihinden itibaren geçerli olacak.	Yeni kur bir Ocak iki bin yirmi yedi tarihinden itibaren geçerli olacak.	Yeni kur bir Ocak iki bin yirmi yedi tarihinden itibaren geçerli olacak.	5.1
+n026	number	Veli toplantısı 17:45'te yapılacak.	Veli toplantısı on yedi kırk beşte yapılacak.	Veli toplantısı on yedi kırk beşte yapılacak.	3.2
+n027	number	Bu dönem 36 yeni öğretmen işe başladı.	Bu dönem otuz altı yeni öğretmen işe başladı.	Bu dönem otuz altı yeni öğretmen işe başladı.	3.2
+n028	number	Gecikme faizi aylık %4,25 olarak uygulanır.	Gecikme faizi aylık yüzde dört virgül yirmi beş olarak uygulanır.	Gecikme faizi aylık yüzde dört virgül yirmi beş olarak uygulanır.	4.6
+n029	number	Kasada 6.430 TL nakit bulunuyor.	Kasada altı bin dört yüz otuz Türk lirası nakit bulunuyor.	Kasada altı bin dört yüz otuz Türk lirası nakit bulunuyor.	4.1
+n030	number	Teslimat 14 iş günü içinde yapılacaktır.	Teslimat on dört iş günü içinde yapılacaktır.	Teslimat on dört iş günü içinde yapılacaktır.	3.2
+n031	number	Sipariş numarası 450981 olan kayıt bulunamadı.	Sipariş numarası dört beş sıfır dokuz sekiz bir olan kayıt bulunamadı.	Sipariş numarası dört beş sıfır dokuz sekiz bir olan kayıt bulunamadı.	5.0
+n032	number	Yeni dönem 08.09.2026 tarihinde başladı.	Yeni dönem sekiz Eylül iki bin yirmi altı tarihinde başladı.	Yeni dönem sekiz Eylül iki bin yirmi altı tarihinde başladı.	4.3
+n033	number	Karne ortalaması 87,4 olarak hesaplandı.	Karne ortalaması seksen yedi virgül dört olarak hesaplandı.	Karne ortalaması seksen yedi virgül dört olarak hesaplandı.	4.2
+n034	number	Maaş artışı %30 olarak belirlendi.	Maaş artışı yüzde otuz olarak belirlendi.	Maaş artışı yüzde otuz olarak belirlendi.	2.9
+n035	number	Toplam alacak 2.345.600 TL'ye ulaştı.	Toplam alacak iki milyon üç yüz kırk beş bin altı yüz Türk lirasına ulaştı.	Toplam alacak iki milyon üç yüz kırk beş bin altı yüz Türk lirasına ulaştı.	5.4
+n036	number	Okulun kuruluşu 1998 yılına dayanıyor.	Okulun kuruluşu bin dokuz yüz doksan sekiz yılına dayanıyor.	Okulun kuruluşu bin dokuz yüz doksan sekiz yılına dayanıyor.	4.3
+n037	number	Ders süresi 40 dakikadır.	Ders süresi kırk dakikadır.	Ders süresi kırk dakikadır.	1.9
+n038	number	Öğle arası 12:00 ile 13:00 arasındadır.	Öğle arası on iki ile on üç arasındadır.	Öğle arası on iki ile on üç arasındadır.	2.9
+n039	number	Borcun 5.000 TL tutarındaki kısmı ödendi.	Borcun beş bin Türk lirası tutarındaki kısmı ödendi.	Borcun beş bin Türk lirası tutarındaki kısmı ödendi.	3.7
+n040	number	KDV dahil toplam tutar 11.800 TL'dir.	Ka de ve dahil toplam tutar on bir bin sekiz yüz Türk lirasıdır.	Ka de ve dahil toplam tutar on bir bin sekiz yüz Türk lirasıdır.	4.6
+n041	number	Öğrencinin devamsızlığı 6 gün oldu.	Öğrencinin devamsızlığı altı gün oldu.	Öğrencinin devamsızlığı altı gün oldu.	2.7
+n042	number	Kampanya 31.12.2026 tarihinde sona eriyor.	Kampanya otuz bir Aralık iki bin yirmi altı tarihinde sona eriyor.	Kampanya otuz bir Aralık iki bin yirmi altı tarihinde sona eriyor.	4.7
+n043	number	Çalışanların %75'i eğitime katıldı.	Çalışanların yüzde yetmiş beşi eğitime katıldı.	Çalışanların yüzde yetmiş beşi eğitime katıldı.	3.4
+n044	number	Ürün ₺89,99'a satışa sunuldu.	Ürün seksen dokuz Türk lirası doksan dokuz kuruşa satışa sunuldu.	Ürün seksen dokuz Türk lirası doksan dokuz kuruşa satışa sunuldu.	4.6
+n045	number	Randevunuz 10:20'de onaylandı.	Randevunuz on yirmide onaylandı.	Randevunuz on yirmide onaylandı.	2.3
+n046	number	Toplam 2.500 kilogram malzeme teslim alındı.	Toplam iki bin beş yüz kilogram malzeme teslim alındı.	Toplam iki bin beş yüz kilogram malzeme teslim alındı.	3.9
+n047	number	Bu ay 19 fatura düzenlendi.	Bu ay on dokuz fatura düzenlendi.	Bu ay on dokuz fatura düzenlendi.	2.4
+n048	number	Teklifin geçerlilik süresi 30 gündür.	Teklifin geçerlilik süresi otuz gündür.	Teklifin geçerlilik süresi otuz gündür.	2.8
+n049	number	Sınıf mevcudu 28 öğrencidir.	Sınıf mevcudu yirmi sekiz öğrencidir.	Sınıf mevcudu yirmi sekiz öğrencidir.	2.6
+n050	number	Endeks 0,85 puan geriledi.	Endeks sıfır virgül seksen beş puan geriledi.	Endeks sıfır virgül seksen beş puan geriledi.	3.2
+n051	number	Hedefin %112'si gerçekleştirildi.	Hedefin yüzde yüz on ikisi gerçekleştirildi.	Hedefin yüzde yüz on ikisi gerçekleştirildi.	3.1
+n052	number	Ödeme 15.03.2027'de yapılacak.	Ödeme on beş Mart iki bin yirmi yedide yapılacak.	Ödeme on beş Mart iki bin yirmi yedide yapılacak.	3.5
+n053	number	Yıllık ücret 96.000 TL'dir.	Yıllık ücret doksan altı bin Türk lirasıdır.	Yıllık ücret doksan altı bin Türk lirasıdır.	3.1
+n054	number	Kütüphanede 4.380 kitap bulunuyor.	Kütüphanede dört bin üç yüz seksen kitap bulunuyor.	Kütüphanede dört bin üç yüz seksen kitap bulunuyor.	3.6
+n055	number	Sistem 3 saniye içinde yanıt verdi.	Sistem üç saniye içinde yanıt verdi.	Sistem üç saniye içinde yanıt verdi.	2.6
+n056	number	Kapanış saati 18:30'dur.	Kapanış saati on sekiz otuzdur.	Kapanış saati on sekiz otuzdur.	2.2
+n057	number	Personel servisi 07:50'de hareket eder.	Personel servisi yedi ellide hareket eder.	Personel servisi yedi ellide hareket eder.	3.0
+n058	number	Toplam 215 veli ankete katıldı.	Toplam iki yüz on beş veli ankete katıldı.	Toplam iki yüz on beş veli ankete katıldı.	3.0
+n059	number	Stok değeri 750.000 TL'nin üzerinde.	Stok değeri yedi yüz elli bin Türk lirasının üzerinde.	Stok değeri yedi yüz elli bin Türk lirasının üzerinde.	3.9
+n060	number	2026 yılı bütçesi revize edildi.	İki bin yirmi altı yılı bütçesi revize edildi.	İki bin yirmi altı yılı bütçesi revize edildi.	3.3
+n061	number	Fiyatlara %20 KDV dahildir.	Fiyatlara yüzde yirmi ka de ve dahildir.	Fiyatlara yüzde yirmi ka de ve dahildir.	2.9
+n062	number	İade tutarı 450 TL'dir.	İade tutarı dört yüz elli Türk lirasıdır.	İade tutarı dört yüz elli Türk lirasıdır.	2.9
+n063	number	Kredi kartıyla 6 taksit seçeneği sunuluyor.	Kredi kartıyla altı taksit seçeneği sunuluyor.	Kredi kartıyla altı taksit seçeneği sunuluyor.	3.3
+n064	number	Rapor 21.10.2026 tarihine kadar teslim edilmeli.	Rapor yirmi bir Ekim iki bin yirmi altı tarihine kadar teslim edilmeli.	Rapor yirmi bir Ekim iki bin yirmi altı tarihine kadar teslim edilmeli.	5.1
+n065	number	Doluluk oranı %93'e ulaştı.	Doluluk oranı yüzde doksan üçe ulaştı.	Doluluk oranı yüzde doksan üçe ulaştı.	2.7
+n066	number	Sınav süresi 90 dakikadır.	Sınav süresi doksan dakikadır.	Sınav süresi doksan dakikadır.	2.1
+n067	number	Bakım ücreti 3.600,00 TL'dir.	Bakım ücreti üç bin altı yüz Türk lirasıdır.	Bakım ücreti üç bin altı yüz Türk lirasıdır.	3.1
+n068	number	Ortalama bekleme süresi 4,5 dakikaya düştü.	Ortalama bekleme süresi dört virgül beş dakikaya düştü.	Ortalama bekleme süresi dört virgül beş dakikaya düştü.	3.9
+n069	number	Alış fiyatı 1.020 TL, satış fiyatı 1.350 TL'dir.	Alış fiyatı bin yirmi Türk lirası, satış fiyatı bin üç yüz elli Türk lirasıdır.	Alış fiyatı bin yirmi Türk lirası, satış fiyatı bin üç yüz elli Türk lirasıdır.	5.6
+n070	number	Son güncelleme 16:05'te yapıldı.	Son güncelleme on altı sıfır beşte yapıldı.	Son güncelleme on altı sıfır beşte yapıldı.	3.1
+a001	abbreviation	KDV beyannamesi ayın yirmi sekizine kadar verilmelidir.	Ka de ve beyannamesi ayın yirmi sekizine kadar verilmelidir.	Ka de ve beyannamesi ayın yirmi sekizine kadar verilmelidir.	4.3
+a002	abbreviation	SGK prim bildirgesi zamanında gönderildi.	Se ge ka prim bildirgesi zamanında gönderildi.	Se ge ka prim bildirgesi zamanında gönderildi.	3.3
+a003	abbreviation	e-Fatura mükellefi olan müşteriler için ayrı bir seri kullanılır.	E fatura mükellefi olan müşteriler için ayrı bir seri kullanılır.	E fatura mükellefi olan müşteriler için ayrı bir seri kullanılır.	4.6
+a004	abbreviation	e-Arşiv belgeleri e-posta ile iletilir.	E arşiv belgeleri e posta ile iletilir.	E arşiv belgeleri e posta ile iletilir.	2.8
+a005	abbreviation	IBAN numarasını girerken boşluk bırakmayınız.	İban numarasını girerken boşluk bırakmayınız.	İban numarasını girerken boşluk bırakmayınız.	3.2
+a006	abbreviation	CRM üzerinden müşteri görüşmeleri kaydedilebilir.	Si ar em üzerinden müşteri görüşmeleri kaydedilebilir.	Si ar em üzerinden müşteri görüşmeleri kaydedilebilir.	3.9
+a007	abbreviation	ERP projesinin ikinci aşaması başladı.	E re pe projesinin ikinci aşaması başladı.	E re pe projesinin ikinci aşaması başladı.	3.0
+a008	abbreviation	KPI hedefleri her çeyrek dönemde gözden geçirilir.	Ke pe i hedefleri her çeyrek dönemde gözden geçirilir.	Ke pe i hedefleri her çeyrek dönemde gözden geçirilir.	3.9
+a009	abbreviation	Raporu PDF olarak indirebilirsiniz.	Raporu pe de ef olarak indirebilirsiniz.	Raporu pe de ef olarak indirebilirsiniz.	2.9
+a010	abbreviation	Doğrulama kodu SMS ile gönderildi.	Doğrulama kodu se me se ile gönderildi.	Doğrulama kodu se me se ile gönderildi.	2.8
+a011	abbreviation	ÖTV oranları yeni düzenlemeyle değişti.	Ö te ve oranları yeni düzenlemeyle değişti.	Ö te ve oranları yeni düzenlemeyle değişti.	3.1
+a012	abbreviation	e-İrsaliye düzenlenmeden sevkiyat yapılmamalıdır.	E irsaliye düzenlenmeden sevkiyat yapılmamalıdır.	E irsaliye düzenlenmeden sevkiyat yapılmamalıdır.	3.5
+a013	abbreviation	e-Defter beratları süresi içinde yüklendi.	E defter beratları süresi içinde yüklendi.	E defter beratları süresi içinde yüklendi.	3.0
+a014	abbreviation	TC kimlik numarası on bir haneden oluşur.	Te ce kimlik numarası on bir haneden oluşur.	Te ce kimlik numarası on bir haneden oluşur.	3.1
+a015	abbreviation	Müşteri adayı CRM ekranında lead olarak işaretlendi.	Müşteri adayı si ar em ekranında lid olarak işaretlendi.	Müşteri adayı si ar em ekranında lid olarak işaretlendi.	4.0
+a016	abbreviation	Verileri Excel formatında export ederek paylaşabilirsiniz.	Verileri Eksel formatında eksport ederek paylaşabilirsiniz.	Verileri Eksel formatında eksport ederek paylaşabilirsiniz.	4.2
+a017	abbreviation	Login ekranında kullanıcı adınızı ve şifrenizi giriniz.	Login ekranında kullanıcı adınızı ve şifrenizi giriniz.	Login ekranında kullanıcı adınızı ve şifrenizi giriniz.	3.9
+a018	abbreviation	Dashboard üzerinden günlük satışları takip edebilirsiniz.	Deşbord üzerinden günlük satışları takip edebilirsiniz.	Deşbord üzerinden günlük satışları takip edebilirsiniz.	3.9
+a019	abbreviation	Online kayıt formu veliler tarafından doldurulabilir.	Onlayn kayıt formu veliler tarafından doldurulabilir.	Onlayn kayıt formu veliler tarafından doldurulabilir.	3.8
+a020	abbreviation	KDV'si ödenmemiş faturalar ayrıca listelenir.	Ka de vesi ödenmemiş faturalar ayrıca listelenir.	Ka de vesi ödenmemiş faturalar ayrıca listelenir.	3.5
+a021	abbreviation	SGK'ya bildirilen gün sayısı kontrol edilmelidir.	Se ge kaya bildirilen gün sayısı kontrol edilmelidir.	Se ge kaya bildirilen gün sayısı kontrol edilmelidir.	3.8
+a022	abbreviation	ERP'deki stok bilgileri anlık olarak güncellenir.	E re pedeki stok bilgileri anlık olarak güncellenir.	E re pedeki stok bilgileri anlık olarak güncellenir.	3.7
+a023	abbreviation	CRM'e eklenen notlar satış ekibiyle paylaşılır.	Si ar eme eklenen notlar satış ekibiyle paylaşılır.	Si ar eme eklenen notlar satış ekibiyle paylaşılır.	3.6
+a024	abbreviation	PDF'e dönüştürülen rapor e-posta ile gönderildi.	Pe de efe dönüştürülen rapor e posta ile gönderildi.	Pe de efe dönüştürülen rapor e posta ile gönderildi.	3.7
+a025	abbreviation	IBAN'ın ilk iki harfi ülke kodunu gösterir.	İbanın ilk iki harfi ülke kodunu gösterir.	İbanın ilk iki harfi ülke kodunu gösterir.	3.0
+a026	abbreviation	Raporlar, grafikler vb. içerikler panelde yer alır.	Raporlar, grafikler ve benzeri içerikler panelde yer alır.	Raporlar, grafikler ve benzeri içerikler panelde yer alır.	4.1
+a027	abbreviation	Faturalar, irsaliyeler vs. arşivde saklanır.	Faturalar, irsaliyeler vesaire arşivde saklanır.	Faturalar, irsaliyeler vesaire arşivde saklanır.	3.4
+a028	abbreviation	KPI değerlerinde belirgin bir düşüş görüldü.	Ke pe i değerlerinde belirgin bir düşüş görüldü.	Ke pe i değerlerinde belirgin bir düşüş görüldü.	3.4
+a029	abbreviation	SMS bildirimleri veli tercihine göre gönderilir.	Se me se bildirimleri veli tercihine göre gönderilir.	Se me se bildirimleri veli tercihine göre gönderilir.	3.8
+a030	abbreviation	e-Fatura ve e-Arşiv entegrasyonu test edildi.	E fatura ve e arşiv entegrasyonu test edildi.	E fatura ve e arşiv entegrasyonu test edildi.	3.2
+a031	abbreviation	ERP ve CRM sistemleri arasında veri aktarımı sağlandı.	E re pe ve si ar em sistemleri arasında veri aktarımı sağlandı.	E re pe ve si ar em sistemleri arasında veri aktarımı sağlandı.	4.5
+a032	abbreviation	KDV ve ÖTV tutarları faturada ayrı ayrı gösterilir.	Ka de ve ve ö te ve tutarları faturada ayrı ayrı gösterilir.	Ka de ve ve ö te ve tutarları faturada ayrı ayrı gösterilir.	4.3
+a033	abbreviation	TL cinsinden tutarlar iki ondalık basamakla gösterilir.	Türk lirası cinsinden tutarlar iki ondalık basamakla gösterilir.	Türk lirası cinsinden tutarlar iki ondalık basamakla gösterilir.	4.6
+a034	abbreviation	Hesap TR56 0001 0012 3456 7890 1234 56 numaralı IBAN ile eşleştirildi.	Hesap te re, elli altı, sıfır sıfır sıfır bir, sıfır sıfır bir iki, üç dört beş altı, yedi sekiz dokuz sıfır, bir iki üç dört, beş altı numaralı iban ile eşleştirildi.	Hesap te re, elli altı, sıfır sıfır sıfır bir, sıfır sıfır bir iki, üç dört beş altı, yedi sekiz dokuz sıfır, bir iki üç dört, beş altı numaralı iban ile eşleştirildi.	11.9
+a035	abbreviation	Tedarikçinin IBAN bilgisi güncellendi.	Tedarikçinin iban bilgisi güncellendi.	Tedarikçinin iban bilgisi güncellendi.	2.7
+a036	abbreviation	Lead kaydı fırsata dönüştürüldü.	Lid kaydı fırsata dönüştürüldü.	Lid kaydı fırsata dönüştürüldü.	2.2
+a037	abbreviation	Export işlemi tamamlandığında bildirim alacaksınız.	Eksport işlemi tamamlandığında bildirim alacaksınız.	Eksport işlemi tamamlandığında bildirim alacaksınız.	3.7
+a038	abbreviation	Excel şablonunu indirip doldurduktan sonra tekrar yükleyiniz.	Eksel şablonunu indirip doldurduktan sonra tekrar yükleyiniz.	Eksel şablonunu indirip doldurduktan sonra tekrar yükleyiniz.	4.4
+a039	abbreviation	Login işlemi başarısız oldu, lütfen tekrar deneyiniz.	Login işlemi başarısız oldu, lütfen tekrar deneyiniz.	Login işlemi başarısız oldu, lütfen tekrar deneyiniz.	3.8
+a040	abbreviation	Online ödeme sistemi yirmi dört saat hizmet vermektedir.	Onlayn ödeme sistemi yirmi dört saat hizmet vermektedir.	Onlayn ödeme sistemi yirmi dört saat hizmet vermektedir.	4.0
+s001	short	Tamam.	Tamam.	Tamam.	0.4
+s002	short	Kaydedildi.	Kaydedildi.	Kaydedildi.	0.8
+s003	short	İşlem başarılı.	İşlem başarılı.	İşlem başarılı.	1.1
+s004	short	Lütfen bekleyiniz.	Lütfen bekleyiniz.	Lütfen bekleyiniz.	1.3
+s005	short	Hata oluştu.	Hata oluştu.	Hata oluştu.	0.9
+s006	short	Onaylandı.	Onaylandı.	Onaylandı.	0.7
+s007	short	Reddedildi.	Reddedildi.	Reddedildi.	0.8
+s008	short	Teşekkür ederim.	Teşekkür ederim.	Teşekkür ederim.	1.1
+s009	short	Hoş geldiniz.	Hoş geldiniz.	Hoş geldiniz.	0.9
+s010	short	Güle güle.	Güle güle.	Güle güle.	0.7
+s011	short	İyi günler.	İyi günler.	İyi günler.	0.8
+s012	short	Evet, doğru.	Evet, doğru.	Evet, doğru.	0.9
+s013	short	Hayır, yanlış.	Hayır, yanlış.	Hayır, yanlış.	1.0
+s014	short	Devam ediyoruz.	Devam ediyoruz.	Devam ediyoruz.	1.1
+s015	short	Kayıt bulunamadı.	Kayıt bulunamadı.	Kayıt bulunamadı.	1.2
+s016	short	Oturum kapatıldı.	Oturum kapatıldı.	Oturum kapatıldı.	1.2
+s017	short	Ödeme alındı.	Ödeme alındı.	Ödeme alındı.	0.9
+s018	short	Belge yüklendi.	Belge yüklendi.	Belge yüklendi.	1.1
+s019	short	Dikkat!	Dikkat!	Dikkat.	0.5
+s020	short	Harika!	Harika!	Harika.	0.5
+s021	short	Maalesef olmadı.	Maalesef olmadı.	Maalesef olmadı.	1.1
+s022	short	Bir dakika lütfen.	Bir dakika lütfen.	Bir dakika lütfen.	1.3
+s023	short	Sonraki adım.	Sonraki adım.	Sonraki adım.	0.9
+s024	short	Önceki sayfa.	Önceki sayfa.	Önceki sayfa.	0.9
+s025	short	Ana menü.	Ana menü.	Ana menü.	0.6
+s026	short	Filtreyi temizle.	Filtreyi temizle.	Filtreyi temizle.	1.2
+s027	short	Değişiklikler geri alındı.	Değişiklikler geri alındı.	Değişiklikler geri alındı.	1.9
+s028	short	Yetkiniz yok.	Yetkiniz yok.	Yetkiniz yok.	0.9
+s029	short	Bağlantı kesildi.	Bağlantı kesildi.	Bağlantı kesildi.	1.2
+s030	short	Yeniden deneyin.	Yeniden deneyin.	Yeniden deneyin.	1.1
+s031	short	Ne güzel!	Ne güzel!	Ne güzel.	0.6
+s032	short	Çok teşekkürler.	Çok teşekkürler.	Çok teşekkürler.	1.1
+s033	short	Görüşmek üzere.	Görüşmek üzere.	Görüşmek üzere.	1.1
+s034	short	Kolay gelsin.	Kolay gelsin.	Kolay gelsin.	0.9
+s035	short	Afiyet olsun.	Afiyet olsun.	Afiyet olsun.	0.9
+s036	short	Geçmiş olsun.	Geçmiş olsun.	Geçmiş olsun.	0.9
+s037	short	Tebrikler!	Tebrikler!	Tebrikler.	0.7
+s038	short	Rapor hazır.	Rapor hazır.	Rapor hazır.	0.9
+s039	short	Sipariş iptal edildi.	Sipariş iptal edildi.	Sipariş iptal edildi.	1.5
+s040	short	Güncelleme tamamlandı.	Güncelleme tamamlandı.	Güncelleme tamamlandı.	1.6
