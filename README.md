@@ -4,8 +4,8 @@ Self-hosted Turkish text-to-speech proof of concept. Standalone: no ERP
 integration, no external TTS APIs. Inference runs fully offline; input text
 never leaves the machine.
 
-**Current phase:** FAZ 7 — validation and train/val/test split ready; waiting for
-pilot recordings (no training, no API, no Docker).
+**Current phase:** FAZ 8 prepared — training code ready, **no training started**;
+waiting for pilot recordings, GPU environment and approval of the parameters.
 
 ## Model
 
@@ -182,6 +182,30 @@ categories, ids).
 
 For the full 420-sentence pilot this gives about 378 / 20 / 22 records.
 
+### Fine-tuning (FAZ 8)
+
+Needs an NVIDIA GPU (bf16 autocast needs Ampere or newer; otherwise fp32).
+No extra dependencies: plain PyTorch, no `accelerate`.
+
+```powershell
+python src/prepare_latents.py                                     # splits -> AudioVAE latents (offline)
+python src/finetune.py --config configs/finetune_pilot.json --plan  # print parameters, train nothing
+python src/finetune.py --config configs/finetune_pilot.json         # train (only after approval)
+python src/finetune.py --config configs/finetune_pilot.json --resume latest
+```
+
+- Starts from `models/freya-tts`; the architecture is read from its
+  `config.json` and weights load with `strict=True` (the upstream YAML
+  configs list d=768/depth=22, which does not match the released d=640/depth=16).
+- Same objective and optimizer as upstream `training/sft.py`; adds a
+  validation loss with fixed noise (comparable across steps), best checkpoint
+  (`best/` + `best.json`), epoch logging, early stopping, and exact resume
+  (model, optimizer, RNG and data order restored).
+- Logs `checkpoints/<run>/train_log.csv` (step, epoch, lr, train/val loss).
+  `best/` and `final/` use the same layout as `models/freya-tts`.
+- Refuses to start over an existing run unless `--resume` is given.
+- Override any config value with `--set key=value`.
+
 ## Offline guarantee
 
 - `src/download_models.py` is the only code that contacts Hugging Face.
@@ -202,6 +226,10 @@ src/voice_check.py      pitch-based voice drift detector
 src/recording_script.py pilot recording script builder + checks
 src/validate_dataset.py read-only dataset validation + reports
 src/split_dataset.py    reproducible train/val/test split
+src/prepare_latents.py  split manifests -> AudioVAE latents
+src/training_data.py    latent dataset / collate / LR schedule (from FreyaTTS)
+src/finetune.py         fine-tuning loop with validation, best ckpt, resume
+configs/                training configs
 recording/              pilot script sources and generated TSV
 docs/                   dataset report, recording guide
 tests/                  unit tests

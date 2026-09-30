@@ -59,6 +59,7 @@ def _check_model_files() -> None:
 
 
 def _load_audio_vae(device: str):
+    _register_voxcpm_namespace()
     from voxcpm.modules.audiovae import AudioVAEConfigV2, AudioVAEV2
 
     vae = AudioVAEV2(AudioVAEConfigV2())
