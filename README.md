@@ -4,8 +4,8 @@ Self-hosted Turkish text-to-speech proof of concept. Standalone: no ERP
 integration, no external TTS APIs. Inference runs fully offline; input text
 never leaves the machine.
 
-**Current phase:** FAZ 6 — dataset validation pipeline ready; waiting for pilot
-recordings (no training, no API, no Docker).
+**Current phase:** FAZ 7 — validation and train/val/test split ready; waiting for
+pilot recordings (no training, no API, no Docker).
 
 ## Model
 
@@ -161,6 +161,27 @@ Read-only: never modifies, moves or deletes dataset files. Writes
 Errors exclude a record from training; warnings keep it but list it for
 review. Thresholds live in `Thresholds` in `src/validate_dataset.py`.
 
+### Train / validation / test split
+
+```powershell
+python src/split_dataset.py               # --seed 42 --val-ratio 0.05 --test-ratio 0.05
+```
+
+Re-runs validation and splits only accepted records into
+`datasets/pilot/splits/{train,val,test}.jsonl` (`{"id", "audio", "text"}`,
+the FreyaTTS manifest format; audio paths relative to the project root) plus
+`split_info.json` (seed, ratios, script hash, per-split counts/minutes/
+categories, ids).
+
+- Re-takes of the same transcript always land in the same split.
+- Stratified by script category; every category has held-out items.
+- Seeded sha256 ordering: identical output for the same seed and data, and
+  mostly stable when recordings are added.
+- Evaluation-set leakage aborts the split (defense in depth; validation
+  already rejects it).
+
+For the full 420-sentence pilot this gives about 378 / 20 / 22 records.
+
 ## Offline guarantee
 
 - `src/download_models.py` is the only code that contacts Hugging Face.
@@ -180,6 +201,7 @@ src/text_normalizer.py  Turkish text normalization (numbers, money, dates, abbre
 src/voice_check.py      pitch-based voice drift detector
 src/recording_script.py pilot recording script builder + checks
 src/validate_dataset.py read-only dataset validation + reports
+src/split_dataset.py    reproducible train/val/test split
 recording/              pilot script sources and generated TSV
 docs/                   dataset report, recording guide
 tests/                  unit tests
