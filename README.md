@@ -4,6 +4,8 @@ Self-hosted Turkish text-to-speech proof of concept. Standalone: no ERP
 integration, no external TTS APIs. Inference runs fully offline; input text
 never leaves the machine.
 
+**Project status, decisions and next steps:** [docs/PROJECT_STATUS.md](docs/PROJECT_STATUS.md)
+
 **Current phase:** FAZ 8 prepared — training code ready, **no training started**;
 waiting for pilot recordings, GPU environment and approval of the parameters.
 
