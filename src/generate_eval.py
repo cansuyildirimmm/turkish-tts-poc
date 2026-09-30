@@ -33,6 +33,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--sentences", type=Path, default=config.EVAL_SENTENCES_PATH)
     p.add_argument("--device", default="auto", choices=["auto", "cpu", "cuda"])
     p.add_argument("--steps", type=int, default=config.INFERENCE_STEPS)
+    p.add_argument("--no-normalize", action="store_true", help="skip Turkish text normalization")
     return p.parse_args()
 
 
@@ -47,12 +48,14 @@ def main() -> int:
     tts = tts_engine.load_tts(device)
     tts.synthesize(WARMUP_TEXT, steps=args.steps)
 
-    print(f"Model: {config.MODEL_NAME} | device: {device} | steps: {args.steps} | sentences: {len(sentences)}")
+    print(f"Model: {config.MODEL_NAME} | device: {device} | steps: {args.steps} | "
+          f"normalize: {not args.no_normalize} | sentences: {len(sentences)}")
     rows = []
     total_audio = total_infer = 0.0
     for s in sentences:
+        tts_text = tts_engine.prepare_text(tts, s.text, normalize=not args.no_normalize)
         t0 = time.perf_counter()
-        wav = tts.synthesize(s.text, steps=args.steps)
+        wav = tts.synthesize(tts_text, steps=args.steps)
         infer_s = time.perf_counter() - t0
 
         wav_path = out_dir / f"{s.sentence_id}.wav"
@@ -64,7 +67,7 @@ def main() -> int:
             "sentence_id": s.sentence_id,
             "category": s.category,
             "text": s.text,
-            "model_text": tts_engine.upstream_normalize(s.text),
+            "tts_text": tts_text,
             "audio": wav_path.name,
             "audio_duration_s": f"{dur:.2f}",
             "inference_time_s": f"{infer_s:.2f}",

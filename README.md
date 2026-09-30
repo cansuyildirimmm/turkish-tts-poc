@@ -4,7 +4,7 @@ Self-hosted Turkish text-to-speech proof of concept. Standalone: no ERP
 integration, no external TTS APIs. Inference runs fully offline; input text
 never leaves the machine.
 
-**Current phase:** FAZ 3 — ERP evaluation set (no training, no API, no Docker).
+**Current phase:** FAZ 4 — Turkish text normalization (no training, no API, no Docker).
 
 ## Model
 
@@ -61,6 +61,34 @@ Options:
 | `--device` | `auto` | `auto` picks `cuda` if available, else `cpu` |
 | `--steps` | `32` | Flow-matching ODE steps (quality/speed trade-off) |
 
+### Text normalization
+
+Before synthesis, document text is converted to its spoken form by
+`src/text_normalizer.py` (the original text is never modified):
+
+| Input | Spoken form sent to TTS |
+|---|---|
+| `KDV %20'dir.` | `Ka de ve yüzde yirmidir.` |
+| `₺12.550,75'tir` | `on iki bin beş yüz elli Türk lirası yetmiş beş kuruştur` |
+| `5.200 TL'ye` | `beş bin iki yüz Türk lirasına` |
+| `30.09.2026'dır` | `otuz Eylül iki bin yirmi altıdır` |
+| `14:30'da` | `on dört otuzda` |
+| `%87,5` | `yüzde seksen yedi virgül beş` |
+| `TR12 0006 …` | `te re, on iki, sıfır sıfır sıfır altı, …` |
+| `CRM`, `e-Fatura` | `si ar em`, `e fatura` |
+
+Rules are deterministic; Turkish suffix harmony after apostrophes is
+re-applied when the spoken last word changes (`TL'ye` -> `Türk lirasına`).
+Readings of abbreviations and English terms are plain dictionaries at the top
+of the module (`ABBREVIATIONS`, `FOREIGN_WORDS`). Use `--no-normalize` on the
+CLIs to bypass it. Characters outside the model's 92-symbol vocabulary are
+mapped to the nearest known symbol in `tts_engine.fit_to_vocab`.
+
+```powershell
+pip install pytest==8.4.2
+python -m pytest tests
+```
+
 ### Evaluation set
 
 ```powershell
@@ -74,6 +102,19 @@ loaded once and warmed up before timing.
 
 The evaluation set is **unseen data**: never add these sentences to any
 training dataset.
+
+`outputs/base_raw/` holds the FAZ 3 run without normalization
+(`--no-normalize --out-dir outputs/base_raw`) for before/after comparison.
+
+### Voice drift check
+
+```powershell
+python src/voice_check.py outputs/base
+```
+
+Tracks pitch per second and flags files whose pitch drops >= 5 semitones from
+the opening (the female voice drifting toward a male-sounding voice). See
+*Known limitations*.
 
 ## Offline guarantee
 
@@ -90,13 +131,24 @@ src/tts_engine.py       offline model loader
 src/inference.py        CLI: text -> WAV
 src/evaluation_set.py   reader for evaluation/sentences.txt
 src/generate_eval.py    batch synthesis of the evaluation set
+src/text_normalizer.py  Turkish text normalization (numbers, money, dates, abbreviations)
+src/voice_check.py      pitch-based voice drift detector
+tests/                  unit tests
 evaluation/sentences.txt  unseen ERP evaluation sentences
 outputs/base/           generated audio (git-ignored)
 models/                 model weights (git-ignored)
 third_party/FreyaTTS/   upstream inference code (git-ignored)
 datasets/ checkpoints/  later phases (git-ignored)
-tests/                  unit tests (FAZ 4)
 ```
+
+## Known limitations
+
+- **Voice drift:** FreyaTTS-small has no speaker conditioning; the voice comes
+  from the noise seed. Toward the end of each synthesized segment the pitch
+  often drops by up to an octave and the voice can sound male. Shorter
+  chunks, more ODE steps, other seeds and duration scaling do not fix it
+  reliably (measured with `voice_check.py`).
+- CPU speed: RTF ~1.7 on a Ryzen 5 5600H (slower than real time).
 
 ## Notes
 

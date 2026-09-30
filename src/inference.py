@@ -30,6 +30,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--out", type=Path, default=config.DEFAULT_OUTPUT_PATH, help="output WAV path")
     p.add_argument("--device", default="auto", choices=["auto", "cpu", "cuda"])
     p.add_argument("--steps", type=int, default=config.INFERENCE_STEPS, help="Euler ODE steps")
+    p.add_argument("--no-normalize", action="store_true", help="skip Turkish text normalization")
     return p.parse_args()
 
 
@@ -47,8 +48,9 @@ def main() -> int:
     tts = tts_engine.load_tts(device)
     load_s = time.perf_counter() - t0
 
+    tts_text = tts_engine.prepare_text(tts, text, normalize=not args.no_normalize)
     t0 = time.perf_counter()
-    wav = tts.synthesize(text, steps=args.steps)
+    wav = tts.synthesize(tts_text, steps=args.steps)
     infer_s = time.perf_counter() - t0
 
     out = args.out if args.out.is_absolute() else Path.cwd() / args.out
@@ -64,7 +66,7 @@ def main() -> int:
     print(f"Model           : {config.MODEL_NAME}")
     print(f"Device          : {device}")
     print(f"Input text      : {text}")
-    print(f"Model text      : {tts_engine.upstream_normalize(text)}")
+    print(f"TTS text        : {tts_text}")
     print(f"Audio output    : {shown}")
     print(f"Audio duration  : {duration_s:.2f} s ({config.SAMPLE_RATE} Hz)")
     print(f"Model load time : {load_s:.2f} s")

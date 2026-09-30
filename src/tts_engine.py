@@ -8,12 +8,15 @@ modelscope, funasr, gradio, ...), none of which we need. We register a bare
 
 import importlib.util
 import json
+import re
 import sys
 import types
+import unicodedata
 
 import torch
 
 import config
+import text_normalizer
 
 
 def select_device(requested: str = "auto") -> str:
@@ -95,3 +98,31 @@ def load_tts(device: str):
 def upstream_normalize(text: str) -> str:
     """FreyaTTS's own light normalization, applied inside synthesize()."""
     return _import_freyatts().pipeline.normalize(text)
+
+
+# Characters missing from the model's 92-symbol vocabulary, mapped to the
+# closest symbol it knows. Anything else unknown is decomposed or replaced.
+_VOCAB_FALLBACK = {"Ğ": "ğ", "q": "k", "Â": "A", "î": "i", "Î": "İ", "û": "u", "Û": "U",
+                   "“": "", "”": "", '"': "", "«": "", "»": "", "–": ",", "—": ","}
+
+
+def fit_to_vocab(text: str, vocab: dict) -> str:
+    """Replace characters the model cannot encode (it would read them as <UNK>)."""
+    out = []
+    for ch in text:
+        if ch in vocab:
+            out.append(ch)
+        elif ch in _VOCAB_FALLBACK:
+            out.append(_VOCAB_FALLBACK[ch])
+        elif ch.lower() in vocab:
+            out.append(ch.lower())
+        else:
+            base = unicodedata.normalize("NFD", ch)[0]
+            out.append(base if base in vocab else " ")
+    return re.sub(r"\s+", " ", "".join(out)).strip()
+
+
+def prepare_text(tts, text: str, normalize: bool = True) -> str:
+    """Document text -> exact string handed to the model."""
+    t = text_normalizer.normalize(text) if normalize else text
+    return fit_to_vocab(t, tts.char_to_id)
