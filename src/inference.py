@@ -31,6 +31,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--device", default="auto", choices=["auto", "cpu", "cuda"])
     p.add_argument("--steps", type=int, default=config.INFERENCE_STEPS, help="Euler ODE steps")
     p.add_argument("--no-normalize", action="store_true", help="skip Turkish text normalization")
+    p.add_argument("--drift-guard", action=argparse.BooleanOptionalAction, default=config.DRIFT_GUARD,
+                   help="re-synthesize drifting clauses and keep the least-drifting take")
     return p.parse_args()
 
 
@@ -50,7 +52,7 @@ def main() -> int:
 
     tts_text = tts_engine.prepare_text(tts, text, normalize=not args.no_normalize)
     t0 = time.perf_counter()
-    wav = tts.synthesize(tts_text, steps=args.steps)
+    wav, _ = tts_engine.synthesize(tts, tts_text, steps=args.steps, drift_guard=args.drift_guard)
     infer_s = time.perf_counter() - t0
 
     out = args.out if args.out.is_absolute() else Path.cwd() / args.out

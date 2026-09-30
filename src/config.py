@@ -67,4 +67,17 @@ SAMPLE_RATE = 48000
 # Inference parameters. Keep these identical between base and fine-tuned runs.
 INFERENCE_STEPS = 32  # Euler ODE steps, the upstream default
 
+# Drift guard: FreyaTTS-small tends to drift toward a lower (male-sounding)
+# voice at the end of a clause. When enabled, each clause is re-synthesized
+# at these duration scales (same seed = same voice) until the pitch drop is
+# acceptable, and the least-drifting take is kept. Costs up to 4x compute.
+DRIFT_GUARD = False
+DRIFT_GUARD_SCALES = (1.0, 0.9, 1.1, 1.2)
+DRIFT_ACCEPT_SEMITONES = 4.0
+DRIFT_WINDOW_S = 0.5
+# A take only qualifies if it is mostly voiced and opens in the target voice's
+# range; otherwise a broken (whispery/noisy) take would look drift-free.
+DRIFT_MIN_VOICED_RATIO = 0.5
+DRIFT_MIN_OPENING_HZ = 200.0
+
 DEFAULT_OUTPUT_PATH = BASE_OUTPUT_DIR / "test.wav"

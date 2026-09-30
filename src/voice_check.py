@@ -22,11 +22,13 @@ WINDOW_S = 1.0
 DRIFT_SEMITONES = 5.0
 
 
-def window_f0(path: Path) -> list[float]:
-    y, _ = librosa.load(path, sr=ANALYSIS_SR, mono=True)
+def window_f0_array(y: np.ndarray, sr: int, window_s: float = WINDOW_S) -> list[float]:
+    """Median voiced F0 per window (NaN where a window has too little voicing)."""
+    if sr != ANALYSIS_SR:
+        y = librosa.resample(y.astype(np.float32), orig_sr=sr, target_sr=ANALYSIS_SR)
     f0, voiced, _ = librosa.pyin(y, fmin=60, fmax=450, sr=ANALYSIS_SR)
     hop_s = 512 / ANALYSIS_SR  # librosa.pyin default hop_length
-    per_win = int(round(WINDOW_S / hop_s))
+    per_win = int(round(window_s / hop_s))
     out = []
     for i in range(0, len(f0), per_win):
         seg = f0[i:i + per_win][voiced[i:i + per_win]]
@@ -34,15 +36,38 @@ def window_f0(path: Path) -> list[float]:
     return out
 
 
+def pitch_drop(windows: list[float]) -> float | None:
+    """Largest drop (semitones) below the opening pitch; None if nothing is voiced."""
+    valid = [w for w in windows if not np.isnan(w)]
+    if not valid:
+        return None
+    ref = float(np.median(valid[:2]))  # opening pitch
+    return max(12 * np.log2(ref / w) if not np.isnan(w) else 0.0 for w in windows)
+
+
+def take_score(windows: list[float], min_voiced_ratio: float, min_opening_hz: float) -> float:
+    """Pitch drop of a take, or inf if the take is mostly unvoiced or not the target voice."""
+    valid = [w for w in windows if not np.isnan(w)]
+    if not windows or len(valid) / len(windows) < min_voiced_ratio:
+        return float("inf")
+    if float(np.median(valid[:2])) < min_opening_hz:
+        return float("inf")
+    return pitch_drop(windows)
+
+
+def window_f0(path: Path) -> list[float]:
+    y, sr = librosa.load(path, sr=None, mono=True)
+    return window_f0_array(y, sr)
+
+
 def analyze(path: Path) -> dict:
     wins = window_f0(path)
-    valid = [w for w in wins if not np.isnan(w)]
-    if not valid:
+    drop = pitch_drop(wins)
+    if drop is None:
         return {"file": path.name, "windows": wins, "ref": float("nan"), "drift": False}
-    ref = float(np.median(valid[:2]))  # opening pitch
-    drops = [12 * np.log2(ref / w) if not np.isnan(w) else 0.0 for w in wins]
-    return {"file": path.name, "windows": wins, "ref": ref,
-            "max_drop": max(drops), "drift": max(drops) >= DRIFT_SEMITONES}
+    valid = [w for w in wins if not np.isnan(w)]
+    return {"file": path.name, "windows": wins, "ref": float(np.median(valid[:2])),
+            "max_drop": drop, "drift": drop >= DRIFT_SEMITONES}
 
 
 def main() -> int:

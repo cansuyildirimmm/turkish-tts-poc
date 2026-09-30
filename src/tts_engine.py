@@ -8,15 +8,19 @@ modelscope, funasr, gradio, ...), none of which we need. We register a bare
 
 import importlib.util
 import json
+import math
 import re
 import sys
 import types
 import unicodedata
+from pathlib import Path
 
+import numpy as np
 import torch
 
 import config
 import text_normalizer
+import voice_check
 
 
 def select_device(requested: str = "auto") -> str:
@@ -74,23 +78,31 @@ def _load_audio_vae(device: str):
     return vae
 
 
-def load_tts(device: str):
-    """Build the FreyaTTS pipeline from files under models/."""
+def load_tts(device: str, model_dir: Path | None = None):
+    """Build the FreyaTTS pipeline from local files.
+
+    `model_dir` holds config.json + model.safetensors: the base model under
+    models/ (default) or a fine-tuned checkpoint such as checkpoints/<run>/best.
+    """
     _check_model_files()
+    model_dir = Path(model_dir) if model_dir else config.FREYA_MODEL_DIR
+    for name in ("config.json", "model.safetensors"):
+        if not (model_dir / name).is_file():
+            raise FileNotFoundError(f"{model_dir / name} not found")
     freyatts = _import_freyatts()
     from safetensors.torch import load_file
 
-    with open(config.FREYA_MODEL_DIR / "config.json", encoding="utf-8") as f:
+    with open(model_dir / "config.json", encoding="utf-8") as f:
         cfg = json.load(f)
     model = freyatts.pipeline.FreyaDiT(
         vocab=cfg["vocab"], d=cfg["d"], depth=cfg["depth"], heads=cfg["heads"], ff=cfg["ff"],
     )
-    model.load_state_dict(load_file(config.FREYA_MODEL_DIR / "model.safetensors"), strict=True)
+    model.load_state_dict(load_file(model_dir / "model.safetensors"), strict=True)
     model = model.to(device).eval()
 
     vae = _load_audio_vae(device)
 
-    with open(config.FREYATTS_SRC_DIR / "freyatts" / "char_vocab.json", encoding="utf-8") as f:
+    with open(config.FREYATTS_VOCAB_PATH, encoding="utf-8") as f:
         char_to_id = json.load(f)
 
     return freyatts.pipeline.FreyaTTS(model, vae, char_to_id, device=device)
@@ -99,6 +111,56 @@ def load_tts(device: str):
 def upstream_normalize(text: str) -> str:
     """FreyaTTS's own light normalization, applied inside synthesize()."""
     return _import_freyatts().pipeline.normalize(text)
+
+
+@torch.no_grad()
+def _synth_chunk(tts, text: str, steps: int, duration_scale: float) -> np.ndarray:
+    """FreyaTTS._synth_one with the predicted frame count scaled by `duration_scale`.
+
+    With duration_scale=1.0 this is identical to upstream. The seed (= voice)
+    is always the pipeline's own, so every candidate is the same speaker.
+    """
+    m = tts.model
+    ids = tts._ids(text)
+    cmask = torch.ones_like(ids, dtype=torch.bool)
+    te = m.text_encode(ids)
+    pooled = (te * cmask[..., None].float()).sum(1) / (cmask.sum(1, keepdim=True) + 1e-6)
+    frames = int(round(math.exp(float(m.dur(pooled).squeeze(-1))) * duration_scale))
+    frames = max(tts.t_floor, ids.shape[1] + 4, min(300, frames))
+    latents = m.sample(ids, frames, steps=steps, cmask=cmask, seed=tts.seed)
+    return tts.vae.decode(latents.transpose(1, 2).float()).squeeze().float().cpu().numpy()
+
+
+def synthesize(tts, text: str, steps: int = config.INFERENCE_STEPS,
+               drift_guard: bool = config.DRIFT_GUARD) -> tuple[np.ndarray, dict]:
+    """Prepared text -> 48 kHz waveform, plus per-chunk details.
+
+    Without the drift guard this is exactly FreyaTTS.synthesize. With it, each
+    clause is synthesized at duration scales DRIFT_GUARD_SCALES in order until
+    its pitch drop is below DRIFT_ACCEPT_SEMITONES; the least-drifting take is
+    kept. Deterministic: same text, same output.
+    """
+    if not drift_guard:
+        return tts.synthesize(text, steps=steps), {"drift_guard": False}
+
+    t = upstream_normalize(text)
+    chunks = tts._clauses(t) if len(t.split()) > tts.max_words else [t]
+    gap = np.zeros(int(0.12 * tts.sample_rate), dtype=np.float32)
+    parts, chosen = [], []
+    for chunk in chunks:
+        best = None
+        for scale in config.DRIFT_GUARD_SCALES:
+            wav = _synth_chunk(tts, chunk, steps, scale)
+            windows = voice_check.window_f0_array(wav, tts.sample_rate, config.DRIFT_WINDOW_S)
+            score = voice_check.take_score(windows, config.DRIFT_MIN_VOICED_RATIO, config.DRIFT_MIN_OPENING_HZ)
+            if best is None or score < best[0]:
+                best = (score, scale, wav)
+            if score < config.DRIFT_ACCEPT_SEMITONES:
+                break
+        parts += [best[2].astype(np.float32), gap]
+        chosen.append({"text": chunk, "scale": best[1],
+                       "pitch_drop_st": None if best[0] == float("inf") else round(best[0], 2)})
+    return np.concatenate(parts[:-1]), {"drift_guard": True, "chunks": chosen}
 
 
 # Characters missing from the model's 92-symbol vocabulary, mapped to the

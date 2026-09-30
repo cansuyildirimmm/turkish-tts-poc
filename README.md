@@ -206,6 +206,35 @@ python src/finetune.py --config configs/finetune_pilot.json --resume latest
 - Refuses to start over an existing run unless `--resume` is given.
 - Override any config value with `--set key=value`.
 
+### Base vs fine-tuned comparison (FAZ 9)
+
+```powershell
+python src/compare_models.py --fine-tuned checkpoints/pilot_sft/best
+python src/compare_models.py                  # base only, before fine-tuning
+```
+
+Synthesizes the evaluation set with each model using the same normalized
+text and inference parameters into `comparison/base/` and
+`comparison/fine_tuned/` (git-ignored), and writes:
+
+- `comparison/results.csv`: `sentence_id, text, base_audio, fine_tuned_audio,
+  base_inference_time, fine_tuned_inference_time`, plus category, TTS text,
+  audio durations and the pitch-drift metric per model.
+- `comparison/run_info.json`: model dirs, device, steps, drift guard, seed, git commit.
+- `evaluation/manual_evaluation.csv`: listening sheet (`base_naturalness,
+  fine_tuned_naturalness, base_pronunciation, fine_tuned_pronunciation,
+  preferred_model, notes`). Created once and **never overwritten**.
+  Suggested scale: 1 = bad … 5 = excellent; `preferred_model` = base /
+  fine_tuned / equal.
+
+### Drift guard
+
+`--drift-guard` (inference, generate_eval, compare_models) re-synthesizes a
+clause at duration scales 1.0 / 0.9 / 1.1 / 1.2 (same seed, same voice) until
+its pitch drop is below 4 semitones, keeping the least-drifting take. Takes
+that are fine at 1.0 cost nothing extra; the worst case is 4x compute.
+Deterministic. Settings: `DRIFT_*` in `src/config.py`.
+
 ## Offline guarantee
 
 - `src/download_models.py` is the only code that contacts Hugging Face.
@@ -223,6 +252,7 @@ src/evaluation_set.py   reader for evaluation/sentences.txt
 src/generate_eval.py    batch synthesis of the evaluation set
 src/text_normalizer.py  Turkish text normalization (numbers, money, dates, abbreviations)
 src/voice_check.py      pitch-based voice drift detector
+src/compare_models.py   base vs fine-tuned comparison + manual evaluation sheet
 src/recording_script.py pilot recording script builder + checks
 src/validate_dataset.py read-only dataset validation + reports
 src/split_dataset.py    reproducible train/val/test split

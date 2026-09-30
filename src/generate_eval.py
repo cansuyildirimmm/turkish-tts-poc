@@ -34,6 +34,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--device", default="auto", choices=["auto", "cpu", "cuda"])
     p.add_argument("--steps", type=int, default=config.INFERENCE_STEPS)
     p.add_argument("--no-normalize", action="store_true", help="skip Turkish text normalization")
+    p.add_argument("--drift-guard", action=argparse.BooleanOptionalAction, default=config.DRIFT_GUARD,
+                   help="re-synthesize drifting clauses and keep the least-drifting take")
     return p.parse_args()
 
 
@@ -49,13 +51,13 @@ def main() -> int:
     tts.synthesize(WARMUP_TEXT, steps=args.steps)
 
     print(f"Model: {config.MODEL_NAME} | device: {device} | steps: {args.steps} | "
-          f"normalize: {not args.no_normalize} | sentences: {len(sentences)}")
+          f"normalize: {not args.no_normalize} | drift guard: {args.drift_guard} | sentences: {len(sentences)}")
     rows = []
     total_audio = total_infer = 0.0
     for s in sentences:
         tts_text = tts_engine.prepare_text(tts, s.text, normalize=not args.no_normalize)
         t0 = time.perf_counter()
-        wav = tts.synthesize(tts_text, steps=args.steps)
+        wav, info = tts_engine.synthesize(tts, tts_text, steps=args.steps, drift_guard=args.drift_guard)
         infer_s = time.perf_counter() - t0
 
         wav_path = out_dir / f"{s.sentence_id}.wav"
@@ -72,6 +74,7 @@ def main() -> int:
             "audio_duration_s": f"{dur:.2f}",
             "inference_time_s": f"{infer_s:.2f}",
             "rtf": f"{infer_s / dur:.2f}",
+            "duration_scales": " ".join(str(c["scale"]) for c in info.get("chunks", [])),
         })
         print(f"  {s.sentence_id} [{s.category:<14}] {dur:5.2f}s audio  {infer_s:6.2f}s  RTF {infer_s / dur:.2f}")
 
