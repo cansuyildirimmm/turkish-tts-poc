@@ -1,0 +1,35 @@
+# ERP evaluation set (unseen). DO NOT add these sentences to any training data.
+# Format: id|category|text   (lines starting with # are ignored)
+# Categories: normal, erp, number_spelled, number_raw, abbreviation, mixed, long
+01|normal|Yeni öğrenci kaydı oluşturabilirsiniz.
+02|normal|Bu doküman, yıl sonu kapanış işlemlerinin nasıl yapılacağını adım adım açıklamaktadır.
+03|normal|Lütfen değişikliklerinizi kaydetmeden önce tüm zorunlu alanları doldurduğunuzdan emin olun.
+04|normal|İşlem tamamlandığında ekranın sağ üst köşesinde bir bildirim göreceksiniz.
+05|erp|Öğretmen hak ediş hesaplaması tamamlandı.
+06|erp|Cari hesap hareketlerini görüntüleyebilirsiniz.
+07|erp|Tahsilat fişi başarıyla oluşturuldu.
+08|erp|Stok kartında birim fiyat ve depo bilgileri güncellendi.
+09|erp|Muhasebe fişi onaya gönderildi ve yetkili kullanıcının onayını bekliyor.
+10|erp|Taksit planını değiştirmek için ödeme planı ekranını açınız.
+11|number_spelled|Öğrencinin kalan borcu beş bin iki yüz Türk lirasıdır.
+12|number_spelled|KDV oranı yüzde yirmidir.
+13|number_spelled|Ödeme tarihi otuz Eylül iki bin yirmi altıdır.
+14|number_raw|Öğrencinin kalan borcu 5.200 TL'dir.
+15|number_raw|KDV %20'dir. Toplam borç ₺12.550,75'tir.
+16|number_raw|Ödeme tarihi 30.09.2026'dır.
+17|number_raw|Toplantı saat 14:30'da başlayacaktır.
+18|number_raw|Bu dönemde tahsilat oranı %87,5 olarak gerçekleşti.
+19|number_raw|Fatura tutarı 1.250.000 TL olarak hesaplandı.
+20|number_raw|Son ödeme tarihi 15 Ekim 2026'dır.
+21|abbreviation|IBAN bilgilerini kontrol ediniz.
+22|abbreviation|e-Fatura başarıyla oluşturuldu.
+23|abbreviation|e-Arşiv faturası müşterinin e-posta adresine gönderildi.
+24|abbreviation|ERP sistemi üzerinden cari hesap seçebilirsiniz.
+25|abbreviation|SGK ve KDV beyannameleri bu ay içinde verilmelidir.
+26|abbreviation|IBAN numarası TR12 0006 1005 1978 6457 8413 26 olarak kaydedildi.
+27|mixed|CRM modülünde yeni bir lead kaydı oluşturuldu.
+28|mixed|Raporu PDF veya Excel formatında export edebilirsiniz.
+29|mixed|Dashboard üzerindeki KPI değerleri her gece otomatik olarak güncellenir.
+30|mixed|Login olduktan sonra şifrenizi değiştirmeniz önerilir.
+31|long|Yeni dönem kayıtları başlamadan önce, tüm öğrencilerin geçmiş dönem borçlarının kapatıldığından, veli iletişim bilgilerinin güncel olduğundan ve sınıf atamalarının doğru yapıldığından emin olunuz.
+32|long|Cari hesap ekstresi, seçilen tarih aralığındaki tüm borç ve alacak hareketlerini, açılış bakiyesini ve dönem sonu bakiyesini birlikte gösterir.

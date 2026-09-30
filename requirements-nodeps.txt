@@ -1,0 +1,5 @@
+# Install with: pip install --no-deps -r requirements-nodeps.txt
+# Only voxcpm.modules.audiovae is used (see src/tts_engine.py). Its declared
+# dependencies (transformers, modelscope, funasr, gradio, ...) belong to the
+# 2B VoxCPM2 model we do not run, so they are deliberately skipped.
+voxcpm==2.0.3

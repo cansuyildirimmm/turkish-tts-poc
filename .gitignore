@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Large artifacts: never commit
+models/*
+!models/.gitkeep
+datasets/*
+!datasets/.gitkeep
+checkpoints/*
+!checkpoints/.gitkeep
+outputs/*
+!outputs/.gitkeep
+comparison/
+*.wav
+*.mp3
+*.flac
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+
+# Third-party source cloned at a pinned commit (see README)
+third_party/*
+!third_party/.gitkeep
+
+# Secrets / local config
+.env
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

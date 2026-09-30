@@ -1,0 +1,14 @@
+# Direct dependencies, pinned. Full resolved set: requirements.lock.txt
+# CPU-only PyTorch wheels (no CUDA download). For an NVIDIA machine swap the
+# index URL for the matching CUDA one.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0+cpu
+
+numpy==2.4.6
+einops==0.8.2
+soundfile==0.14.0
+librosa==0.11.0
+safetensors==0.8.0
+huggingface_hub==2.0.0
+# Needed by voxcpm.modules.audiovae (voxcpm itself: requirements-nodeps.txt)
+pydantic==2.13.5
