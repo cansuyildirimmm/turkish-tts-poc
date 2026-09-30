@@ -4,8 +4,8 @@ Self-hosted Turkish text-to-speech proof of concept. Standalone: no ERP
 integration, no external TTS APIs. Inference runs fully offline; input text
 never leaves the machine.
 
-**Current phase:** FAZ 5 — dataset research done; pilot recording in preparation
-(no training, no API, no Docker).
+**Current phase:** FAZ 6 — dataset validation pipeline ready; waiting for pilot
+recordings (no training, no API, no Docker).
 
 ## Model
 
@@ -134,6 +134,33 @@ text mapped to the model vocabulary (the training transcript). Fails if any
 sentence overlaps the evaluation set, is duplicated, or contains characters
 the model cannot represent.
 
+### Dataset validation
+
+```powershell
+python src/validate_dataset.py            # defaults: datasets/pilot + recording/pilot_script.tsv
+```
+
+Read-only: never modifies, moves or deletes dataset files. Writes
+`reports/dataset_report.txt` and `reports/dataset_report.json` (git-ignored).
+
+| Check | Result |
+|---|---|
+| unreadable/corrupt/empty WAV, no transcript, empty transcript | error |
+| duration < 0.5 s or > 14 s | error |
+| clipping (> 0.1 % samples at full scale), no speech | error |
+| sample rate < 22050 Hz | error |
+| mojibake / characters with no model-vocabulary mapping | error |
+| overlap with the evaluation set (identical or shared 5-word run) | error |
+| duplicate audio (identical samples; the earlier script id is kept) | error |
+| sample rate != 48 kHz, not mono, not 24-bit | warning |
+| leading/trailing silence > 1 s or missing | warning |
+| estimated SNR < 30 dB, peak < -20 dBFS | warning |
+| speaking rate outside 5-25 letters/s (transcript mismatch) | warning |
+| duplicate transcript | warning |
+
+Errors exclude a record from training; warnings keep it but list it for
+review. Thresholds live in `Thresholds` in `src/validate_dataset.py`.
+
 ## Offline guarantee
 
 - `src/download_models.py` is the only code that contacts Hugging Face.
@@ -152,6 +179,7 @@ src/generate_eval.py    batch synthesis of the evaluation set
 src/text_normalizer.py  Turkish text normalization (numbers, money, dates, abbreviations)
 src/voice_check.py      pitch-based voice drift detector
 src/recording_script.py pilot recording script builder + checks
+src/validate_dataset.py read-only dataset validation + reports
 recording/              pilot script sources and generated TSV
 docs/                   dataset report, recording guide
 tests/                  unit tests

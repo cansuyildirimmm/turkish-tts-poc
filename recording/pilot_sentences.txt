@@ -377,7 +377,7 @@ a030|abbreviation|e-Fatura ve e-Arşiv entegrasyonu test edildi.
 a031|abbreviation|ERP ve CRM sistemleri arasında veri aktarımı sağlandı.
 a032|abbreviation|KDV ve ÖTV tutarları faturada ayrı ayrı gösterilir.
 a033|abbreviation|TL cinsinden tutarlar iki ondalık basamakla gösterilir.
-a034|abbreviation|Hesap TR56 0001 0012 3456 7890 1234 56 numaralı IBAN ile eşleştirildi.
+a034|abbreviation|IBAN: TR56 0001 0012 3456 7890 1234 56.
 a035|abbreviation|Tedarikçinin IBAN bilgisi güncellendi.
 a036|abbreviation|Lead kaydı fırsata dönüştürüldü.
 a037|abbreviation|Export işlemi tamamlandığında bildirim alacaksınız.

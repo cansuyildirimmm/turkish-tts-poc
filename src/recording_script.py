@@ -25,22 +25,13 @@ from collections import Counter
 import config
 import text_normalizer
 import tts_engine
-from evaluation_set import load_sentences
+from evaluation_set import EvalLeakChecker, load_sentences
 
-NGRAM = 5
 # Rough Turkish read-speech rate on normalized text, used only for estimates.
 CHARS_PER_SECOND = 14.0
+COMMA_PAUSE_S = 0.35  # readers pause at commas (e.g. between IBAN digit groups)
 MAX_CLIP_S = 14.0  # FreyaTTS precompute_latents.py default --max_s
 TURKISH_LETTERS = "abcçdefgğhıijklmnoöprsştuüvyz"
-
-
-def _words(text: str) -> list[str]:
-    return [w.strip(".,;:!?'\"").lower() for w in text.split() if w.strip(".,;:!?'\"")]
-
-
-def _ngrams(text: str, n: int) -> set[tuple[str, ...]]:
-    w = _words(text)
-    return {tuple(w[i:i + n]) for i in range(len(w) - n + 1)}
 
 
 def main() -> int:
@@ -48,9 +39,7 @@ def main() -> int:
         vocab = json.load(f)
 
     sentences = load_sentences(config.PILOT_SENTENCES_PATH)
-    eval_sentences = load_sentences(config.EVAL_SENTENCES_PATH)
-    eval_texts = {text_normalizer.normalize(s.text).lower() for s in eval_sentences}
-    eval_grams = set().union(*(_ngrams(text_normalizer.normalize(s.text), NGRAM) for s in eval_sentences))
+    leak_checker = EvalLeakChecker()
 
     rows, errors = [], []
     seen: dict[str, str] = {}
@@ -61,11 +50,9 @@ def main() -> int:
         train_text = tts_engine.fit_to_vocab(read_text, vocab)
         key = read_text.lower()
 
-        if key in eval_texts:
-            errors.append(f"{s.sentence_id}: identical to an evaluation sentence")
-        shared = _ngrams(read_text, NGRAM) & eval_grams
-        if shared:
-            errors.append(f"{s.sentence_id}: shares '{' '.join(sorted(shared)[0])}' with the evaluation set")
+        leak = leak_checker.leak(read_text)
+        if leak:
+            errors.append(f"{s.sentence_id}: {leak}")
         if key in seen:
             errors.append(f"{s.sentence_id}: duplicate of {seen[key]}")
         seen[key] = s.sentence_id
@@ -73,7 +60,7 @@ def main() -> int:
         if unmappable:
             errors.append(f"{s.sentence_id}: characters with no vocabulary mapping {sorted(unmappable)}: {read_text!r}")
 
-        est_s = len(read_text) / CHARS_PER_SECOND
+        est_s = len(read_text) / CHARS_PER_SECOND + COMMA_PAUSE_S * read_text.count(",")
         if est_s > MAX_CLIP_S:
             errors.append(f"{s.sentence_id}: estimated {est_s:.1f}s exceeds {MAX_CLIP_S}s clip limit")
         total_s += est_s

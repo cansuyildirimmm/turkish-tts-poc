@@ -37,3 +37,6 @@ third_party/*
 Thumbs.db
 .vscode/
 .idea/
+
+# Generated validation reports (describe personal recordings)
+reports/

@@ -23,6 +23,7 @@ RECORDING_DIR = PROJECT_ROOT / "recording"
 PILOT_SENTENCES_PATH = RECORDING_DIR / "pilot_sentences.txt"
 PILOT_SCRIPT_PATH = RECORDING_DIR / "pilot_script.tsv"
 PILOT_DATASET_DIR = PROJECT_ROOT / "datasets" / "pilot"
+REPORTS_DIR = PROJECT_ROOT / "reports"
 
 # FreyaTTS inference code (not on PyPI) is cloned here at a pinned commit.
 FREYATTS_SRC_DIR = THIRD_PARTY_DIR / "FreyaTTS"
