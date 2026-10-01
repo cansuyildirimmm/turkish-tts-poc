@@ -1,6 +1,6 @@
 # Proje Durumu – Türkçe TTS PoC
 
-**Son güncelleme:** 2026-09-30 · **Son commit:** `3ec2501` · **Repo:** https://github.com/cansuyildirimmm/turkish-tts-poc
+**Son güncelleme:** 2026-10-01 · **Son commit:** `be6f90a` · **Repo:** https://github.com/cansuyildirimmm/turkish-tts-poc
 
 Bu dosya, çalışmaya yeni bir oturumda kaldığı yerden devam edebilmek için
 tutulur. Her faz sonunda güncellenmelidir.
@@ -23,45 +23,54 @@ tutulur. Her faz sonunda güncellenmelidir.
 | 2 Base inference | ✅ | Offline, sabit revizyonlu indirme, SHA-256 doğrulama |
 | 3 ERP evaluation set | ✅ | `evaluation/sentences.txt` (32 cümle, unseen) |
 | 4 Text normalization | ✅ | `src/text_normalizer.py`, ek uyumu dahil |
-| 5 Dataset araştırması | ✅ | Ticari kullanıma uygun tek konuşmacılı hazır Türkçe dataset yok → **şirket-içi pilot kayıt** kararı. `docs/dataset_report.md` |
-| 6 Dataset validation | 🟡 Kod hazır | Pilot kayıt bekleniyor |
-| 7 Train/val/test split | 🟡 Kod hazır | Pilot kayıt bekleniyor |
-| 8 Fine-tuning | 🟡 Kod hazır, **training başlatılmadı** | Kayıt + GPU ortamı + parametre onayı bekleniyor |
+| 5 Dataset araştırması | ✅ | Ticari kullanıma uygun tek konuşmacılı hazır Türkçe dataset yok. Pilot kayıt kararı 2026-10-01'de **iptal** → sentetik veri. `docs/dataset_report.md` |
+| 6 Dataset validation | 🟡 Kod hazır | Sentetik veriye uyarlanacak |
+| 7 Train/val/test split | 🟡 Kod hazır | Sentetik veriye uyarlanacak |
+| 8 Fine-tuning | 🟡 Kod hazır, **training başlatılmadı** | Sentetik veri + CPU parametreleri + onay bekleniyor |
 | 9 Base vs fine-tuned | 🟡 Script hazır | Base ile test edildi (`comparison/`) |
 | 10 FastAPI | ⏳ | Model kalitesi onaylanınca |
 | 11 Docker | ⏳ | |
 | 12 Azure/ERP mimarisi | ⏳ | Sadece öneri; Azure servis tipi henüz bilinmiyor |
 
-## Şu an beklenenler (kullanıcı tarafı)
+## 2026-10-01 kararları (YÖN DEĞİŞİKLİĞİ)
 
-1. **Hukuki ön koşullar:** KVKK aydınlatma metni, açık rıza, hak devri
-   sözleşmesi, sesli rıza beyanı (`docs/recording_guide.md` bölüm 0).
-2. **Pilot kayıt:** 420 cümle (`recording/pilot_script.tsv`, `read_text`
-   sütunu), 48 kHz / 24-bit mono WAV → `datasets/pilot/wavs/<id>.wav`.
-3. **GPU ortamı seçimi:** Öneri: şirketin Azure hesabında geçici GPU VM
-   (veri şirket içinde kalır). Alternatif: kiralık GPU (KVKK değerlendirmesi
-   gerekir) veya şirket içi NVIDIA makine.
-4. ~~Kısaltma okunuşları~~ ✅ 2026-10-01'de onaylandı: ERP "e re pe",
-   CRM "si ar em", KPI "ke pe i", PDF "pe de ef". CRM `outputs/base/27.wav`
-   dinlenerek teyit edildi (önceki "ce er me" duyumu normalize edilmemiş
-   `base_raw` çıktısından).
+- **Pilot kayıt YAPILMAYACAK.** Kullanıcı ses kaydetmek istemiyor; kayıt
+  ortamı da yok. Gerçek insan sesi olmadığı için KVKK/rıza belgeleri gerekmez.
+- **Şirket şartları:** (1) ücretli hiçbir şey yok, (2) yeni yabancı
+  kod/model/üreticiye bağımlılık yok.
+- Bu nedenle elenenler: Chatterbox (ek model), profesyonel seslendirme
+  (ücretli), Azure/kiralık GPU (ücretli).
+- **Seçilen yol (C): sentetik veriyle voice-lock fine-tuning.** FreyaTTS-small
+  kendi çıktılarıyla eğitilir; kayma kontrolü (FAZ 4) ile sesi sabit kalan
+  örnekler otomatik seçilir. Sadece mevcut yerel FreyaTTS kopyası kullanılır.
+- **Eğitim yeri: bu bilgisayarın CPU'su** (ücretsiz). Süre bilinmiyor
+  (kaba: birkaç saat – bir gece); başlamadan önce kısa hız testi yapılacak.
+- Beklenti: kalite base'i geçmez; hedef sadece cümle sonu ses kaymasını
+  gidermek. Başarı FAZ 9 karşılaştırmasıyla ölçülecek.
+- Kısaltma okunuşları onaylandı: ERP "e re pe", CRM "si ar em", KPI "ke pe i",
+  PDF "pe de ef" (CRM `outputs/base/27.wav` ile teyit edildi).
 
-## Kayıtlar gelince yapılacaklar (sırayla)
+## Yarın buradan devam (sıradaki adım)
 
-```powershell
-python src/validate_dataset.py      # rapor: reports/dataset_report.txt/.json -> kullanıcıya göster
-python src/split_dataset.py         # datasets/pilot/splits/*.jsonl + split_info.json
-python src/prepare_latents.py       # datasets/pilot/latents/  (GPU makinesinde daha hızlı)
-python src/finetune.py --config configs/finetune_pilot.json --plan   # parametreleri göster, ONAY AL
-python src/finetune.py --config configs/finetune_pilot.json          # sadece onaydan sonra
-python src/compare_models.py --fine-tuned checkpoints/pilot_sft/best
-```
+**Adım 1 – Sentetik veri üretimi TASARIMI** (henüz uzun işlem çalıştırma):
+kullanıcıya şunları sun ve onay al:
+- kaç cümle / toplam süre hedefi, cümle kaynağı (ERP tarzı; değerlendirme
+  setindeki 32 cümle eğitime GİRMEMELİ),
+- seed/ses seçimi (tek tutarlı ses karakteri),
+- otomatik seçim kriterleri (kayma kontrolü eşikleri, süre sınırları),
+- CPU'da tahmini üretim süresi.
 
-Önerilen pilot parametreleri (`configs/finetune_pilot.json`, henüz onaylanmadı):
-batch 16, lr 5e-5, 1500 adım (~65 epoch), warmup 100 + cosine, AdamW
-(0.9, 0.95) wd 0.01, grad clip 1.0, bf16, λ_dur 0.1, val her 50 / ckpt her
-250 adım, early stopping patience 6. Tahmini VRAM ~7 GB, A10/4090'da ~10–20 dk
-(kaba tahmin). ~25 dk veriyle overfitting riski → best checkpoint + early stopping.
+Sonraki adımlar (her biri ayrı onayla):
+2. Doğrulama + split: FAZ 6–7 kodunu sentetik veriye uyarla.
+3. CPU için eğitim parametreleri (`--plan` ile tam liste) → **ONAY** → kısa
+   hız testi → eğitim.
+4. `compare_models.py` ile base vs fine-tuned (32 cümle, dinleme + otomatik).
+
+Eski pilot-kayıt akışı (referans için, artık kullanılmıyor):
+`validate_dataset.py` → `split_dataset.py` → `prepare_latents.py` →
+`finetune.py --config configs/finetune_pilot.json --plan` → `compare_models.py`.
+`configs/finetune_pilot.json` GPU/gerçek kayıt varsayımıyla yazıldı; CPU ve
+sentetik veri için yeniden ayarlanacak.
 
 ## Önemli teknik bulgular
 
