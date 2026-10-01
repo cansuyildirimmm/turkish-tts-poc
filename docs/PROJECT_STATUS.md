@@ -41,10 +41,10 @@ tutulur. Her faz sonunda güncellenmelidir.
 3. **GPU ortamı seçimi:** Öneri: şirketin Azure hesabında geçici GPU VM
    (veri şirket içinde kalır). Alternatif: kiralık GPU (KVKK değerlendirmesi
    gerekir) veya şirket içi NVIDIA makine.
-4. **Açık küçük sorular:** Kısaltma okunuşları (ERP "e re pe",
-   KPI "ke pe i", PDF "pe de ef") onaylanacak. CRM ("si ar em") 2026-10-01'de
-   `outputs/base/27.wav` dinlenerek doğru okunduğu teyit edildi (önceki
-   "ce er me" duyumu normalize edilmemiş `base_raw` çıktısından).
+4. ~~Kısaltma okunuşları~~ ✅ 2026-10-01'de onaylandı: ERP "e re pe",
+   CRM "si ar em", KPI "ke pe i", PDF "pe de ef". CRM `outputs/base/27.wav`
+   dinlenerek teyit edildi (önceki "ce er me" duyumu normalize edilmemiş
+   `base_raw` çıktısından).
 
 ## Kayıtlar gelince yapılacaklar (sırayla)
 
