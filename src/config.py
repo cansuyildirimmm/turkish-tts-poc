@@ -25,6 +25,12 @@ PILOT_SCRIPT_PATH = RECORDING_DIR / "pilot_script.tsv"
 PILOT_DATASET_DIR = PROJECT_ROOT / "datasets" / "pilot"
 REPORTS_DIR = PROJECT_ROOT / "reports"
 
+# Synthetic voice-lock data (decision 2026-10-01): FreyaTTS-small's own output,
+# filtered for drift. Source scripts: the pilot script plus group B (longer).
+SYNTHETIC_SENTENCES_PATH = RECORDING_DIR / "synthetic_sentences.txt"
+SYNTHETIC_SCRIPT_PATH = RECORDING_DIR / "synthetic_script.tsv"
+SYNTHETIC_DATASET_DIR = PROJECT_ROOT / "datasets" / "synthetic"
+
 # FreyaTTS inference code (not on PyPI) is cloned here at a pinned commit.
 FREYATTS_SRC_DIR = THIRD_PARTY_DIR / "FreyaTTS"
 FREYATTS_SRC_COMMIT = "146d36c1cb6660646be57d31339db4eed9315de3"

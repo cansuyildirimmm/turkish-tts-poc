@@ -1,6 +1,6 @@
 # Proje Durumu – Türkçe TTS PoC
 
-**Son güncelleme:** 2026-10-01 · **Son commit:** `be6f90a` · **Repo:** https://github.com/cansuyildirimmm/turkish-tts-poc
+**Son güncelleme:** 2026-10-08 · **Son commit:** `5ee7cf1` · **Repo:** https://github.com/cansuyildirimmm/turkish-tts-poc
 
 Bu dosya, çalışmaya yeni bir oturumda kaldığı yerden devam edebilmek için
 tutulur. Her faz sonunda güncellenmelidir.
@@ -24,7 +24,7 @@ tutulur. Her faz sonunda güncellenmelidir.
 | 3 ERP evaluation set | ✅ | `evaluation/sentences.txt` (32 cümle, unseen) |
 | 4 Text normalization | ✅ | `src/text_normalizer.py`, ek uyumu dahil |
 | 5 Dataset araştırması | ✅ | Ticari kullanıma uygun tek konuşmacılı hazır Türkçe dataset yok. Pilot kayıt kararı 2026-10-01'de **iptal** → sentetik veri. `docs/dataset_report.md` |
-| 6 Dataset validation | 🟡 Kod hazır | Sentetik veriye uyarlanacak |
+| 6 Dataset validation | 🟡 Kod hazır | Sentetik veri üretimi: `src/generate_synthetic.py`, 20 cümlelik deneme başarılı (2026-10-08) |
 | 7 Train/val/test split | 🟡 Kod hazır | Sentetik veriye uyarlanacak |
 | 8 Fine-tuning | 🟡 Kod hazır, **training başlatılmadı** | Sentetik veri + CPU parametreleri + onay bekleniyor |
 | 9 Base vs fine-tuned | 🟡 Script hazır | Base ile test edildi (`comparison/`) |
@@ -50,21 +50,42 @@ tutulur. Her faz sonunda güncellenmelidir.
 - Kısaltma okunuşları onaylandı: ERP "e re pe", CRM "si ar em", KPI "ke pe i",
   PDF "pe de ef" (CRM `outputs/base/27.wav` ile teyit edildi).
 
+## 2026-10-08 oturumu (sentetik veri, Adım 1)
+
+- Tasarım onaylandı: kaynak = 420 pilot cümle + **400 yeni uzun ERP cümlesi**
+  (`recording/synthetic_sentences.txt` → `synthetic_script.tsv`, eval çakışması
+  yok), tek ses (`LEYLA_SEED`=9), her parça ayrı üretilir, süre ölçekleri
+  1.0/0.9/1.1/1.2 sırayla denenir. Kod: `src/generate_synthetic.py` (+12 test).
+- **Deneme 1** (20 cümle, ölçüt "açılışa göre düşüş < 3 yarım ton"): 1/20 kabul.
+  Reddedilenlerde düşüş 4,5–10 yarım ton.
+- **Dinleme testi (kullanıcı):** 9–10 yarım ton düşen klipler (en düşük ~186 Hz)
+  **aynı kadın sesi, sorun yok** → "açılışa göre düşüş" doğal cümle sonu
+  tonlamasını kayma sanıyor. Önceki "22/32 kayma" bulgusu da bu ölçüte
+  dayanıyordu, yani abartılıydı.
+- Yeni ölçüt: **hiçbir 0,5 sn pencere < 180 Hz olmasın.** Base eval çıktılarında
+  en düşük pencere çoğunlukla 170–210 Hz; belirgin uç değerler 96–130 Hz
+  (uzun, parçalanan cümleler 31 ve 32).
+- **Deneme 2** (aynı 20 cümle, 180 Hz): **20/20 kabul**, 1,34 dk ses, 2,3 sn
+  işlem / 1 sn ses. Tam üretim tahmini ~50–55 dk ses, ~2–2,5 saat CPU.
+  Çıktı `datasets/synthetic/`, ilk deneme `datasets/synthetic_trial_v1/`.
+- Not: filtre artık neredeyse hiçbir şey elemiyor → fine-tuning kazancı sınırlı
+  olabilir. Drift-guard da aynı hatalı düşüş ölçütünü kullanıyor (bu yüzden ~4x
+  maliyet).
+
 ## Yarın buradan devam (sıradaki adım)
 
-**Adım 1 – Sentetik veri üretimi TASARIMI** (henüz uzun işlem çalıştırma):
-kullanıcıya şunları sun ve onay al:
-- kaç cümle / toplam süre hedefi, cümle kaynağı (ERP tarzı; değerlendirme
-  setindeki 32 cümle eğitime GİRMEMELİ),
-- seed/ses seçimi (tek tutarlı ses karakteri),
-- otomatik seçim kriterleri (kayma kontrolü eşikleri, süre sınırları),
-- CPU'da tahmini üretim süresi.
-
-Sonraki adımlar (her biri ayrı onayla):
-2. Doğrulama + split: FAZ 6–7 kodunu sentetik veriye uyarla.
-3. CPU için eğitim parametreleri (`--plan` ile tam liste) → **ONAY** → kısa
-   hız testi → eğitim.
-4. `compare_models.py` ile base vs fine-tuned (32 cümle, dinleme + otomatik).
+**Kullanıcı seçimi: B.** Tam sentetik üretimden ÖNCE:
+1. Drift-guard'ın kabul ölçütünü "düşüş < 4 yarım ton" yerine **"en düşük
+   pencere ≥ 180 Hz"** yap (`config.py` DRIFT_*, `tts_engine.synthesize`,
+   `voice_check`; testleri güncelle).
+2. Eval setinde (32 cümle) ölç: base (guard kapalı) vs yeni guard → kaç cümlede
+   < 180 Hz pencere kalıyor, maliyet kaç kat. 31 ve 32 numaralı cümleleri
+   kullanıcıya dinlet. (~20–30 dk CPU)
+3. Sonuca göre karar (kullanıcıya rapor + onay):
+   - guard yetiyorsa → fine-tuning gerekmeyebilir, FAZ 10'a (FastAPI) geçiş tartışılır;
+   - yetmiyorsa → tam üretim `python src/generate_synthetic.py` (~2–2,5 saat),
+     sonra doğrulama + split, CPU eğitim parametreleri (`--plan`) → **ONAY** →
+     eğitim → `compare_models.py`.
 
 Eski pilot-kayıt akışı (referans için, artık kullanılmıyor):
 `validate_dataset.py` → `split_dataset.py` → `prepare_latents.py` →

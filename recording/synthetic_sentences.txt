@@ -1,0 +1,406 @@
+# Synthetic-data source sentences, group B (original text written for this project).
+# Longer ERP-style sentences (about 8-14 words) so the fine-tuning data contains
+# long clauses: speaker drift mostly shows up at the end of long clauses.
+# Format: id|category|text   (lines starting with # are ignored)
+# Must never overlap with evaluation/sentences.txt (checked by src/recording_script.py).
+# Categories: erp_long, general_long, number_long, question_long
+x001|erp_long|Öğrenci kayıt ekranında veli bilgileri girilmeden kaydetme butonu aktif hale gelmez.
+x002|erp_long|Yeni eğitim dönemine ait ders programları müdür yardımcısı tarafından onaylandı.
+x003|erp_long|Personel bordrolarında görülen fark, eksik girilen fazla mesai saatlerinden kaynaklanıyor.
+x004|erp_long|Satın alma siparişi, tedarikçi teklifleri karşılaştırıldıktan sonra sisteme işlenmelidir.
+x005|erp_long|Depo sayımında tespit edilen eksikler stok düzeltme fişi ile kayıt altına alındı.
+x006|erp_long|Banka mutabakatı sırasında eşleşmeyen hareketler ayrı bir listede raporlanmaktadır.
+x007|erp_long|Öğrenci devamsızlık bilgileri her ders saatinin sonunda öğretmen tarafından girilir.
+x008|erp_long|Gelir tablosu raporu, seçilen dönemdeki tüm gelir ve gider hesaplarını özetler.
+x009|erp_long|Sınav sonuçları onaylandıktan sonra velilere otomatik bilgilendirme mesajı gönderilecektir.
+x010|erp_long|Kullanıcı yetkileri sistem yöneticisi tarafından rol bazında tanımlanmalı ve düzenli olarak gözden geçirilmelidir.
+x011|erp_long|Müşteri siparişleri depo onayından geçtikten sonra sevkiyat planına otomatik olarak eklenir.
+x012|erp_long|Amortisman hesaplaması, demirbaş kartında tanımlı faydalı ömür süresine göre yapılır.
+x013|erp_long|Bütçe aşımı olan masraf merkezleri yönetim raporunda kırmızı renkle işaretlenmektedir.
+x014|erp_long|Okul servis güzergahları değiştiğinde ilgili velilere kısa mesaj ile bilgi verilir.
+x015|erp_long|İade faturası kesildiğinde ilgili stok miktarı depoya otomatik olarak geri eklenir.
+x016|erp_long|Öğretmenlerin haftalık ders yükü, ders programı oluşturulurken sistem tarafından kontrol edilir.
+x017|erp_long|Kapanmamış siparişler listesinde teslim tarihi geçmiş kayıtlar en üstte görüntülenir.
+x018|erp_long|Kasa sayımı sonucunda oluşan fark, sorumlu personelin açıklamasıyla birlikte kaydedilmelidir.
+x019|erp_long|Veli toplantısı davetleri sınıf öğretmeninin onayıyla birlikte tüm velilere iletilecektir.
+x020|erp_long|Tedarikçi performans raporu teslim süresi, kalite ve fiyat kriterlerine göre hazırlanır.
+x021|erp_long|Yemekhane menüsü her ayın son haftasında bir sonraki ay için sisteme yüklenir.
+x022|erp_long|Çek ve senet takibi ekranında vadesi yaklaşan belgeler ayrıca listelenmektedir.
+x023|erp_long|Öğrenci nakil işlemi tamamlandığında eski okulun kayıtları arşive taşınır.
+x024|erp_long|Çalışanların yıllık izin hakları işe giriş tarihine göre sistem tarafından hesaplanır.
+x025|erp_long|Fiyat listesi güncellendiğinde açık tekliflerdeki tutarlar otomatik olarak değişmez.
+x026|erp_long|Ödeme emri, iki farklı yetkilinin onayı alınmadan bankaya gönderilemez.
+x027|erp_long|Ders kitapları dağıtımı tamamlandığında öğrenci kartlarına teslim bilgisi eklenmelidir.
+x028|erp_long|Üretim emri başlatılmadan önce gerekli hammaddelerin depoda bulunduğu kontrol edilir.
+x029|erp_long|Kampüsler arası öğrenci transferi için iki müdürlüğün de onayı gerekmektedir.
+x030|erp_long|Gecikmiş tahsilatlar için hatırlatma mesajları her pazartesi sabahı otomatik gönderilir.
+x031|erp_long|Sistem yedekleri her gece saat on ikiden sonra ayrı bir sunucuya alınmaktadır.
+x032|erp_long|Kulüp faaliyetlerine katılan öğrencilerin listesi dönem sonunda rehberlik servisine iletilir.
+x033|erp_long|Sabit kıymet kartlarında bulunan seri numaraları sayım sırasında tek tek kontrol edilmelidir.
+x034|erp_long|Yeni kullanıcı hesabı oluşturulduğunda geçici şifre kullanıcının e-posta adresine gönderilir.
+x035|erp_long|Burs başvuruları değerlendirme kurulunun kararından sonra öğrenci hesabına yansıtılır.
+x036|erp_long|Alış faturaları, irsaliye bilgileriyle eşleştirilmeden muhasebe kaydına alınmamalıdır.
+x037|erp_long|Etüt saatleri, öğretmenlerin boş dersleri dikkate alınarak haftalık olarak planlanır.
+x038|erp_long|Satış temsilcilerinin aylık hedef gerçekleşme oranları yönetim ekranında izlenebilir.
+x039|erp_long|Dönem notları açıklanmadan önce tüm derslerin not girişleri tamamlanmış olmalıdır.
+x040|erp_long|Müşteri risk limiti aşıldığında yeni sipariş girişi sistem tarafından engellenir.
+x041|erp_long|Revir kayıtlarında öğrencinin şikayeti, yapılan müdahale ve saat bilgisi tutulur.
+x042|erp_long|Hesap planında yapılan değişiklikler geçmiş dönem kayıtlarını etkilemeyecek şekilde uygulanır.
+x043|erp_long|Kütüphaneden ödünç alınan kitapların iade tarihi geçtiğinde öğrenciye uyarı gönderilir.
+x044|erp_long|Personel performans değerlendirmeleri yılda iki kez yöneticiler tarafından sisteme girilir.
+x045|erp_long|Mal kabul sırasında hasarlı bulunan ürünler ayrı bir karantina deposuna alınır.
+x046|erp_long|Velilerin ödeme planı talepleri muhasebe birimi tarafından en geç iki gün içinde yanıtlanır.
+x047|erp_long|Döviz kurları her sabah merkez bankası verilerine göre sisteme aktarılmaktadır.
+x048|erp_long|Öğrenci karnesinde ders notlarının yanında davranış değerlendirmesi de yer almaktadır.
+x049|erp_long|Proje bazlı maliyet raporu, her projenin işçilik ve malzeme giderlerini ayrı ayrı gösterir.
+x050|erp_long|Yeni dönem ücret tarifesi yönetim kurulu onayından sonra sisteme tanımlanacaktır.
+x051|erp_long|Sevk irsaliyesi yazdırılmadan önce araç plakası ve şoför bilgisi girilmelidir.
+x052|erp_long|Öğretmen nöbet çizelgesi, okul idaresi tarafından her hafta başında yayınlanır.
+x053|erp_long|Stok değerleme yöntemi dönem içinde değiştirilemez, bu nedenle dikkatli seçilmelidir.
+x054|erp_long|Gezi katılım formları veli onayı alınmış öğrenciler için sistem üzerinden oluşturulur.
+x055|erp_long|Bankadan gelen ekstre dosyası içeri aktarıldığında hareketler otomatik olarak eşleştirilir.
+x056|erp_long|Ders seçimi ekranı, kayıt yenileme dönemi boyunca öğrencilerin erişimine açık kalacaktır.
+x057|erp_long|Kredi kartı ile yapılan tahsilatlar ertesi iş günü banka hesabına aktarılır.
+x058|erp_long|Mezun öğrencilerin belgeleri talep edildiğinde öğrenci işleri biriminden hazırlanır.
+x059|erp_long|Hizmet faturaları, sözleşmede belirtilen dönemler için toplu olarak oluşturulabilir.
+x060|erp_long|Sınıf mevcudu belirlenen kapasiteyi aştığında yeni öğrenci ataması yapılamaz.
+x061|erp_long|Muhasebe dönemi kapatıldıktan sonra geriye dönük kayıt girişi yalnızca yönetici yetkisiyle yapılır.
+x062|erp_long|Öğrenci sağlık bilgileri yalnızca yetkili personel tarafından görüntülenebilir.
+x063|erp_long|Ürün kartında minimum stok seviyesi tanımlandığında otomatik sipariş önerisi oluşturulur.
+x064|erp_long|Velilerin mobil uygulamadan gönderdiği mazeret dilekçeleri sınıf öğretmenine iletilir.
+x065|erp_long|Maaş ödemeleri her ayın on beşinde toplu ödeme dosyası ile bankaya gönderilir.
+x066|erp_long|Kayıt dondurma talebi onaylandığında öğrencinin ödeme planı da askıya alınır.
+x067|erp_long|Raporlama ekranındaki filtreler kaydedilerek daha sonra tekrar kullanılabilir.
+x068|erp_long|Tedarikçiye yapılacak ödemeler vade tarihine göre sıralanarak haftalık olarak planlanır.
+x069|erp_long|Okul kantininde yapılan harcamalar öğrenci kartından otomatik olarak düşülmektedir.
+x070|erp_long|Sözleşme bitiş tarihine otuz gün kala ilgili birime hatırlatma bildirimi gönderilir.
+x071|erp_long|Laboratuvar malzemeleri, dönem başında yapılan ihtiyaç listesine göre satın alınır.
+x072|erp_long|Satış faturası iptal edildiğinde bağlı tahsilat kaydı da kontrol edilmelidir.
+x073|erp_long|Rehberlik görüşmelerinin notları gizli olarak saklanır ve yalnızca danışman tarafından açılabilir.
+x074|erp_long|Şube bazında hazırlanan satış raporları bölge müdürlüklerine her hafta gönderilmektedir.
+x075|erp_long|Öğrenci kimlik kartları kayıt işlemi tamamlandıktan sonra bir hafta içinde basılır.
+x076|erp_long|Giderlerin masraf merkezlerine dağıtımı ay sonunda belirlenen oranlara göre yapılır.
+x077|erp_long|Servis aracı şoförlerinin belgeleri her yıl başında yeniden kontrol edilmektedir.
+x078|erp_long|Müşteri şikayetleri kayıt altına alındıktan sonra ilgili departmana otomatik yönlendirilir.
+x079|erp_long|Öğretmenler sınav sorularını sisteme yükledikten sonra zümre başkanı onay verir.
+x080|erp_long|Stok hareket raporu seçilen ürünün tüm giriş ve çıkış işlemlerini tarih sırasıyla listeler.
+x081|erp_long|Kardeş indirimi, aynı veliye bağlı ikinci öğrenciden itibaren otomatik olarak uygulanır.
+x082|erp_long|Toplu e-posta gönderimi öncesinde alıcı listesinin doğru seçildiğini kontrol ediniz.
+x083|erp_long|Yazılım lisanslarının yenileme tarihleri bilgi işlem birimi tarafından takip edilmektedir.
+x084|erp_long|Mesai dışı yapılan çalışmalar birim yöneticisinin onayından sonra bordroya yansıtılır.
+x085|erp_long|Kayıt ön görüşmesi yapılan aday öğrenciler ayrı bir listede takip edilmektedir.
+x086|erp_long|Fatura adresi ile teslimat adresi farklı olduğunda iki adres de siparişe girilmelidir.
+x087|erp_long|Okul aile birliği bağışları ayrı bir gelir hesabında izlenmekte ve raporlanmaktadır.
+x088|erp_long|Stokta bulunmayan ürünler için verilen siparişler bekleyen siparişler listesine eklenir.
+x089|erp_long|Öğrencilerin etkinlik puanları dönem sonunda karne bilgilerine otomatik olarak aktarılır.
+x090|erp_long|Avans talepleri, personelin maaşından taksitler halinde kesilecek şekilde planlanır.
+x091|erp_long|Kampüs girişlerinde kullanılan kart okuyucuların kayıtları güvenlik birimi tarafından incelenir.
+x092|erp_long|Teklif onaylandığında sistem aynı bilgilerle otomatik olarak bir satış siparişi oluşturur.
+x093|erp_long|Sınav takvimi açıklandıktan sonra derslik ve gözetmen atamaları tamamlanmalıdır.
+x094|erp_long|Kur farkı hesaplaması ay sonunda açık kalan döviz bakiyeleri üzerinden yapılır.
+x095|erp_long|Velilerin iletişim izinleri, kişisel verilerin korunması kapsamında ayrıca kaydedilmektedir.
+x096|erp_long|Arızalı demirbaşlar için açılan servis talepleri teknik birim tarafından önceliklendirilir.
+x097|erp_long|Öğrenci başarı raporu, dönem boyunca alınan tüm sınav notlarının ortalamasını gösterir.
+x098|erp_long|İhracat faturalarında döviz cinsi ve gümrük bilgileri eksiksiz olarak girilmelidir.
+x099|erp_long|Kurs kayıtları kontenjan dolduğunda otomatik olarak bekleme listesine alınmaktadır.
+x100|erp_long|Personelin eğitim sertifikaları özlük dosyasına taranarak eklenmeli ve güncel tutulmalıdır.
+x101|erp_long|Müşteri cari kartında tanımlı vade süresi siparişlerde varsayılan olarak kullanılır.
+x102|erp_long|Kayıt yenileme dönemi bittiğinde ödeme yapmayan velilere ikinci hatırlatma gönderilecektir.
+x103|erp_long|Depo yerleşim planı, ürünlerin raf ve göz bilgilerine göre sistemde tanımlanmıştır.
+x104|erp_long|Ödül ve disiplin kayıtları öğrenci dosyasında ayrı bir sekmede gösterilmektedir.
+x105|erp_long|Gelen havale bilgisi açıklama alanındaki öğrenci numarasına göre otomatik eşleştirilir.
+x106|erp_long|Dönem sonu stok sayımı tamamlanmadan maliyet raporları kesinleşmiş sayılmaz.
+x107|erp_long|Okul yönetimi, haftalık doluluk raporunu her cuma öğleden sonra incelemektedir.
+x108|erp_long|Sipariş onay süreci, tutar sınırına göre bir veya iki yönetici onayı gerektirir.
+x109|erp_long|Öğretmenler ödev teslim durumlarını sınıf listesi ekranından topluca güncelleyebilir.
+x110|erp_long|Ticari kart bakiyeleri dönem sonunda müşterilere mutabakat mektubu ile bildirilir.
+x111|erp_long|Engelli öğrenciler için hazırlanan bireysel eğitim planları rehberlik servisinde saklanır.
+x112|erp_long|Ürün barkodları, mal kabul sırasında el terminali ile okutularak sisteme girilir.
+x113|erp_long|Yeni personel işe başladığında bilgi işlem birimine otomatik bir görev kaydı açılır.
+x114|erp_long|Taksitli satışlarda her taksit için ayrı bir vade tarihi ve tutar oluşturulur.
+x115|erp_long|Velilere gönderilen anketlerin sonuçları okul yönetimine özet rapor olarak sunulur.
+x116|erp_long|Yetkisiz giriş denemeleri sistem kayıtlarında tutulur ve yöneticilere bildirilir.
+x117|erp_long|Muhasebe kayıtları, fiş türüne göre ayrı numara serileriyle takip edilmektedir.
+x118|erp_long|Bahar dönemi ders kayıtları ocak ayının son haftasında başlayacaktır.
+x119|erp_long|İnsan kaynakları modülünde açık pozisyonlar ve başvuru durumları birlikte izlenebilir.
+x120|erp_long|Fatura kesilmeyen sevkiyatlar ay sonunda ayrı bir rapor halinde muhasebeye bildirilir.
+x121|erp_long|Öğrencilerin servis kullanım bilgileri ödeme planındaki servis ücretiyle eşleştirilir.
+x122|erp_long|Kalite kontrol sonuçları olumsuz olan partiler satışa açılmadan bloke edilir.
+x123|erp_long|Danışman öğretmen, öğrencinin devamsızlık durumunu haftalık olarak veliye bildirmelidir.
+x124|erp_long|Bütçe revizyonu talepleri yalnızca mali işler müdürünün onayıyla sisteme işlenebilir.
+x125|erp_long|Satın alınan ürünlerin garanti süreleri demirbaş kartında ayrıca belirtilmelidir.
+x126|erp_long|Mezuniyet töreni için katılım listesi öğrenci işleri tarafından hazırlanmaktadır.
+x127|erp_long|Kullanıcı oturumu belirli bir süre işlem yapılmadığında güvenlik nedeniyle kapatılır.
+x128|erp_long|Satış iadeleri onaylanmadan müşteri hesabına alacak kaydı oluşturulamaz.
+x129|erp_long|Okul öncesi sınıflarda günlük beslenme ve uyku bilgileri velilerle paylaşılmaktadır.
+x130|erp_long|Kesilen faturalar, gün sonunda toplu olarak elektronik ortamda gönderilmektedir.
+x131|erp_long|Yıllık izin talebi onaylandığında çalışanın kalan izin günü sistemde güncellenir.
+x132|erp_long|Ürün grubu bazında hazırlanan karlılık raporu satış yönetimine her ay sunulur.
+x133|erp_long|Destek talepleri öncelik seviyesine göre sıralanarak ilgili uzmana atanmaktadır.
+x134|erp_long|Öğrenci kayıt sözleşmesi imzalanmadan ilk taksit tahsil edilmemelidir.
+x135|erp_long|Gider tahakkukları ay sonunda tahmini tutarlar üzerinden muhasebeleştirilir.
+x136|erp_long|Kayıp eşya bildirimleri güvenlik biriminde kayıt altına alınarak sahiplerine duyurulur.
+x137|erp_long|Tedarikçi sözleşmelerinde belirtilen fiyatlar sipariş ekranında otomatik olarak getirilir.
+x138|erp_long|Sınıf geçme durumları, yıl sonu notları girildikten sonra sistem tarafından hesaplanır.
+x139|erp_long|Merkez depodan şubelere yapılan sevkiyatlar transfer fişi ile takip edilmektedir.
+x140|erp_long|Velinin birden fazla telefon numarası varsa öncelikli numara ayrıca işaretlenmelidir.
+x141|erp_long|Toplu not girişi için hazırlanan şablon dosyası öğretmenlerin kullanımına açılmıştır.
+x142|erp_long|Satıcı faturalarındaki vergi tutarları beyanname öncesinde ayrıca kontrol edilmelidir.
+x143|erp_long|Okul bahçesindeki onarım çalışmaları nedeniyle teneffüsler spor salonunda yapılacaktır.
+x144|erp_long|Fiyat farkı faturaları, ilgili orijinal fatura numarası belirtilerek düzenlenmelidir.
+x145|erp_long|Öğrenci velisinin değişmesi durumunda eski velinin sistem erişimi derhal kapatılır.
+x146|erp_long|Gelecek dönem için hazırlanan nakit akış tahmini haftalık olarak güncellenmektedir.
+x147|erp_long|Eğitim materyalleri sipariş edilmeden önce zümre öğretmenlerinin görüşü alınır.
+x148|erp_long|Hatalı girilen stok kodları düzeltilmeden sayım sonuçları sisteme aktarılamaz.
+x149|erp_long|Akşam etütlerine katılan öğrencilerin listesi nöbetçi öğretmene her gün iletilir.
+x150|erp_long|Kayıtlı kullanıcıların son giriş tarihleri yönetim panelinden görüntülenebilir.
+x151|erp_long|Şirket araçlarının yakıt giderleri plaka bazında aylık olarak raporlanmaktadır.
+x152|erp_long|Öğretmen değerlendirme anketleri dönem sonunda öğrencilerin erişimine açılacaktır.
+x153|erp_long|Kısmi teslim edilen siparişlerde kalan miktar açık sipariş olarak izlenmeye devam eder.
+x154|erp_long|Yardımcı personelin vardiya planları her ayın son haftasında yayınlanmaktadır.
+x155|erp_long|Gelen evraklar taranarak ilgili birimin dijital arşiv klasörüne kaydedilir.
+x156|erp_long|Kayıtlı öğrencilerin adres bilgileri servis planlaması için düzenli olarak güncellenir.
+x157|erp_long|Mali tablolar bağımsız denetim öncesinde muhasebe müdürü tarafından gözden geçirilir.
+x158|erp_long|Yaz okulu başvuruları haziran ayının ilk haftasında çevrim içi olarak alınacaktır.
+x159|erp_long|Müşteri temsilcisi değiştiğinde açık teklifler yeni temsilciye otomatik devredilir.
+x160|erp_long|Laboratuvar dersleri için malzeme talepleri en az bir hafta önceden girilmelidir.
+x161|erp_long|Banka komisyon giderleri her ay sonunda ilgili gider hesabına aktarılmaktadır.
+x162|erp_long|Öğrencinin daha önce aldığı burs bilgileri yeni başvuru değerlendirmesinde dikkate alınır.
+x163|erp_long|Ambalaj malzemeleri stokları üretim planına göre her hafta yeniden hesaplanır.
+x164|erp_long|Sınav kağıtları değerlendirildikten sonra öğrencilere sistem üzerinden gösterilecektir.
+x165|erp_long|İşten ayrılan personelin hesapları ayrılış tarihinde sistem tarafından devre dışı bırakılır.
+x166|erp_long|Satış kampanyaları başlangıç ve bitiş tarihleri tanımlanarak sisteme girilmelidir.
+x167|erp_long|Okul hemşiresi aşı takvimini velilere yazılı bilgilendirme ile birlikte duyurmaktadır.
+x168|erp_long|Doküman yönetim sisteminde her belgenin sürüm geçmişi ayrıca saklanmaktadır.
+x169|erp_long|Tedarik süresi uzun olan ürünler için sipariş noktası daha yüksek belirlenmelidir.
+x170|erp_long|Kayıt iptali durumunda ödenen tutarın iadesi sözleşme koşullarına göre hesaplanır.
+x171|erp_long|Görev tanımları güncellendiğinde ilgili personel sistem üzerinden bilgilendirilmektedir.
+x172|erp_long|Müşteri bazında indirim oranları yalnızca satış müdürü tarafından değiştirilebilir.
+x173|erp_long|Sınıf öğretmenleri veli görüşmelerinin özetini görüşme sonrasında sisteme kaydetmelidir.
+x174|erp_long|Gecikme faizi, vadesi geçen tutarlar için gün sayısına göre otomatik olarak hesaplanır.
+x175|erp_long|Kırtasiye siparişleri her birimin talepleri birleştirilerek tek seferde verilmektedir.
+x176|erp_long|Ders yoklamaları alınmadan öğretmenin günlük ders kaydı tamamlanmış sayılmaz.
+x177|erp_long|Sevkiyat sırasında oluşan hasarlar için sigorta şirketine tutanak ile bildirim yapılır.
+x178|erp_long|Öğrenci velileri, mobil uygulama üzerinden ödeme geçmişlerini görüntüleyebilmektedir.
+x179|erp_long|Yeni ürün kartı açılırken ölçü birimi ve vergi oranı mutlaka seçilmelidir.
+x180|erp_long|Okul kütüphanesine bağışlanan kitaplar envantere kaydedildikten sonra rafa yerleştirilir.
+x181|erp_long|Toplantı tutanakları, katılımcıların onayından sonra ortak klasörde paylaşılmaktadır.
+x182|erp_long|Taşeron firmalarla yapılan sözleşmelerin teminat mektupları ayrıca takip edilmelidir.
+x183|erp_long|Hazırlık sınıfı öğrencilerinin seviye tespit sınavı eylül ayının ilk günü yapılacaktır.
+x184|erp_long|Ödeme planı değiştirildiğinde veliye güncel taksit tablosu e-posta ile gönderilir.
+x185|erp_long|Fiziksel stok ile sistem stoğu arasındaki farklar sayım raporunda ayrıca gösterilir.
+x186|erp_long|Kayıt ekranındaki zorunlu alanlar kırmızı yıldız işaretiyle belirtilmektedir.
+x187|erp_long|Satın alma talepleri, bütçe kalemi seçilmeden onay sürecine gönderilemez.
+x188|erp_long|Öğrenci kulüplerinin yıllık faaliyet planları ekim ayı sonuna kadar teslim edilmelidir.
+x189|erp_long|Kredi limitini aşan müşterilerin siparişleri finans biriminin onayına düşmektedir.
+x190|erp_long|Okul binasındaki enerji tüketimi aylık olarak teknik birim tarafından raporlanır.
+x191|erp_long|Yeni dönemde kullanılacak ders kitaplarının listesi velilere ağustos ayında duyurulacaktır.
+x192|erp_long|Personelin kıdem bilgileri, tazminat hesaplamasında esas alınmak üzere sistemde tutulur.
+x193|erp_long|Bekleyen onaylar ekranı, yöneticinin onayını bekleyen tüm belgeleri bir arada gösterir.
+x194|erp_long|Velilerin sisteme kayıtlı e-posta adresleri yılda bir kez doğrulama için kontrol edilir.
+x195|erp_long|Hammadde fiyatlarındaki artış ürün maliyet kartlarına ay sonunda yansıtılmaktadır.
+x196|erp_long|Öğrencilerin kütüphane borçları mezuniyet işlemlerinden önce kapatılmalıdır.
+x197|erp_long|Gün sonu raporu, kasada bulunan nakit ve kredi kartı tahsilatlarını ayrı ayrı listeler.
+x198|erp_long|Yetki değişiklikleri, bilgi güvenliği politikası gereğince kayıt altına alınmaktadır.
+x199|erp_long|Sınav salonlarına yerleştirme listesi sınavdan iki gün önce öğrencilere duyurulur.
+x200|erp_long|Dönem içinde açılan yeni şubelerin hesap kodları merkezden tanımlanmaktadır.
+x201|general_long|Bu sabah trafik çok yoğun olduğu için toplantıya biraz geç kalabilirim.
+x202|general_long|Hafta sonu yapılacak bakım çalışması sırasında sisteme erişim mümkün olmayacaktır.
+x203|general_long|Yeni çalışma arkadaşımız önümüzdeki pazartesi günü ekibimize katılacak.
+x204|general_long|Kış aylarında okul binasının ısıtma sistemi sabah altıda çalıştırılmaktadır.
+x205|general_long|Eğitim seminerine katılmak isteyen öğretmenlerin isimlerini cuma gününe kadar bekliyoruz.
+x206|general_long|Ofisin ikinci katındaki toplantı salonu bu hafta boyunca tadilatta olacak.
+x207|general_long|Yarın yapılacak tatbikat sırasında tüm personelin bina dışına çıkması gerekmektedir.
+x208|general_long|Proje ekibi, ilk teslimatı planlanan tarihten bir hafta önce tamamlamayı hedefliyor.
+x209|general_long|Okulumuzun bahar şenliği bu yıl mayıs ayının son cumartesi günü yapılacak.
+x210|general_long|Yaz tatili boyunca sınıfların boyası yenilenecek ve sıralar değiştirilecektir.
+x211|general_long|Öğle arasında kantinin önünde uzun kuyruklar oluştuğu için yeni bir kasa açıldı.
+x212|general_long|Sunum dosyasını toplantıdan önce tüm katılımcılarla paylaşmayı unutmayalım.
+x213|general_long|Şehirlerarası yolculuk yapacak personelin otel rezervasyonları idari işler tarafından yapılır.
+x214|general_long|Kar yağışı nedeniyle yarın okullar yarım gün eğitim yapacaktır.
+x215|general_long|Müşterimizle yapılan görüşme oldukça olumlu geçti ve yeni bir anlaşma imzalandı.
+x216|general_long|Bilgi işlem ekibi, yeni bilgisayarların kurulumunu bu hafta içinde tamamlayacak.
+x217|general_long|Öğrencilerimiz bilim olimpiyatlarında bölge birinciliği kazanarak okulumuzu gururlandırdı.
+x218|general_long|Ofis taşınması sırasında tüm dosyaların etiketlenmiş kutulara yerleştirilmesi gerekiyor.
+x219|general_long|Akşam saatlerinde yapılan veli seminerine beklenenden çok daha fazla katılım oldu.
+x220|general_long|Yeni yazılım sürümü kullanıcıların geri bildirimleri dikkate alınarak hazırlandı.
+x221|general_long|Bahçedeki ağaçların budanması için belediyeden izin alınması gerekmektedir.
+x222|general_long|Satış ekibimiz bu çeyrekte belirlenen hedeflerin üzerinde bir performans gösterdi.
+x223|general_long|Müzik öğretmenimiz okul korosu için yeni öğrenci seçmeleri yapacağını duyurdu.
+x224|general_long|Toplantı odası rezervasyonları ortak takvim üzerinden yapılmaya devam edecektir.
+x225|general_long|Fuar standımız için gerekli malzemeler önceki gün akşamdan hazırlanmalıdır.
+x226|general_long|Öğrenciler müze gezisinden sonra gördükleri eserler hakkında kısa bir rapor yazacaklar.
+x227|general_long|Elektrik kesintisi nedeniyle sunucular jeneratör ile birkaç saat çalıştırıldı.
+x228|general_long|Yeni ofis düzeninde her ekip kendi çalışma alanını kendisi belirleyebilecek.
+x229|general_long|Spor salonunun zemini yenilendiği için beden eğitimi dersleri bahçede yapılıyor.
+x230|general_long|Kurumsal web sitemizin yeni tasarımı önümüzdeki ay yayına alınacaktır.
+x231|general_long|Şirketimizin kuruluş yıl dönümü için küçük bir kutlama programı hazırlanıyor.
+x232|general_long|Okul gazetesinin yeni sayısı öğrencilerin yazdığı hikayelerle birlikte basıldı.
+x233|general_long|Uzaktan çalışma günlerinde de ekip toplantılarına kamerayla katılmak gerekiyor.
+x234|general_long|Bu yılki kitap fuarında okulumuzun öğrencileri kendi yazdıkları kitapları imzaladı.
+x235|general_long|Güvenlik görevlisi, akşam altıdan sonra binaya girişleri kayıt altına almaktadır.
+x236|general_long|Kurum içi eğitimlere katılan çalışanlara dönem sonunda sertifika verilecektir.
+x237|general_long|Tiyatro kulübü yıl sonu gösterisi için haftada iki gün prova yapıyor.
+x238|general_long|Yeni gelen yazıcılar her katın koridorundaki ortak alana yerleştirildi.
+x239|general_long|Tatil dönüşünde öğrencilerin uyum sağlaması için ilk hafta hafif bir program uygulanacak.
+x240|general_long|Arşiv odasındaki eski belgeler dijital ortama aktarıldıktan sonra imha edilecektir.
+x241|general_long|Kahve makinesi arızalandığı için teknik servis yarın sabah gelecek.
+x242|general_long|Bölge müdürümüz gelecek hafta şubeleri ziyaret ederek çalışanlarla görüşecek.
+x243|general_long|Okul bahçesine yeni oturma bankları ve gölgelik alanlar yapılması planlanıyor.
+x244|general_long|Yıl sonu değerlendirme toplantısında başarılı projeler tek tek ele alındı.
+x245|general_long|Bu yıl ilk kez düzenlenen robotik yarışmasına on iki takım katıldı.
+x246|general_long|Ekip liderleri haftalık raporlarını her cuma öğlene kadar göndermelidir.
+x247|general_long|Öğrenciler sonbahar döneminde yerel bir yardım kuruluşu için kampanya düzenledi.
+x248|general_long|Toplantı sırasında alınan kararlar katılımcılara yazılı olarak iletilecektir.
+x249|general_long|Kampüsteki otopark alanı genişletildiği için artık daha fazla araç park edebilecek.
+x250|general_long|Yeni başlayan stajyerler ilk hafta boyunca farklı departmanları tanıyacaklar.
+x251|general_long|Yağmurlu havalarda öğrenciler teneffüslerini kapalı spor salonunda geçirmektedir.
+x252|general_long|Kurumumuzun sosyal sorumluluk projesi yerel basında geniş yer buldu.
+x253|general_long|Bilgisayar laboratuvarındaki cihazlar yaz tatilinde tamamen yenilenecektir.
+x254|general_long|Müşteri memnuniyeti anketinin sonuçları bir sonraki yönetim toplantısında paylaşılacak.
+x255|general_long|Okulumuzdaki satranç turnuvasına bu yıl her sınıftan en az iki öğrenci katıldı.
+x256|general_long|Pazartesi sabahı yapılacak genel toplantıya tüm birim yöneticilerinin katılması bekleniyor.
+x257|general_long|Ofis malzemelerinin daha verimli kullanılması için yeni bir düzenleme yapıldı.
+x258|general_long|Mezunlarımızın bir kısmı bu yıl okulumuzda kariyer günü etkinliğine konuşmacı olarak katıldı.
+x259|general_long|Çalışma saatleri dışında gelen acil talepler nöbetçi ekip tarafından karşılanmaktadır.
+x260|general_long|Öğretmenler odasındaki dolaplar her öğretmene ayrı ayrı tahsis edilmiştir.
+x261|general_long|Yeni hizmet binasının açılış töreni önümüzdeki ayın ilk haftasında yapılacak.
+x262|general_long|Kış döneminde servis saatleri hava koşullarına göre değişiklik gösterebilir.
+x263|general_long|Çevre kulübü üyeleri okul bahçesine elli fidan dikerek ağaçlandırma çalışması yaptı.
+x264|general_long|Ekibimizin hazırladığı rapor yönetim kurulu tarafından çok beğenildi.
+x265|general_long|Yangın söndürme tüplerinin kontrolü her altı ayda bir düzenli olarak yapılmaktadır.
+x266|general_long|Bu dönem açılan yabancı dil kurslarına öğrencilerden büyük ilgi gösterildi.
+x267|general_long|Personel servisinin güzergahı yol çalışmaları nedeniyle geçici olarak değiştirildi.
+x268|general_long|Okulumuzun basketbol takımı il şampiyonasında finale yükselmeyi başardı.
+x269|general_long|Kurum içi iletişimi güçlendirmek için aylık bir bülten hazırlanmaya başlandı.
+x270|general_long|Toplantı odasındaki ekranın bağlantı kablosu bilgi işlem biriminden temin edilebilir.
+x271|general_long|Bayram tatili nedeniyle kargo teslimatlarında birkaç günlük gecikme yaşanabilir.
+x272|general_long|Öğrencilerimiz bu yıl ilk kez uluslararası bir öğrenci değişim programına katılacak.
+x273|general_long|Ofisteki bitkilerin bakımı her hafta dönüşümlü olarak farklı bir ekip tarafından yapılıyor.
+x274|general_long|Hafta içi akşamları düzenlenen kurslar çalışan velilerin katılımı için planlandı.
+x275|general_long|Şirketimiz bu yıl yenilenebilir enerji kullanımını önemli ölçüde artırmayı hedefliyor.
+x276|general_long|Okulun giriş kapısındaki güvenlik kontrolü sabah saatlerinde daha sıkı yapılmaktadır.
+x277|general_long|Yeni ürün tanıtımı için hazırlanan videolar sosyal medya hesaplarımızda yayınlandı.
+x278|general_long|Bahar şenliğinde öğrencilerin hazırladığı yiyecekler hayır amaçlı olarak satıldı.
+x279|general_long|Kurum içi yazışmalarda resmi şablonların kullanılmasına özen gösterilmelidir.
+x280|general_long|Bu yıl öğretmenlerimiz için mesleki gelişim programı üç ayrı modül halinde hazırlandı.
+x281|general_long|Yaz aylarında çalışma saatleri sabah sekizden öğleden sonra dörde kadar uygulanacak.
+x282|general_long|Okul kütüphanesinin çalışma saatleri sınav haftalarında akşam yediye kadar uzatıldı.
+x283|general_long|İş güvenliği eğitimi tüm yeni çalışanlar için ilk gün zorunlu olarak verilmektedir.
+x284|general_long|Öğrencilerin hazırladığı bilim projeleri spor salonunda sergilenecek.
+x285|general_long|Şirket yemekhanesinde vejetaryen menü seçeneği de sunulmaya başlandı.
+x286|general_long|Yeni dönemde okulumuza üç yeni öğretmen ve bir rehber öğretmen katılıyor.
+x287|general_long|Proje teslim tarihi müşterinin talebi üzerine iki hafta ileriye ertelendi.
+x288|general_long|Okul önündeki yaya geçidi için belediyeye yeni bir trafik ışığı talebi iletildi.
+x289|general_long|Kurumumuz kalite belgesini yeniden almak için denetim sürecine hazırlanıyor.
+x290|general_long|Müzik odasındaki piyanonun akordu yaz tatili başlamadan önce yapılacak.
+x291|general_long|Departman toplantılarının süresi verimliliği artırmak için bir saatle sınırlandırıldı.
+x292|general_long|Okulumuzun web sitesinde etkinlik takvimi her hafta düzenli olarak güncellenmektedir.
+x293|general_long|Yeni çalışanlar için hazırlanan oryantasyon kitapçığı insan kaynaklarından alınabilir.
+x294|general_long|Hava kirliliğinin arttığı günlerde açık hava etkinlikleri iptal edilmektedir.
+x295|general_long|Ekip ruhunu güçlendirmek amacıyla bu ay bir doğa yürüyüşü düzenlenecek.
+x296|general_long|Öğrenci meclisi seçimleri ekim ayının üçüncü haftasında gerçekleştirilecektir.
+x297|general_long|Yeni ofis telefonlarının kullanım kılavuzu ortak klasöre yüklendi.
+x298|general_long|Mezuniyet yıllığı için fotoğraf çekimleri nisan ayı boyunca devam edecek.
+x299|general_long|Toplantı salonunun klima sistemi bakımdan sonra tekrar kullanıma açıldı.
+x300|general_long|Bölgemizdeki diğer okullarla ortak bir kültür ve sanat festivali planlanıyor.
+x301|number_long|Bu dönem toplam 1.284 öğrencinin kayıt yenileme işlemi tamamlandı.
+x302|number_long|Ekim ayında kesilen faturaların toplam tutarı 2.450.000 TL'ye ulaştı.
+x303|number_long|Personel servisi her sabah saat 07:15'te ana kampüsten hareket etmektedir.
+x304|number_long|Velilerin yüzde altmış ikisi ödemelerini kredi kartı ile yapmayı tercih etti.
+x305|number_long|Depoda bulunan 350 adet ürünün son kullanma tarihi önümüzdeki ay doluyor.
+x306|number_long|İkinci taksitin son ödeme günü 10 Kasım 2026 olarak belirlenmiştir.
+x307|number_long|Okulumuzun bu yılki mezun sayısı geçen yıla göre %12 oranında arttı.
+x308|number_long|Muhasebe biriminde şu anda onay bekleyen 47 adet ödeme talebi bulunuyor.
+x309|number_long|Kantinde yapılan günlük satışların ortalaması 3.800 TL civarında seyrediyor.
+x310|number_long|Yeni dönem ders ücretleri %18 artışla sisteme tanımlanacaktır.
+x311|number_long|Kütüphanemizde şu anda 11.800 kitap ve 340 süreli yayın bulunmaktadır.
+x312|number_long|Haftalık ders programında her sınıf için toplam 40 ders saati planlandı.
+x313|number_long|Bu ay işe alınan 8 personelin bordro kayıtları sisteme girilmiştir.
+x314|number_long|Servis ücretleri 1 Ocak 2027 tarihinden itibaren yeniden düzenlenecektir.
+x315|number_long|Geçen çeyrekte müşteri şikayetlerinin sayısı %30 oranında azaldı.
+x316|number_long|Okul aile birliği toplantısı 24 Ekim cumartesi günü saat 11:00'de yapılacak.
+x317|number_long|Toplam 26 tedarikçiden alınan teklifler karşılaştırma tablosunda listelendi.
+x318|number_long|Depo kapasitesinin %85'i dolduğunda yöneticilere otomatik uyarı gönderilir.
+x319|number_long|Dönem sonu sınavları 5 Ocak tarihinde başlayıp iki hafta sürecektir.
+x320|number_long|Yıllık bakım sözleşmesinin bedeli 96.000 TL olarak kararlaştırıldı.
+x321|number_long|Bu hafta toplam 215 öğrenci revirde muayene edildi ve kayıtları tutuldu.
+x322|number_long|Satış ekibimiz geçen ay 1.120 yeni sipariş alarak rekor kırdı.
+x323|number_long|Öğle yemeği servisi her gün saat 12:10 ile 13:30 arasında verilmektedir.
+x324|number_long|Bu yıl burs alan öğrenci sayısı toplam öğrencilerin %9'una ulaştı.
+x325|number_long|Peşin ödeme yapan velilere toplam ücret üzerinden %7 indirim uygulanır.
+x326|number_long|Kasım ayında gerçekleşen elektrik gideri 18.430 TL olarak kaydedildi.
+x327|number_long|Bilgi işlem birimi bu ay toplam 164 destek talebini sonuçlandırdı.
+x328|number_long|Kayıt döneminde günlük ortalama 60 veli ile ön görüşme yapıldı.
+x329|number_long|Yeni alınan 25 dizüstü bilgisayar öğretmenlere zimmetlenerek teslim edildi.
+x330|number_long|Fabrikadaki üretim hattı haftada 6 gün ve günde 2 vardiya çalışmaktadır.
+x331|number_long|Okul servislerimiz her gün toplam 480 öğrenciyi evlerinden almaktadır.
+x332|number_long|Tahsil edilemeyen alacakların toplamı yıl sonunda 215.000 TL'ye ulaştı.
+x333|number_long|Bu dönem açılan yaz okulu programına 75 öğrenci başvurdu.
+x334|number_long|Yapılan anket sonucunda velilerin %91'i okulumuzdan memnun olduğunu belirtti.
+x335|number_long|Personel eğitimleri için bu yıl ayrılan bütçe 120.000 TL olarak planlandı.
+x336|number_long|Mart ayında stoktan çıkışı yapılan ürün sayısı 2.760 adede ulaştı.
+x337|number_long|Veli toplantıları 3 Şubat ile 7 Şubat tarihleri arasında yapılacaktır.
+x338|number_long|Ortalama teslim süresi yeni depo düzeniyle 4 günden 2 güne indi.
+x339|number_long|Okulumuzda bu yıl toplam 52 farklı kulüp faaliyeti yürütülmektedir.
+x340|number_long|Ödeme planındaki taksit sayısı en fazla 10 olacak şekilde sınırlandırıldı.
+x341|number_long|Muhasebe kayıtlarında tespit edilen 14 hatalı fiş düzeltilerek yeniden onaylandı.
+x342|number_long|Bu yıl kampüse toplam 1.600 metrekarelik yeni bir spor alanı eklendi.
+x343|number_long|Sabah servisinin okula varış saati 08:05 olarak güncellendi.
+x344|number_long|Yıllık izin hakkı 5 yılı dolduran personel için 20 gün olarak uygulanır.
+x345|number_long|Ekim ayında toplam 38 yeni müşteri kartı açıldı ve onaylandı.
+x346|number_long|Laboratuvar malzemeleri için ayrılan 45.000 TL'lik bütçenin yarısı kullanıldı.
+x347|number_long|Bu dönem öğretmen başına düşen ortalama öğrenci sayısı 16 oldu.
+x348|number_long|Fatura tarihinden itibaren 30 gün içinde yapılmayan ödemelere gecikme faizi uygulanır.
+x349|number_long|Okulumuzun kayıt kapasitesi bu yıl 900 öğrenciden 1.050 öğrenciye çıkarıldı.
+x350|number_long|Yemekhanede günde ortalama 1.400 öğün yemek servis edilmektedir.
+x351|number_long|Haziran ayının 20'sinde karneler dağıtılacak ve yaz tatili başlayacaktır.
+x352|number_long|Yeni depo binasının inşaatı %70 oranında tamamlanmış durumdadır.
+x353|number_long|Bu yıl açılan 4 yeni şubeyle birlikte toplam şube sayımız 22'ye ulaştı.
+x354|number_long|Aylık kırtasiye giderleri ortalama 6.200 TL seviyesinde gerçekleşmektedir.
+x355|number_long|Kış döneminde okul saat 08:40'ta başlayıp 15:20'de sona erecektir.
+x356|number_long|İlk dönem sonunda öğrencilerin genel not ortalaması 78,4 olarak hesaplandı.
+x357|number_long|Ticari araç filomuzdaki 17 aracın sigorta poliçeleri yenilendi.
+x358|number_long|Bu yıl düzenlenen bilim fuarında 63 öğrenci projesi sergilendi.
+x359|number_long|Ödenmemiş 3 aylık aidatlar için velilere ikinci ihtar mektubu gönderildi.
+x360|number_long|Eylül ayında yapılan kayıtların %40'ı çevrim içi başvuru ile tamamlandı.
+x361|question_long|Bu ayın bordro hesaplamaları tamamlandıktan sonra ödeme dosyasını kim onaylayacak?
+x362|question_long|Veli toplantısının tarihini değiştirmek için hangi birimle iletişime geçmeliyim?
+x363|question_long|Öğrencinin ödeme planındaki taksit sayısını sonradan artırmak mümkün müdür?
+x364|question_long|Depoda eksik çıkan ürünler için stok düzeltme fişini kimin onaylaması gerekiyor?
+x365|question_long|Kayıt yenileme işlemini çevrim içi olarak tamamlayamayan veliler ne yapmalı?
+x366|question_long|Satın alma talebimin hangi onay aşamasında beklediğini nereden görebilirim?
+x367|question_long|Geçmiş dönemlere ait not çizelgelerine sistem üzerinden ulaşabilir miyiz?
+x368|question_long|Müşterinin risk limitini geçici olarak yükseltmek için kimden onay almalıyım?
+x369|question_long|Servis güzergahında yapılan değişiklik velilere ne zaman bildirilecek?
+x370|question_long|Yıllık izin talebimi onaylandıktan sonra iptal etmek mümkün olur mu?
+x371|question_long|Yeni personelin sisteme erişim yetkileri hangi tarihte tanımlanmış olacak?
+x372|question_long|Sınav sonuçlarına itiraz etmek isteyen öğrenciler başvurularını nereye yapmalı?
+x373|question_long|Tedarikçiden gelen faturada fiyat farkı olduğunda nasıl bir yol izlemeliyiz?
+x374|question_long|Kardeş indirimi her iki öğrencinin ödeme planına da uygulanıyor mu?
+x375|question_long|Dönem sonu kapanış işlemleri başlamadan önce hangi raporları kontrol etmeliyiz?
+x376|question_long|Velinin telefon numarası değiştiğinde bu bilgiyi kim güncelleyebilir?
+x377|question_long|Hatalı kesilen bir satış faturasını iptal etmek için hangi adımları izlemeliyim?
+x378|question_long|Öğrenci nakil belgeleri diğer okula hangi yolla gönderilmektedir?
+x379|question_long|Fazla mesai talepleri bordroya yansıtılmadan önce kim tarafından kontrol ediliyor?
+x380|question_long|Kütüphaneden alınan kitabın süresini sistem üzerinden uzatabilir miyim?
+x381|question_long|Kampanya kapsamında verilen indirimler hangi tarihe kadar geçerli olacak?
+x382|question_long|Toplu ödeme dosyasında hata çıkarsa bankaya yeniden gönderim nasıl yapılır?
+x383|question_long|Bekleyen siparişlerin teslim tarihlerini müşteriye kim bildirecek?
+x384|question_long|Ders programında yapılan değişiklikler öğretmenlere otomatik olarak bildiriliyor mu?
+x385|question_long|Kasa sayımında fark çıktığında tutanağı kimin imzalaması gerekiyor?
+x386|question_long|Rehberlik servisinden randevu almak için veliler hangi ekranı kullanmalı?
+x387|question_long|Demirbaş kartı açılmadan satın alınan cihaz kullanıma verilebilir mi?
+x388|question_long|Mezun öğrencinin transkript talebi kaç iş günü içinde hazırlanmaktadır?
+x389|question_long|Bütçesi aşılan bir masraf merkezinden yeni harcama yapılmasına izin veriliyor mu?
+x390|question_long|Yeni dönem ücret tarifesi velilere hangi kanallar üzerinden duyurulacak?
+x391|question_long|Hatalı girilen devamsızlık kaydını öğretmen kendisi düzeltebiliyor mu?
+x392|question_long|İade edilen ürünler için müşteriye alacak dekontu ne zaman gönderilecek?
+x393|question_long|Banka hareketleriyle eşleşmeyen tahsilatlar hangi listede takip ediliyor?
+x394|question_long|Burs başvurusu reddedilen öğrencilerin velilerine gerekçe bildiriliyor mu?
+x395|question_long|Sistem bakım çalışması sırasında acil işlemler için hangi yol izlenecek?
+x396|question_long|Geçici şifre ile giriş yapan kullanıcıdan şifre değişikliği isteniyor mu?
+x397|question_long|Teklif süresi dolmuş bir teklifi yeniden geçerli hale getirmek mümkün mü?
+x398|question_long|Öğle yemeği menüsündeki değişiklikler velilere önceden haber veriliyor mu?
+x399|question_long|Yıl sonu stok sayımı için depolar hangi tarihte işlemlere kapatılacak?
+x400|question_long|Yeni açılan şubenin hesap kodlarını tanımlama yetkisi kimde bulunuyor?

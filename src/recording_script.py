@@ -13,14 +13,19 @@ Checks (non-zero exit on any hard failure):
   - characters with no mapping into the model vocabulary
 Also reports estimated duration and letter coverage.
 
+Also used for the synthetic-data source sentences (group B):
+    python src/recording_script.py --sentences recording/synthetic_sentences.txt         --out recording/synthetic_script.tsv --also-check recording/pilot_sentences.txt
+
 Usage:
     python src/recording_script.py
 """
 
+import argparse
 import csv
 import json
 import sys
 from collections import Counter
+from pathlib import Path
 
 import config
 import text_normalizer
@@ -35,20 +40,34 @@ TURKISH_LETTERS = "abcçdefgğhıijklmnoöprsştuüvyz"
 
 
 def main() -> int:
+    p = argparse.ArgumentParser(description="Normalize and check a sentence list into a script TSV")
+    p.add_argument("--sentences", type=Path, default=config.PILOT_SENTENCES_PATH)
+    p.add_argument("--out", type=Path, default=config.PILOT_SCRIPT_PATH)
+    p.add_argument("--also-check", type=Path, action="append", default=[],
+                   help="other sentence file whose sentences and ids must not be duplicated")
+    args = p.parse_args()
+
     with open(config.FREYATTS_VOCAB_PATH, encoding="utf-8") as f:
         vocab = json.load(f)
 
-    sentences = load_sentences(config.PILOT_SENTENCES_PATH)
+    sentences = load_sentences(args.sentences)
     leak_checker = EvalLeakChecker()
 
     rows, errors = [], []
     seen: dict[str, str] = {}
+    other_ids = set()
+    for other in args.also_check:
+        for s in load_sentences(other):
+            seen[text_normalizer.normalize(s.text).lower()] = f"{other.name}:{s.sentence_id}"
+            other_ids.add(s.sentence_id)
     letters = Counter()
     total_s = 0.0
     for s in sentences:
         read_text = text_normalizer.normalize(s.text)
         train_text = tts_engine.fit_to_vocab(read_text, vocab)
         key = read_text.lower()
+        if s.sentence_id in other_ids:
+            errors.append(f"{s.sentence_id}: id already used in --also-check file")
 
         leak = leak_checker.leak(read_text)
         if leak:
@@ -74,7 +93,7 @@ def main() -> int:
             "est_seconds": f"{est_s:.1f}",
         })
 
-    with open(config.PILOT_SCRIPT_PATH, "w", newline="", encoding="utf-8-sig") as f:
+    with open(args.out, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()), delimiter="\t")
         writer.writeheader()
         writer.writerows(rows)
@@ -87,7 +106,7 @@ def main() -> int:
     print(f"Letter coverage    : {len(TURKISH_LETTERS) - len(missing)}/{len(TURKISH_LETTERS)} letters"
           + (f"; missing: {''.join(missing)}" if missing else "")
           + (f"; rare (<20): {', '.join(rare)}" if rare else ""))
-    print(f"Script written     : {config.PILOT_SCRIPT_PATH.relative_to(config.PROJECT_ROOT)}")
+    print(f"Script written     : {args.out}")
     if errors:
         print(f"\n{len(errors)} problem(s):")
         for e in errors:
