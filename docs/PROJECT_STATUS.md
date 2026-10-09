@@ -96,12 +96,21 @@ tutulur. Her faz sonunda güncellenmelidir.
   sonra ayrıca dinletilecek.
 - Karar: **fine-tuning yolu.**
 
+## Tam sentetik üretim (2026-10-09, tamamlandı)
+
+- 828 klip → 806 üretimde kabul, 10 tutarlılıkta elendi (`excluded/`),
+  **796 klip = 52,1 dk** (pilot 408 / 21,0 dk, yeni ERP 388 / 31,1 dk), 2,0 saat CPU.
+  Bir kez bellek yetersizliğinden durdu; kaldığı yerden sorunsuz devam etti.
+- Ret nedenleri: low_pitch 19 (çoğu 174–179 Hz), low_opening 6, unvoiced 3.
+- Kabul edilenlerin ölçekleri: 1.0×631, 0.9×141, 1.1×21, **1.2×3**.
+- Özet: `datasets/synthetic/generation_summary.json`.
+
 ## Buradan devam (sıradaki adım)
 
-1. Tam sentetik üretim: `python src/generate_synthetic.py` (~2–2,5 saat,
-   kaldığı yerden devam eder). Başlatıldı: 2026-10-09.
-2. 1.2 ölçekli kabul edilen klipleri kullanıcıya dinlet (konuşmacı değişimi?).
-3. Doğrulama + split, CPU eğitim parametreleri (`finetune.py --plan`) →
+1. Kullanıcı 1.2 ölçekli 3 klibi dinleyecek: `datasets/synthetic/wavs/x025.wav`,
+   `x301.wav`, `x384.wav` (diğerleriyle aynı ses mi? Değilse çıkar).
+2. `validate_dataset.py` → `split_dataset.py` (sentetik veriye uyarla).
+3. Kısa CPU hız testi + `finetune.py --plan` ile tam parametre listesi →
    **ONAY** → eğitim → `compare_models.py`.
 
 Eski pilot-kayıt akışı (referans için, artık kullanılmıyor):
