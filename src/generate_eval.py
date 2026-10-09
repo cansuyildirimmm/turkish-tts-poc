@@ -35,7 +35,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--steps", type=int, default=config.INFERENCE_STEPS)
     p.add_argument("--no-normalize", action="store_true", help="skip Turkish text normalization")
     p.add_argument("--drift-guard", action=argparse.BooleanOptionalAction, default=config.DRIFT_GUARD,
-                   help="re-synthesize drifting clauses and keep the least-drifting take")
+                   help="re-synthesize clauses that fall below DRIFT_MIN_PITCH_HZ")
     return p.parse_args()
 
 
@@ -75,6 +75,7 @@ def main() -> int:
             "inference_time_s": f"{infer_s:.2f}",
             "rtf": f"{infer_s / dur:.2f}",
             "duration_scales": " ".join(str(c["scale"]) for c in info.get("chunks", [])),
+            "chunk_min_f0_hz": " ".join(str(c["min_f0_hz"]) for c in info.get("chunks", [])),
         })
         print(f"  {s.sentence_id} [{s.category:<14}] {dur:5.2f}s audio  {infer_s:6.2f}s  RTF {infer_s / dur:.2f}")
 

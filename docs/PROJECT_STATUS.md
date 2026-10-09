@@ -1,6 +1,6 @@
 # Proje Durumu – Türkçe TTS PoC
 
-**Son güncelleme:** 2026-10-08 · **Son commit:** `5ee7cf1` · **Repo:** https://github.com/cansuyildirimmm/turkish-tts-poc
+**Son güncelleme:** 2026-10-09 · **Son commit:** bu dosyayı içeren commit · **Repo:** https://github.com/cansuyildirimmm/turkish-tts-poc
 
 Bu dosya, çalışmaya yeni bir oturumda kaldığı yerden devam edebilmek için
 tutulur. Her faz sonunda güncellenmelidir.
@@ -72,20 +72,37 @@ tutulur. Her faz sonunda güncellenmelidir.
   olabilir. Drift-guard da aynı hatalı düşüş ölçütünü kullanıyor (bu yüzden ~4x
   maliyet).
 
-## Yarın buradan devam (sıradaki adım)
+## 2026-10-09 oturumu (drift-guard ölçütü, B seçeneği)
 
-**Kullanıcı seçimi: B.** Tam sentetik üretimden ÖNCE:
-1. Drift-guard'ın kabul ölçütünü "düşüş < 4 yarım ton" yerine **"en düşük
-   pencere ≥ 180 Hz"** yap (`config.py` DRIFT_*, `tts_engine.synthesize`,
-   `voice_check`; testleri güncelle).
-2. Eval setinde (32 cümle) ölç: base (guard kapalı) vs yeni guard → kaç cümlede
-   < 180 Hz pencere kalıyor, maliyet kaç kat. 31 ve 32 numaralı cümleleri
-   kullanıcıya dinlet. (~20–30 dk CPU)
-3. Sonuca göre karar (kullanıcıya rapor + onay):
-   - guard yetiyorsa → fine-tuning gerekmeyebilir, FAZ 10'a (FastAPI) geçiş tartışılır;
-   - yetmiyorsa → tam üretim `python src/generate_synthetic.py` (~2–2,5 saat),
-     sonra doğrulama + split, CPU eğitim parametreleri (`--plan`) → **ONAY** →
-     eğitim → `compare_models.py`.
+- Drift-guard kabul ölçütü "düşüş < 4 yarım ton" yerine **"en düşük 0,5 sn
+  pencere ≥ 180 Hz"** (`config.DRIFT_MIN_PITCH_HZ`, `voice_check.take_floor`).
+  Sentetik üretim de aynı sabiti kullanıyor. 136 test geçiyor.
+- **Eval ölçümü (32 cümle, CPU):**
+
+  | | Guard kapalı | Guard (180 Hz) |
+  |---|---|---|
+  | < 180 Hz pencere | 12/32 | 4/32 (03, 26, 31, 32) |
+  | Süre | 256 sn (RTF 1,74) | 492 sn (RTF 3,36, ~1,9x) |
+
+  Çıktılar: `outputs/base_2026-10-09/`, `outputs/drift_guard_180/`.
+- 32 (96 Hz) düzelmedi: 2. parçanın 4 denemesi de < 200 Hz açılıyor
+  (kayma parçanın başında), ölçek değiştirmek işe yaramıyor. 26'nın son parçası da aynı.
+- **Dinleme (kullanıcı):** base 31 sonda erkek sesine dönüyor; guard 31'de
+  2. parça (ölçek 1.2) **başka bir kadın sesi**. Perde ölçütü konuşmacı
+  değişimini göremez → **guard çözüm değil, varsayılan kapalı kalır.**
+- **Dinleme (kullanıcı):** deneme 2'de 0.9/1.1 ölçekle kabul edilen tek
+  parçalı klipler (g028, x182, x280, x321) **aynı ses** → sentetik üretim
+  olduğu gibi kullanılabilir. 1.2 ölçekle kabul edilen klipler tam üretimden
+  sonra ayrıca dinletilecek.
+- Karar: **fine-tuning yolu.**
+
+## Buradan devam (sıradaki adım)
+
+1. Tam sentetik üretim: `python src/generate_synthetic.py` (~2–2,5 saat,
+   kaldığı yerden devam eder). Başlatıldı: 2026-10-09.
+2. 1.2 ölçekli kabul edilen klipleri kullanıcıya dinlet (konuşmacı değişimi?).
+3. Doğrulama + split, CPU eğitim parametreleri (`finetune.py --plan`) →
+   **ONAY** → eğitim → `compare_models.py`.
 
 Eski pilot-kayıt akışı (referans için, artık kullanılmıyor):
 `validate_dataset.py` → `split_dataset.py` → `prepare_latents.py` →
@@ -118,7 +135,7 @@ sentetik veri için yeniden ayarlanacak.
   venv: `.venv` (`.\.venv\Scripts\python.exe`)
 - Model dosyaları `models/` (Git dışında); FreyaTTS kaynak kodu
   `third_party/FreyaTTS` @ `146d36c` (Git dışında). Yeni makinede kurulum: README.
-- Testler: `python -m pytest tests` → 122 test geçiyor.
+- Testler: `python -m pytest tests` → 136 test geçiyor.
 
 ## Dokümanlar
 

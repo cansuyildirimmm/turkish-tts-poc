@@ -64,11 +64,7 @@ class GenThresholds:
     window_s: float = config.DRIFT_WINDOW_S
     min_opening_hz: float = config.DRIFT_MIN_OPENING_HZ
     min_voiced_ratio: float = config.DRIFT_MIN_VOICED_RATIO
-    # Lowest allowed 0.5 s window pitch. A drop from the opening pitch is NOT a
-    # criterion: listening (2026-10-08) showed 9-10 semitone falls down to ~186 Hz
-    # are natural sentence-final intonation of the same female voice. Base outputs
-    # mostly bottom out at 170-210 Hz; clear outliers sit at 96-130 Hz.
-    min_pitch_hz: float = 180.0
+    min_pitch_hz: float = config.DRIFT_MIN_PITCH_HZ
     consistency_st: float = 2.0        # clip median F0 vs the voice's overall median
     min_duration_s: float = _VT.min_duration_s
     max_duration_s: float = _VT.max_duration_s

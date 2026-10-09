@@ -137,8 +137,8 @@ def synthesize(tts, text: str, steps: int = config.INFERENCE_STEPS,
 
     Without the drift guard this is exactly FreyaTTS.synthesize. With it, each
     clause is synthesized at duration scales DRIFT_GUARD_SCALES in order until
-    its pitch drop is below DRIFT_ACCEPT_SEMITONES; the least-drifting take is
-    kept. Deterministic: same text, same output.
+    no window falls below DRIFT_MIN_PITCH_HZ; otherwise the take with the
+    highest lowest-window pitch is kept. Deterministic: same text, same output.
     """
     if not drift_guard:
         return tts.synthesize(text, steps=steps), {"drift_guard": False}
@@ -152,14 +152,14 @@ def synthesize(tts, text: str, steps: int = config.INFERENCE_STEPS,
         for scale in config.DRIFT_GUARD_SCALES:
             wav = _synth_chunk(tts, chunk, steps, scale)
             windows = voice_check.window_f0_array(wav, tts.sample_rate, config.DRIFT_WINDOW_S)
-            score = voice_check.take_score(windows, config.DRIFT_MIN_VOICED_RATIO, config.DRIFT_MIN_OPENING_HZ)
-            if best is None or score < best[0]:
-                best = (score, scale, wav)
-            if score < config.DRIFT_ACCEPT_SEMITONES:
+            floor = voice_check.take_floor(windows, config.DRIFT_MIN_VOICED_RATIO, config.DRIFT_MIN_OPENING_HZ)
+            if best is None or floor > best[0]:
+                best = (floor, scale, wav)
+            if floor >= config.DRIFT_MIN_PITCH_HZ:
                 break
         parts += [best[2].astype(np.float32), gap]
         chosen.append({"text": chunk, "scale": best[1],
-                       "pitch_drop_st": None if best[0] == float("inf") else round(best[0], 2)})
+                       "min_f0_hz": None if best[0] == 0.0 else round(best[0], 1)})
     return np.concatenate(parts[:-1]), {"drift_guard": True, "chunks": chosen}
 
 

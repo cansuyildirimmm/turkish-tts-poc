@@ -45,14 +45,14 @@ def pitch_drop(windows: list[float]) -> float | None:
     return max(12 * np.log2(ref / w) if not np.isnan(w) else 0.0 for w in windows)
 
 
-def take_score(windows: list[float], min_voiced_ratio: float, min_opening_hz: float) -> float:
-    """Pitch drop of a take, or inf if the take is mostly unvoiced or not the target voice."""
+def take_floor(windows: list[float], min_voiced_ratio: float, min_opening_hz: float) -> float:
+    """Lowest window pitch (Hz) of a take, or 0 if it is mostly unvoiced or not the target voice."""
     valid = [w for w in windows if not np.isnan(w)]
     if not windows or len(valid) / len(windows) < min_voiced_ratio:
-        return float("inf")
+        return 0.0
     if float(np.median(valid[:2])) < min_opening_hz:
-        return float("inf")
-    return pitch_drop(windows)
+        return 0.0
+    return float(min(valid))
 
 
 def window_f0(path: Path) -> list[float]:

@@ -75,12 +75,17 @@ INFERENCE_STEPS = 32  # Euler ODE steps, the upstream default
 
 # Drift guard: FreyaTTS-small tends to drift toward a lower (male-sounding)
 # voice at the end of a clause. When enabled, each clause is re-synthesized
-# at these duration scales (same seed = same voice) until the pitch drop is
-# acceptable, and the least-drifting take is kept. Costs up to 4x compute.
+# at these duration scales (same seed = same voice) until no window falls
+# below DRIFT_MIN_PITCH_HZ, and the take with the highest lowest-window pitch
+# is kept. Costs up to 4x compute.
 DRIFT_GUARD = False
 DRIFT_GUARD_SCALES = (1.0, 0.9, 1.1, 1.2)
-DRIFT_ACCEPT_SEMITONES = 4.0
 DRIFT_WINDOW_S = 0.5
+# Lowest allowed 0.5 s window pitch. A drop from the opening pitch is NOT a
+# criterion: listening (2026-10-08) showed 9-10 semitone falls down to ~186 Hz
+# are natural sentence-final intonation of the same female voice. Base outputs
+# mostly bottom out at 170-210 Hz; clear outliers sit at 96-130 Hz.
+DRIFT_MIN_PITCH_HZ = 180.0
 # A take only qualifies if it is mostly voiced and opens in the target voice's
 # range; otherwise a broken (whispery/noisy) take would look drift-free.
 DRIFT_MIN_VOICED_RATIO = 0.5

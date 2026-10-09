@@ -32,7 +32,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--steps", type=int, default=config.INFERENCE_STEPS, help="Euler ODE steps")
     p.add_argument("--no-normalize", action="store_true", help="skip Turkish text normalization")
     p.add_argument("--drift-guard", action=argparse.BooleanOptionalAction, default=config.DRIFT_GUARD,
-                   help="re-synthesize drifting clauses and keep the least-drifting take")
+                   help="re-synthesize clauses that fall below DRIFT_MIN_PITCH_HZ")
     return p.parse_args()
 
 
