@@ -10,6 +10,7 @@ from pathlib import Path
 
 import numpy as np
 import pytest
+import soundfile as sf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
@@ -125,7 +126,7 @@ def write_log(out: Path, rows: list[dict]) -> None:
         for r in rows:
             w.writerow({k: r.get(k, "") for k in gs.LOG_FIELDS})
             if r["status"] == "accepted":
-                (out / "wavs" / f"{r['clip_id']}.wav").write_bytes(b"x")
+                sf.write(out / "wavs" / f"{r['clip_id']}.wav", speech(0.5), SR, subtype="PCM_24")
 
 
 def log_row(cid, status, f0_hz, source="synthetic"):
@@ -156,9 +157,26 @@ def test_finalize_restores_clip_that_is_consistent_again(tmp_path):
     write_log(tmp_path, [log_row("a", "accepted", 230), log_row("b", "accepted", 231)])
     (tmp_path / "wavs" / "b.wav").unlink()
     (tmp_path / "excluded").mkdir()
-    (tmp_path / "excluded" / "b.wav").write_bytes(b"x")
+    sf.write(tmp_path / "excluded" / "b.wav", speech(0.5), SR, subtype="PCM_24")
     gs.finalize(tmp_path, TH)
     assert (tmp_path / "wavs" / "b.wav").is_file()
+
+
+def test_end_level_flags_clip_that_stops_mid_word():
+    assert gs.end_level_db(speech(1.0), SR) < gs.MAX_END_LEVEL_DB      # silent tail
+    assert gs.end_level_db(speech(1.0, edge_s=0), SR) > gs.MAX_END_LEVEL_DB  # tone runs to the end
+    assert gs.end_level_db(np.zeros(SR, dtype=np.float32), SR) < gs.MAX_END_LEVEL_DB
+
+
+def test_finalize_excludes_clips_that_end_mid_word(tmp_path):
+    write_log(tmp_path, [log_row("a", "accepted", 230), log_row("b", "accepted", 231),
+                         log_row("c", "accepted", 229)])
+    sf.write(tmp_path / "wavs" / "c.wav", speech(0.5, edge_s=0), SR, subtype="PCM_24")
+    s = gs.finalize(tmp_path, TH)
+
+    assert s["kept"] == 2 and s["excluded_by_consistency"] == []
+    assert list(s["excluded_by_end_cut"]) == ["c"]
+    assert (tmp_path / "excluded" / "c.wav").is_file() and not (tmp_path / "wavs" / "c.wav").exists()
 
 
 def test_resume_refuses_changed_thresholds(tmp_path):

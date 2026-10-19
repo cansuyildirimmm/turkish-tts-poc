@@ -11,12 +11,13 @@ rejected. Rejected audio is not stored. Each decision is appended to
 generation_log.csv immediately, so an interrupted run resumes where it stopped.
 
 A finalize pass (run after every generation run) drops clips whose median
-pitch is far from the voice's overall median (speaker consistency), moving
-them to excluded/, and writes script.tsv for validate_dataset.py / split_dataset.py.
+pitch is far from the voice's overall median (speaker consistency) and clips
+that end mid-word (last 30 ms still loud), moving them to excluded/, and writes
+script.tsv for validate_dataset.py / split_dataset.py.
 
 Layout (<out>, default datasets/synthetic):
     wavs/<clip_id>.wav          accepted clips, 48 kHz 24-bit mono
-    excluded/<clip_id>.wav      passed generation checks, failed consistency
+    excluded/<clip_id>.wav      passed generation checks, failed consistency or end-cut
     generation_log.csv          one row per clip
     generation_config.json      thresholds/model/seed; a resume must match it
     script.tsv                  id, category, source, source_id, train_text
@@ -72,6 +73,21 @@ class GenThresholds:
     max_letters_per_s: float = _VT.max_chars_per_s  # only text/audio mismatch signal
     clip_level: float = _VT.clip_level
     max_clipped_fraction: float = _VT.max_clipped_fraction
+
+
+# Finalize-only filter, kept out of GenThresholds so it does not invalidate a resume.
+# Listening (2026-10-19): x128 (-29 dB) and a017 (-33 dB) end mid-word; clean
+# clips end at -58 dB median, -38 dB worst.
+END_WINDOW_S = 0.03
+MAX_END_LEVEL_DB = -40.0
+
+
+def end_level_db(wav: np.ndarray, sr: int, window_s: float = END_WINDOW_S) -> float:
+    """RMS of the last `window_s` relative to the clip peak; high means the clip ends mid-word."""
+    wav = wav.astype(np.float64)
+    tail = wav[-max(1, int(window_s * sr)):]
+    peak = np.abs(wav).max()
+    return float(20 * np.log10(max(np.sqrt(np.mean(tail ** 2)) / peak, 1e-10))) if peak > 0 else -200.0
 
 
 def speech_span_s(wav: np.ndarray, sr: int, silence_rel_db: float = _VT.silence_rel_db) -> float:
@@ -181,23 +197,29 @@ def _check_config(out: Path, run_cfg: dict) -> None:
         path.write_text(json.dumps(run_cfg, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
-def finalize(out: Path, th: GenThresholds) -> dict:
-    """Speaker-consistency filter, script.tsv and summary from the generation log."""
+def finalize(out: Path, th: GenThresholds, max_end_level_db: float = MAX_END_LEVEL_DB) -> dict:
+    """Speaker-consistency and end-cut filters, script.tsv and summary from the generation log."""
     log = read_log(out / "generation_log.csv")
     accepted = [r for r in log if r["status"] == "accepted"]
     wavs, excluded_dir = out / "wavs", out / "excluded"
     voice_median = statistics.median(float(r["median_f0_hz"]) for r in accepted) if accepted else None
 
-    kept, excluded = [], []
+    kept, excluded, end_cut = [], [], []
     for r in accepted:
-        dev = 12 * np.log2(float(r["median_f0_hz"]) / voice_median)
-        keep = abs(dev) <= th.consistency_st
-        src, dst = (excluded_dir, wavs) if keep else (wavs, excluded_dir)
         f = f"{r['clip_id']}.wav"
+        dev = 12 * np.log2(float(r["median_f0_hz"]) / voice_median)
+        current = wavs / f if (wavs / f).is_file() else excluded_dir / f
+        end_db = end_level_db(*sf.read(str(current))) if current.is_file() else None
+        consistent = abs(dev) <= th.consistency_st
+        cut = end_db is not None and end_db > max_end_level_db
+        keep = consistent and not cut
+        src, dst = (excluded_dir, wavs) if keep else (wavs, excluded_dir)
         if (src / f).is_file():
             dst.mkdir(parents=True, exist_ok=True)
             shutil.move(str(src / f), str(dst / f))
-        (kept if keep else excluded).append({**r, "f0_dev_st": round(float(dev), 2)})
+        row = {**r, "f0_dev_st": round(float(dev), 2),
+               "end_level_db": round(end_db, 1) if end_db is not None else None}
+        (kept if keep else excluded if not consistent else end_cut).append(row)
 
     with open(out / "script.tsv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=["id", "category", "source", "source_id", "train_text"], delimiter="\t")
@@ -227,6 +249,8 @@ def finalize(out: Path, th: GenThresholds) -> dict:
         "clips_total": len(log),
         "accepted_by_generation": len(accepted),
         "excluded_by_consistency": [r["clip_id"] for r in excluded],
+        "excluded_by_end_cut": {r["clip_id"]: r["end_level_db"] for r in end_cut},
+        "max_end_level_db": max_end_level_db,
         "kept": len(kept),
         "kept_ratio": round(len(kept) / len(log), 3) if log else 0.0,
         "kept_minutes": round(audio_s / 60, 2),

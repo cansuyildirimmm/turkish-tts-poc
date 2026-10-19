@@ -1,6 +1,6 @@
 # Proje Durumu – Türkçe TTS PoC
 
-**Son güncelleme:** 2026-10-09 · **Son commit:** bu dosyayı içeren commit · **Repo:** https://github.com/cansuyildirimmm/turkish-tts-poc
+**Son güncelleme:** 2026-10-19 · **Son commit:** bu dosyayı içeren commit · **Repo:** https://github.com/cansuyildirimmm/turkish-tts-poc
 
 Bu dosya, çalışmaya yeni bir oturumda kaldığı yerden devam edebilmek için
 tutulur. Her faz sonunda güncellenmelidir.
@@ -24,9 +24,9 @@ tutulur. Her faz sonunda güncellenmelidir.
 | 3 ERP evaluation set | ✅ | `evaluation/sentences.txt` (32 cümle, unseen) |
 | 4 Text normalization | ✅ | `src/text_normalizer.py`, ek uyumu dahil |
 | 5 Dataset araştırması | ✅ | Ticari kullanıma uygun tek konuşmacılı hazır Türkçe dataset yok. Pilot kayıt kararı 2026-10-01'de **iptal** → sentetik veri. `docs/dataset_report.md` |
-| 6 Dataset validation | 🟡 Kod hazır | Sentetik veri üretimi: `src/generate_synthetic.py`, 20 cümlelik deneme başarılı (2026-10-08) |
-| 7 Train/val/test split | 🟡 Kod hazır | Sentetik veriye uyarlanacak |
-| 8 Fine-tuning | 🟡 Kod hazır, **training başlatılmadı** | Sentetik veri + CPU parametreleri + onay bekleniyor |
+| 6 Dataset validation | ✅ | Sentetik veri: 777 klip, 50,9 dk; 0 ret (2026-10-19) |
+| 7 Train/val/test split | ✅ | 700 / 38 / 39 klip, seed 42; latent'ler hazır |
+| 8 Fine-tuning | 🔄 Eğitim başlatıldı (2026-10-19, onaylı) | `configs/finetune_synthetic_cpu.json`, checkpoint'ler `D:/tts_checkpoints` |
 | 9 Base vs fine-tuned | 🟡 Script hazır | Base ile test edildi (`comparison/`) |
 | 10 FastAPI | ⏳ | Model kalitesi onaylanınca |
 | 11 Docker | ⏳ | |
@@ -105,19 +105,34 @@ tutulur. Her faz sonunda güncellenmelidir.
 - Kabul edilenlerin ölçekleri: 1.0×631, 0.9×141, 1.1×21, **1.2×3**.
 - Özet: `datasets/synthetic/generation_summary.json`.
 
+## Veri hazırlığı ve eğitim planı (2026-10-19)
+
+- Kullanıcı 1.2 ölçekli 3 klibi dinledi (x025, x301, x384): **aynı ses**, tutuldu.
+- Kullanıcı `x128` ve `a017`'yi dinledi: **son kelime yarım kalıyor**. finalize'a
+  kesik-son filtresi eklendi (son 30 ms seviyesi tepe değere göre > −40 dB →
+  `excluded/`; temiz kliplerde medyan −58 dB, en kötü −38 dB). 19 klip elendi.
+- Sonuç: **777 klip = 50,9 dk**; validate 0 ret (47 "sonda sessizlik yok",
+  27 "düşük SNR" uyarısı – sentetik seste kaba tahmin). Rapor: `reports/synthetic/`.
+- Split (seed 42): train 700 (45,8 dk) / val 38 (2,5 dk) / test 39 (2,6 dk).
+- Latent'ler: `datasets/synthetic/latents/` (CPU 13 dk).
+- CPU hız testi: ~0,6 sn/klip/adım (batch 16 = 9,4 sn/adım, ~7 dk/epoch).
+- Eğitim: `configs/finetune_synthetic_cpu.json` — 600 adım (~14 epoch), batch 16,
+  lr 5e-5, warmup 50, cosine, fp32, val her 25 adım, patience 6; tahmin ~1,7 saat.
+- **Disk:** C: ~2,6 GB boş; checkpoint ~2,2 GB → `--set output_dir=D:/tts_checkpoints`.
+
 ## Buradan devam (sıradaki adım)
 
-1. Kullanıcı 1.2 ölçekli 3 klibi dinleyecek: `datasets/synthetic/wavs/x025.wav`,
-   `x301.wav`, `x384.wav` (diğerleriyle aynı ses mi? Değilse çıkar).
-2. `validate_dataset.py` → `split_dataset.py` (sentetik veriye uyarla).
-3. Kısa CPU hız testi + `finetune.py --plan` ile tam parametre listesi →
-   **ONAY** → eğitim → `compare_models.py`.
+1. Eğitim durumu: `D:/tts_checkpoints/synthetic_sft_cpu/train_log.csv`,
+   `summary.json`. Yarıda kaldıysa:
+   `python src/finetune.py --config configs/finetune_synthetic_cpu.json --device cpu --set output_dir=D:/tts_checkpoints --resume latest`
+2. Bitince `compare_models.py` ile base vs fine-tuned (FAZ 9): eval 32 cümle,
+   özellikle 31/32 (cümle sonunda ses kayması) dinlenecek.
 
 Eski pilot-kayıt akışı (referans için, artık kullanılmıyor):
 `validate_dataset.py` → `split_dataset.py` → `prepare_latents.py` →
 `finetune.py --config configs/finetune_pilot.json --plan` → `compare_models.py`.
-`configs/finetune_pilot.json` GPU/gerçek kayıt varsayımıyla yazıldı; CPU ve
-sentetik veri için yeniden ayarlanacak.
+`configs/finetune_pilot.json` GPU/gerçek kayıt varsayımıyla yazıldı; sentetik/CPU
+için `configs/finetune_synthetic_cpu.json` kullanılıyor.
 
 ## Önemli teknik bulgular
 
